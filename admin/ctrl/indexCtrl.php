@@ -1,11 +1,15 @@
 <?php
-namespace app\ctrl;
+namespace admin\ctrl;
+
 use core\lib;
 use core\lib\library\session;
-class indexCtrl extends app\ctrl\author{
-    public function index(){
-    	//var_dump($_SERVER);
-    	dump(__APP__);
-        $this->display('index.html');
-    }
+
+/**
+* 初始化控制器
+*/
+class indexCtrl extends authorCtrl{
+	
+	function index(){
+		$this->display('index.html');
+	}
 }

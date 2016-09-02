@@ -1,5 +1,5 @@
 <?php
-namespace app\model;
+namespace admin\model;
 use core\lib\model;
 
 class cityModel extends model{

@@ -1,14 +1,14 @@
 <?php
 
-/* index.html */
-class __TwigTemplate_9f12c1e054acb299fd346d89d20968d50219d8509c0ad714eb3114da4450d1f7 extends Twig_Template
+/* admin-index.html */
+class __TwigTemplate_83af58079e3191be891ae0f04f8f7af7bf9aab002c41bfd54b9ac3514fd7c68d extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html", "index.html", 1);
+        $this->parent = $this->loadTemplate("layout.html", "admin-index.html", 1);
         $this->blocks = array(
             'content' => array($this, 'block_content'),
         );
@@ -84,7 +84,7 @@ class __TwigTemplate_9f12c1e054acb299fd346d89d20968d50219d8509c0ad714eb3114da445
 
     public function getTemplateName()
     {
-        return "index.html";
+        return "admin-index.html";
     }
 
     public function isTraitable()
