@@ -20,7 +20,7 @@ class __TwigTemplate_1ec45542372e4b2183d354e434e1e3f2e5049c2d6aaf0de88ccd4606959
 <html>
 <head>
     <meta charset=\"utf-8\">
-   <title> 旅游</title>
+    <title>旅游</title>
 
     <meta http-equiv=\"description\" content=\"\" />
     <meta http-equiv=\"keywords\" content=\"\" />
@@ -33,109 +33,103 @@ class __TwigTemplate_1ec45542372e4b2183d354e434e1e3f2e5049c2d6aaf0de88ccd4606959
     <!-- <link rel=\"stylesheet\" type=\"text/css\" href=\"";
         // line 15
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Css/global.css\"/> -->
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 16
-        echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Css/global.css\">
+        echo "/Css/global.css\"/>
+    -->
     <link rel=\"stylesheet\" type=\"text/css\" href=\"";
         // line 17
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Css/demo.css\">
+        echo "/Css/global.css\">
     <link rel=\"stylesheet\" type=\"text/css\" href=\"";
         // line 18
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Css/main.css\">
-    <!-- <script src=\"";
+        echo "/Css/demo.css\">
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
         // line 19
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Scripts/zepto.min.js\"></script>
-        <script src=\"";
+        echo "/Css/main.css\">
+    <!-- <script src=\"";
         // line 20
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Scripts/frozen.js\"></script> -->
-    <script type=\"text/javascript\" src=\"";
+        echo "/Scripts/zepto.min.js\"></script>
+<script src=\"";
         // line 21
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Scripts/zepto.min.js\"></script>
-    <script type=\"text/javascript\" src=\"";
-        // line 22
-        echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Scripts/frozen.js\"></script>
-    <script type=\"text/javascript\" src=\"";
+-->
+<script type=\"text/javascript\" src=\"";
         // line 23
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Scripts/jquery1.42.min.js\"></script>
-    <script src=\"";
+        echo "/Scripts/zepto.min.js\"></script>
+<script type=\"text/javascript\" src=\"";
         // line 24
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Scripts/jquery-1.8.2.min.js\"></script>
-    <script type=\"text/javascript\" src=\"";
+        echo "/Scripts/frozen.js\"></script>
+<script type=\"text/javascript\" src=\"";
         // line 25
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Scripts/jquery.superslide.2.1.1.js\"></script>
-    <link href=\"";
+        echo "/Scripts/jquery1.42.min.js\"></script>
+<script src=\"";
         // line 26
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Css/layer.css\" rel=\"stylesheet\" media=\"all\" />
-    <script src=\"";
+        echo "/Scripts/jquery-1.8.2.min.js\"></script>
+<script type=\"text/javascript\" src=\"";
         // line 27
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Scripts/layer.m.js\" type=\"text/javascript\"></script>
-        <script src=\"";
+        echo "/Scripts/jquery.superslide.2.1.1.js\"></script>
+<link href=\"";
         // line 28
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Scripts/laydate.js\"></script>
-    <link href=\"";
+        echo "/Css/layer.css\" rel=\"stylesheet\" media=\"all\" />
+<script src=\"";
         // line 29
+        echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
+        echo "/Scripts/layer.m.js\" type=\"text/javascript\"></script>
+<script src=\"";
+        // line 30
+        echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
+        echo "/Scripts/laydate.js\"></script>
+<script src=\"";
+        // line 31
+        echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
+        echo "/Scripts/tool.js\"></script>
+<link href=\"";
+        // line 32
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Css/laydate.css\" rel=\"stylesheet\" />
 </head>
 
-
-
-<style type=\"text/css\">
-\t\t\t\t
-            </style>
+<style type=\"text/css\"></style>
 
 <body>
-    <div id=\"onediv\" style=\"margin-left: auto; margin-right: auto\">
-        <form action=\"";
-        // line 40
+<div id=\"onediv\" style=\"margin-left: auto; margin-right: auto\">
+    <form action=\"";
+        // line 39
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
         echo "/login/login\" id=\"loginForm\" method=\"POST\">
-            <h3 class=\"tit\">欢迎来到##旅游</h3>
-            <div class=\"ui-form ui-border-tb\">
-                <form action=\"#\">
-                    <div class=\"ui-form-item ui-form-item2 ui-border-b\">
-                        <label for=\"#\" class=\"ui-form-label1\">
-                        </label>
-                        <input type=\"text\" name=\"Phone\" placeholder=\"用户名\" />
-                    </div>
-                    <div class=\"ui-form-item ui-form-item2 ui-border-b\">
-                        <label for=\"#\" class=\"ui-form-label2\">
-                        </label>
-                        <input type=\"password\" name=\"Pwd\" placeholder=\"密码\" />
-                    </div>
+        <h3 class=\"tit\">欢迎来到##旅游</h3>
+        <div class=\"ui-form ui-border-tb\">
+            <form action=\"#\">
+                <div class=\"ui-form-item ui-form-item2 ui-border-b\">
+                    <label for=\"#\" class=\"ui-form-label1\"></label>
+                    <input type=\"text\" name=\"Phone\" placeholder=\"用户名\" />
+                </div>
+                <div class=\"ui-form-item ui-form-item2 ui-border-b\">
+                    <label for=\"#\" class=\"ui-form-label2\"></label>
+                    <input type=\"password\" name=\"Pwd\" placeholder=\"密码\" />
+                </div>
 
-                </form>
+            </form>
 
+        </div>
 
+        <div class=\"ui-btn-group-tiled ui-btn-wrap\">
+            <button onclick=\"win()\" class=\"ui-btn-lg ui-btn-lg2 ui-btn-reg ui-btn-re2\">注册</button>
+            <button onclick=\"sub()\" class=\"ui-btn-lg ui-btn-lg2 ui-btn-login ui-btn-login\">登录</button>
+        </div>
 
-            </div>
-
-            <div class=\"ui-btn-group-tiled ui-btn-wrap\">
-                <button onclick=\"win()\" class=\"ui-btn-lg ui-btn-lg2 ui-btn-reg ui-btn-re2\">
-                    注册
-                </button>
-                <button onclick=\"sub()\" class=\"ui-btn-lg ui-btn-lg2 ui-btn-login ui-btn-login\">
-                    登录
-                </button>
-            </div>
-            
-        </form>
-        <!--/forget-->
-        <script>
+    </form>
+    <!--/forget-->
+    <script>
             function win() {
                 window.location.href = '/user/Register';
             }
@@ -162,21 +156,21 @@ class __TwigTemplate_1ec45542372e4b2183d354e434e1e3f2e5049c2d6aaf0de88ccd4606959
                     \$.ajax({
                         type: \"POST\",
                         url: \"";
-        // line 98
+        // line 89
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
         echo "/login/login\",
                         data:{\"Phone\":\$(\"input[name='Phone']\").val(),\"Pwd\":\$(\"input[name='Pwd']\").val()},
                         success: function (data) {
-                            if (data != \"20001\") {
+                            if (data.code != \"20001\") {
                                 alert(data.msg);
                             } else {
-                                alert(\"登录成功 正在为你跳转...\");
+                                callTips(\"登录成功\");
                                 for(var k in data.data){
                                     window.store.set(k,data.data[k]);
                                 }
                                 setTimeout(function () {
                                     window.location.href = '";
-        // line 109
+        // line 100
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
         echo "/user/index';
                                 }, 2000);
@@ -186,33 +180,28 @@ class __TwigTemplate_1ec45542372e4b2183d354e434e1e3f2e5049c2d6aaf0de88ccd4606959
                 }
 }
         </script>
-        <div class=\"ui-btn-group-tiled ui-btn-wrap\">
-            <div class=\"btn\" style=\"\" id=\"weixinbtn\">
-                <button onclick=\"weixin()\" class=\"ui-btn-lg ui-btn-lg2 ui-btn-weixin\" style=\"height: 44px; line-height: 44px; background: none; text-align: left; padding-left: 30%;\">
-                    <img src=\"";
-        // line 120
+    <div class=\"ui-btn-group-tiled ui-btn-wrap\">
+        <div class=\"btn\" style=\"\" id=\"weixinbtn\">
+            <button onclick=\"weixin()\" class=\"ui-btn-lg ui-btn-lg2 ui-btn-weixin\" style=\"height: 44px; line-height: 44px; background: none; text-align: left; padding-left: 30%;\">
+                <img src=\"";
+        // line 111
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Picture/reg3.png\" height=\"30\" width=\"30\" style=\"margin: 6px 13px 0px 0px; float: left;\" />
-                    <h4 style=\"height: 44px; line-height: 44px; float: left;\">微信登录</h4>
-                </button>
-            </div>
-            <div class=\"btn\" id=\"qqBtn\">
-                
-                <button id=\"qqLoginBtn\" class=\"ui-btn-lg ui-btn-lg2 ui-btn-weixin\" style=\"height: 44px; line-height: 44px; background: none; text-align: left; padding-left: 30%; padding-top: 6px\">
-                    <img src=\"";
-        // line 127
+                <h4 style=\"height: 44px; line-height: 44px; float: left;\">微信登录</h4>
+            </button>
+        </div>
+        <div class=\"btn\" id=\"qqBtn\">
+
+            <button id=\"qqLoginBtn\" class=\"ui-btn-lg ui-btn-lg2 ui-btn-weixin\" style=\"height: 44px; line-height: 44px; background: none; text-align: left; padding-left: 30%; padding-top: 6px\">
+                <img src=\"";
+        // line 118
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Picture/connect_logo_4.png\" style=\"margin: -6px 13px 0px 0px; float: left;\" />
-                    
-             
-                </button>
-            </div>
+
+            </button>
         </div>
-        <script type=\"text/javascript\" src=\"";
-        // line 133
-        echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Scripts/qc_loader.js\" data-appid=\"101313014\" data-redirecturi=\"http://www.feitrip.cn/user/qqlogin\" charset=\"utf-8\"></script>
-        <script>
+    </div>
+    <script>
             function weixin() {
                 //使用微信登陆
                 window.location.href = \"/User/Weixin?loginid=3&url=&gid=&cid=&i=\";
@@ -228,8 +217,8 @@ class __TwigTemplate_1ec45542372e4b2183d354e434e1e3f2e5049c2d6aaf0de88ccd4606959
             });
 
         </script>
-        
-    </div>
+
+</div>
 </body>
 <script>
     var aa = navigator.platform;
@@ -244,7 +233,6 @@ class __TwigTemplate_1ec45542372e4b2183d354e434e1e3f2e5049c2d6aaf0de88ccd4606959
 </script>
 
 </html>
-
 ";
     }
 
@@ -260,14 +248,14 @@ class __TwigTemplate_1ec45542372e4b2183d354e434e1e3f2e5049c2d6aaf0de88ccd4606959
 
     public function getDebugInfo()
     {
-        return array (  213 => 133,  204 => 127,  194 => 120,  180 => 109,  166 => 98,  105 => 40,  91 => 29,  87 => 28,  83 => 27,  79 => 26,  75 => 25,  71 => 24,  67 => 23,  63 => 22,  59 => 21,  55 => 20,  51 => 19,  47 => 18,  43 => 17,  39 => 16,  35 => 15,  19 => 1,);
+        return array (  198 => 118,  188 => 111,  174 => 100,  160 => 89,  107 => 39,  97 => 32,  93 => 31,  89 => 30,  85 => 29,  81 => 28,  77 => 27,  73 => 26,  69 => 25,  65 => 24,  61 => 23,  56 => 21,  52 => 20,  48 => 19,  44 => 18,  40 => 17,  35 => 15,  19 => 1,);
     }
 }
 /* ﻿<!DOCTYPE html>*/
 /* <html>*/
 /* <head>*/
 /*     <meta charset="utf-8">*/
-/*    <title> 旅游</title>*/
+/*     <title>旅游</title>*/
 /* */
 /*     <meta http-equiv="description" content="" />*/
 /*     <meta http-equiv="keywords" content="" />*/
@@ -277,64 +265,55 @@ class __TwigTemplate_1ec45542372e4b2183d354e434e1e3f2e5049c2d6aaf0de88ccd4606959
 /*     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">*/
 /*     <meta name="apple-mobile-web-app-capable" content="yes">*/
 /*     <meta name="apple-mobile-web-app-status-bar-style" content="black">*/
-/*     <!-- <link rel="stylesheet" type="text/css" href="{{ static }}/Css/global.css"/> -->*/
+/*     <!-- <link rel="stylesheet" type="text/css" href="{{ static }}/Css/global.css"/>*/
+/*     -->*/
 /*     <link rel="stylesheet" type="text/css" href="{{ static }}/Css/global.css">*/
 /*     <link rel="stylesheet" type="text/css" href="{{ static }}/Css/demo.css">*/
 /*     <link rel="stylesheet" type="text/css" href="{{ static }}/Css/main.css">*/
 /*     <!-- <script src="{{ static }}/Scripts/zepto.min.js"></script>*/
-/*         <script src="{{ static }}/Scripts/frozen.js"></script> -->*/
-/*     <script type="text/javascript" src="{{ static }}/Scripts/zepto.min.js"></script>*/
-/*     <script type="text/javascript" src="{{ static }}/Scripts/frozen.js"></script>*/
-/*     <script type="text/javascript" src="{{ static }}/Scripts/jquery1.42.min.js"></script>*/
-/*     <script src="{{ static }}/Scripts/jquery-1.8.2.min.js"></script>*/
-/*     <script type="text/javascript" src="{{ static }}/Scripts/jquery.superslide.2.1.1.js"></script>*/
-/*     <link href="{{ static }}/Css/layer.css" rel="stylesheet" media="all" />*/
-/*     <script src="{{ static }}/Scripts/layer.m.js" type="text/javascript"></script>*/
-/*         <script src="{{ static }}/Scripts/laydate.js"></script>*/
-/*     <link href="{{ static }}/Css/laydate.css" rel="stylesheet" />*/
+/* <script src="{{ static }}/Scripts/frozen.js"></script>*/
+/* -->*/
+/* <script type="text/javascript" src="{{ static }}/Scripts/zepto.min.js"></script>*/
+/* <script type="text/javascript" src="{{ static }}/Scripts/frozen.js"></script>*/
+/* <script type="text/javascript" src="{{ static }}/Scripts/jquery1.42.min.js"></script>*/
+/* <script src="{{ static }}/Scripts/jquery-1.8.2.min.js"></script>*/
+/* <script type="text/javascript" src="{{ static }}/Scripts/jquery.superslide.2.1.1.js"></script>*/
+/* <link href="{{ static }}/Css/layer.css" rel="stylesheet" media="all" />*/
+/* <script src="{{ static }}/Scripts/layer.m.js" type="text/javascript"></script>*/
+/* <script src="{{ static }}/Scripts/laydate.js"></script>*/
+/* <script src="{{ static }}/Scripts/tool.js"></script>*/
+/* <link href="{{ static }}/Css/laydate.css" rel="stylesheet" />*/
 /* </head>*/
 /* */
-/* */
-/* */
-/* <style type="text/css">*/
-/* 				*/
-/*             </style>*/
+/* <style type="text/css"></style>*/
 /* */
 /* <body>*/
-/*     <div id="onediv" style="margin-left: auto; margin-right: auto">*/
-/*         <form action="{{ APP }}/login/login" id="loginForm" method="POST">*/
-/*             <h3 class="tit">欢迎来到##旅游</h3>*/
-/*             <div class="ui-form ui-border-tb">*/
-/*                 <form action="#">*/
-/*                     <div class="ui-form-item ui-form-item2 ui-border-b">*/
-/*                         <label for="#" class="ui-form-label1">*/
-/*                         </label>*/
-/*                         <input type="text" name="Phone" placeholder="用户名" />*/
-/*                     </div>*/
-/*                     <div class="ui-form-item ui-form-item2 ui-border-b">*/
-/*                         <label for="#" class="ui-form-label2">*/
-/*                         </label>*/
-/*                         <input type="password" name="Pwd" placeholder="密码" />*/
-/*                     </div>*/
+/* <div id="onediv" style="margin-left: auto; margin-right: auto">*/
+/*     <form action="{{ APP }}/login/login" id="loginForm" method="POST">*/
+/*         <h3 class="tit">欢迎来到##旅游</h3>*/
+/*         <div class="ui-form ui-border-tb">*/
+/*             <form action="#">*/
+/*                 <div class="ui-form-item ui-form-item2 ui-border-b">*/
+/*                     <label for="#" class="ui-form-label1"></label>*/
+/*                     <input type="text" name="Phone" placeholder="用户名" />*/
+/*                 </div>*/
+/*                 <div class="ui-form-item ui-form-item2 ui-border-b">*/
+/*                     <label for="#" class="ui-form-label2"></label>*/
+/*                     <input type="password" name="Pwd" placeholder="密码" />*/
+/*                 </div>*/
 /* */
-/*                 </form>*/
+/*             </form>*/
 /* */
+/*         </div>*/
 /* */
+/*         <div class="ui-btn-group-tiled ui-btn-wrap">*/
+/*             <button onclick="win()" class="ui-btn-lg ui-btn-lg2 ui-btn-reg ui-btn-re2">注册</button>*/
+/*             <button onclick="sub()" class="ui-btn-lg ui-btn-lg2 ui-btn-login ui-btn-login">登录</button>*/
+/*         </div>*/
 /* */
-/*             </div>*/
-/* */
-/*             <div class="ui-btn-group-tiled ui-btn-wrap">*/
-/*                 <button onclick="win()" class="ui-btn-lg ui-btn-lg2 ui-btn-reg ui-btn-re2">*/
-/*                     注册*/
-/*                 </button>*/
-/*                 <button onclick="sub()" class="ui-btn-lg ui-btn-lg2 ui-btn-login ui-btn-login">*/
-/*                     登录*/
-/*                 </button>*/
-/*             </div>*/
-/*             */
-/*         </form>*/
-/*         <!--/forget-->*/
-/*         <script>*/
+/*     </form>*/
+/*     <!--/forget-->*/
+/*     <script>*/
 /*             function win() {*/
 /*                 window.location.href = '/user/Register';*/
 /*             }*/
@@ -363,10 +342,10 @@ class __TwigTemplate_1ec45542372e4b2183d354e434e1e3f2e5049c2d6aaf0de88ccd4606959
 /*                         url: "{{ APP }}/login/login",*/
 /*                         data:{"Phone":$("input[name='Phone']").val(),"Pwd":$("input[name='Pwd']").val()},*/
 /*                         success: function (data) {*/
-/*                             if (data != "20001") {*/
+/*                             if (data.code != "20001") {*/
 /*                                 alert(data.msg);*/
 /*                             } else {*/
-/*                                 alert("登录成功 正在为你跳转...");*/
+/*                                 callTips("登录成功");*/
 /*                                 for(var k in data.data){*/
 /*                                     window.store.set(k,data.data[k]);*/
 /*                                 }*/
@@ -379,24 +358,22 @@ class __TwigTemplate_1ec45542372e4b2183d354e434e1e3f2e5049c2d6aaf0de88ccd4606959
 /*                 }*/
 /* }*/
 /*         </script>*/
-/*         <div class="ui-btn-group-tiled ui-btn-wrap">*/
-/*             <div class="btn" style="" id="weixinbtn">*/
-/*                 <button onclick="weixin()" class="ui-btn-lg ui-btn-lg2 ui-btn-weixin" style="height: 44px; line-height: 44px; background: none; text-align: left; padding-left: 30%;">*/
-/*                     <img src="{{ static }}/Picture/reg3.png" height="30" width="30" style="margin: 6px 13px 0px 0px; float: left;" />*/
-/*                     <h4 style="height: 44px; line-height: 44px; float: left;">微信登录</h4>*/
-/*                 </button>*/
-/*             </div>*/
-/*             <div class="btn" id="qqBtn">*/
-/*                 */
-/*                 <button id="qqLoginBtn" class="ui-btn-lg ui-btn-lg2 ui-btn-weixin" style="height: 44px; line-height: 44px; background: none; text-align: left; padding-left: 30%; padding-top: 6px">*/
-/*                     <img src="{{ static }}/Picture/connect_logo_4.png" style="margin: -6px 13px 0px 0px; float: left;" />*/
-/*                     */
-/*              */
-/*                 </button>*/
-/*             </div>*/
+/*     <div class="ui-btn-group-tiled ui-btn-wrap">*/
+/*         <div class="btn" style="" id="weixinbtn">*/
+/*             <button onclick="weixin()" class="ui-btn-lg ui-btn-lg2 ui-btn-weixin" style="height: 44px; line-height: 44px; background: none; text-align: left; padding-left: 30%;">*/
+/*                 <img src="{{ static }}/Picture/reg3.png" height="30" width="30" style="margin: 6px 13px 0px 0px; float: left;" />*/
+/*                 <h4 style="height: 44px; line-height: 44px; float: left;">微信登录</h4>*/
+/*             </button>*/
 /*         </div>*/
-/*         <script type="text/javascript" src="{{ static }}/Scripts/qc_loader.js" data-appid="101313014" data-redirecturi="http://www.feitrip.cn/user/qqlogin" charset="utf-8"></script>*/
-/*         <script>*/
+/*         <div class="btn" id="qqBtn">*/
+/* */
+/*             <button id="qqLoginBtn" class="ui-btn-lg ui-btn-lg2 ui-btn-weixin" style="height: 44px; line-height: 44px; background: none; text-align: left; padding-left: 30%; padding-top: 6px">*/
+/*                 <img src="{{ static }}/Picture/connect_logo_4.png" style="margin: -6px 13px 0px 0px; float: left;" />*/
+/* */
+/*             </button>*/
+/*         </div>*/
+/*     </div>*/
+/*     <script>*/
 /*             function weixin() {*/
 /*                 //使用微信登陆*/
 /*                 window.location.href = "/User/Weixin?loginid=3&url=&gid=&cid=&i=";*/
@@ -412,8 +389,8 @@ class __TwigTemplate_1ec45542372e4b2183d354e434e1e3f2e5049c2d6aaf0de88ccd4606959
 /*             });*/
 /* */
 /*         </script>*/
-/*         */
-/*     </div>*/
+/* */
+/* </div>*/
 /* </body>*/
 /* <script>*/
 /*     var aa = navigator.platform;*/
@@ -428,5 +405,4 @@ class __TwigTemplate_1ec45542372e4b2183d354e434e1e3f2e5049c2d6aaf0de88ccd4606959
 /* </script>*/
 /* */
 /* </html>*/
-/* */
 /* */
