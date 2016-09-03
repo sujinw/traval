@@ -1,6 +1,6 @@
 <?php
 namespace core\lib\library;
-use core\lib;
+use core\lib\conf;
 use core\lib\library\dir;
 /**
  * 上传处理类
