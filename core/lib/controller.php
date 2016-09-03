@@ -49,7 +49,39 @@ class controller
             'msg'=>$msg,
             'data'=>$data
         );
-        
+        header('Content-Type: application/json');
         echo json_encode($returnDate);
+    }
+
+    /**
+     * [success 操作成功]
+     * @Author   Rukic
+     * @DateTime 2015-11-10T22:59:14+0800
+     * @return   [type]                   [description]
+     */
+    protected function success($msg, $url = NULL, $time=3){
+        if (IS_AJAX) {
+            $this->ajax(array('status' => 1, 'message' => $msg));
+        }else{
+            $url = $url ? "window.location.href='". $url ."'" : 'window.history.back(-1)';
+            include(APP.'/views/error/success.html');
+        }
+        exit;
+    }
+    /**
+     * [error 错误提示]
+     * @Author   Rukic
+     * @DateTime 2015-11-10T23:10:01+0800
+     * @return   [type]                   [description]
+     */
+    protected function error($msg, $url = NULL, $time = 3){
+        if (IS_AJAX) {
+            $this->ajax(array('status' => 0, 'message' => $msg));
+        }else{
+            $url = $url ? "window.location.href='". $url ."'" : 'window.history.back(-1)';
+            include(APP.'/views/error/error.html');
+
+        }
+        exit;
     }
 }

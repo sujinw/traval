@@ -131,7 +131,7 @@ header .rt_nav li .quit_icon:before{content:"Q";}
 .table td .inner_btn:hover{background:#ffa4ff;color:#f8f8f8;}
 .table td .cut_title{width:265px;}
 .paging{margin:8px 0;overflow:hidden;text-align:right;}
-.paging a{background:#19a97b;border:1px #139667 solid;color:white;padding:5px 8px;display:inline-block;cursor:pointer;}
+.paging a,.paging p{background:#19a97b;border:1px #139667 solid;color:white;padding:5px 8px;display:inline-block;cursor:pointer;}
 .paging a:hover{background:#11a274;border:1px #0e8f61 solid;}
 .paging a:active{background:#17a578;border:1px #0e8f61 solid;}
 .single_selection{color:#333;padding:6px 8px;display:inline-block;vertical-align:middle;}

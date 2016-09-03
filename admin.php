@@ -5,18 +5,18 @@
  * 2.加载函数库
  * 3.启动框架
  */
-
 define('BASEDIR', realpath('./'));
 define('CORE', BASEDIR . '/core');
 define('APP', BASEDIR . '/admin');
 define('M', 'admin');
 define('DEBUG', true);
 
-define("ROOT_PATH",dirname(BASEDIR));
+define("ROOT_PATH",BASEDIR);
 $path = 'http://'. $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME'];
 $path = str_replace('\\', '/', $path);
 define('__APP__',$path);
 define("__ROOT__",dirname(__APP__));
+
 //静态资源
 define('__STATIC__',dirname(__APP__).'/'.M.'/views/static');		
 define('__VIEWS__',dirname(__APP__).'/'.M.'/views');
