@@ -1,24 +1,24 @@
 <?php
 namespace admin\model;
+
 use core\lib\model;
 use core\lib\library\page;
-
 /**
-* 用户表操作model
+* 会员等级表操作模型
 */
-class userModel extends Model{
-	public $t = 'traval_user';
+class userleveModel extends Model{
+	public $t="traval_userleve";
 	public static $total;
 	/**
-	 * [addUser 添加用户]
+	 * [addUser 添加用户等级]
 	 * @param    [array]                   $data [description]
 	 * @Author   Rukic
 	 * @DateTime 2016-09-03T09:50:25+0800
 	 */
-	public function addUser($data){
-		$userId = $this->insert('traval_user',$data);
+	public function addLeve($data){
+		$userId = $this->insert($this->t,$data);
 		if($userId){
-			$path = ROOT_PATH."/cache/dataBase/traval_user.txt";
+			$path = ROOT_PATH."/cache/dataBase/traval_userleve.txt";
 			if(file_put_contents($path,$userId)){
 				return true;
 			}else{
@@ -28,13 +28,13 @@ class userModel extends Model{
 	}
 
 	/**
-	 * [listUserByPage 获取用户分页]
+	 * [listLeveByPage 获取用户分页]
 	 * @return   [type]                   [array]
 	 * @Author   Rukic
 	 * @DateTime 2016-09-03T09:51:12+0800
 	 */
-	public function listUserByPage($curpage,$showrow,$url){
-		$userData['lists'] = $this->select('traval_user','*',["LIMIT" => [($curpage - 1)*$showrow,$showrow]]);
+	public function listLeveByPage($curpage,$showrow,$url){
+		$userData['lists'] = $this->select('traval_userleve','*',["LIMIT" => [($curpage - 1)*$showrow,$showrow]]);
 		$userData['page'] = null;
 
 		//总记录数大于每页显示数，显示分页
@@ -45,24 +45,23 @@ class userModel extends Model{
 		return $userData;
 	}
 
-	public function selectUserById($id){
-		if($userInfo = $this->get($this->t,"*",array('id'=>$id))){
-			return $userInfo;
-		}else{
-			return false;
-		}
-	}
-
-	public function delUserById($id){
-		if($user = $this->delete($this->t,array("id"=>$id))){
-			return $user;
-		}else{
-			return false;
-		}
-	}
-
 	/**
-	 * [countTotal user表统计]
+	 * [setUserLeve 修改会员信息]
+	 * @param    [array]                   $data [description]
+	 * @param    [int]                   $id   [description]
+	 * @Author   Rukic
+	 * @DateTime 2016-09-04T20:35:07+0800
+	 */
+	public function setUserLeve($data,$id){
+		$res = $this->update($this->t,$data,array('leve_id'=>$id));
+		if($res){
+			return $res;
+		}else{
+			return false;
+		}
+	}
+	/**
+	 * [countTotal userleve表统计]
 	 * @return   [num]                   [description]
 	 * @Author   Rukic
 	 * @DateTime 2016-09-03T10:00:05+0800
@@ -74,8 +73,5 @@ class userModel extends Model{
 			return self::$total;
 		}
 	}
-
-
-
 }
 ?>

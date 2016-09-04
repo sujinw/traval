@@ -14,6 +14,7 @@ class authorCtrl extends lib\controller{
 		$this->assign("static",__STATIC__);
 		$this->assign("views",__VIEWS__);
 		$this->assign("APP",__APP__);
+		$this->assign("ROOT",__ROOT__);
 		# code...
 	}
 }

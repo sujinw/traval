@@ -5,7 +5,7 @@
 <section>
 	<div class="page_title">
 		<h2 class="fl">会员等级列表</h2>
-		<a href="{{ APP }}/user/add" class="fr top_rt_btn">添加会员等级</a>
+		<a href="{{ APP }}/user/addleve" class="fr top_rt_btn">添加会员等级</a>
 	</div>
 	<table class="table">
 		<tr>
@@ -16,20 +16,18 @@
 			<th>等级描述</th>
 			<th>操作</th>
 		</tr>
-		{% for user in users %}
+		{% for user in leve %}
 		<tr>
 			<td align="center">
 				<input type="checkbox" value="{{ user.id }}" id="{{ user.id }}" />
-				{{ user.id }}
+				{{ user.leve_id }}
 			</td>
-			<td align="center">{{ user.username }}/{{ user.nickname }}({{ user.surname }})</td>
-			<td align="center">{{ user.babayname }}</td>
-			<td align="center">{{ user.babaybirthday }}</td>
-			<td align="center">{{ user.phone }}</td>
-			<td align="center">{{ user.email }}</td>
-			<td align="center">{{ user.address }}</td>
+			<td align="center">{{ user.leve_name }}</td>
+			<td align="center"><img style="width:80px;height:80px;" src="{{ ROOT }}/{{ user.leve_img }}" /></td>
+			<td align="center">{{ user.leve_rid }}</td>
+			<td align="center">{{ user.leve_des }}</td>
 			<td align="center">
-				<a href="{{ APP }}/user/editUser/id/{{ user.id }}">编辑</a>
+				<a href="{{ APP }}/user/editUserLeve/id/{{ user.id }}">编辑</a>
 				<a href="jsvascript:;" onclick="delUser({{ user.id }})" class="inner_btn">删除</a>
 			</td>
 		</tr>
@@ -63,7 +61,7 @@ function escape2Html(str) {
  return str.replace(/&(lt|gt|nbsp|amp|quot);/ig,function(all,t){return arrEntities[t];});
 }
 $().ready(function(){
-	var page = escape2Html("{{ userData.page }}");
+	var page = escape2Html("{{ leves.page }}");
 	$(".paging").html(page);
 });
 //弹出：取消或关闭按钮

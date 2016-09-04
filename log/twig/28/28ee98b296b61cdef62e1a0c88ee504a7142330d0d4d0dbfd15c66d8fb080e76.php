@@ -104,8 +104,10 @@ class __TwigTemplate_0228dea687043274364eede374b5e1c0dfe199ab88d8fb4345eca308946
         // line 60
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
         echo "/user/add\">添加会员</a></dd>
-    <dd><a href=\"#\">会员等级</a></dd>
-    <dd><a href=\"#\">资金管理</a></dd>
+    <dd><a href=\"";
+        // line 61
+        echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
+        echo "/user/leve\">会员等级</a></dd>
    </dl>
   </li>
   <li>
@@ -149,9 +151,9 @@ class __TwigTemplate_0228dea687043274364eede374b5e1c0dfe199ab88d8fb4345eca308946
 <section class=\"rt_wrap content mCustomScrollbar\">
  <div class=\"rt_content\">
 \t";
-        // line 105
+        // line 104
         $this->displayBlock('content', $context, $blocks);
-        // line 108
+        // line 107
         echo "  </div>
 </section>
 </body>
@@ -159,10 +161,10 @@ class __TwigTemplate_0228dea687043274364eede374b5e1c0dfe199ab88d8fb4345eca308946
 ";
     }
 
-    // line 105
+    // line 104
     public function block_content($context, array $blocks = array())
     {
-        // line 106
+        // line 105
         echo "
 \t";
     }
@@ -179,7 +181,7 @@ class __TwigTemplate_0228dea687043274364eede374b5e1c0dfe199ab88d8fb4345eca308946
 
     public function getDebugInfo()
     {
-        return array (  166 => 106,  163 => 105,  155 => 108,  153 => 105,  105 => 60,  101 => 59,  93 => 54,  79 => 43,  46 => 13,  42 => 12,  38 => 11,  33 => 9,  28 => 7,  20 => 1,);
+        return array (  168 => 105,  165 => 104,  157 => 107,  155 => 104,  109 => 61,  105 => 60,  101 => 59,  93 => 54,  79 => 43,  46 => 13,  42 => 12,  38 => 11,  33 => 9,  28 => 7,  20 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -242,8 +244,7 @@ class __TwigTemplate_0228dea687043274364eede374b5e1c0dfe199ab88d8fb4345eca308946
 /*     <dt>会员管理</dt>*/
 /*     <dd><a href="{{ APP }}/user/index">会员列表</a></dd>*/
 /*     <dd><a href="{{ APP }}/user/add">添加会员</a></dd>*/
-/*     <dd><a href="#">会员等级</a></dd>*/
-/*     <dd><a href="#">资金管理</a></dd>*/
+/*     <dd><a href="{{ APP }}/user/leve">会员等级</a></dd>*/
 /*    </dl>*/
 /*   </li>*/
 /*   <li>*/

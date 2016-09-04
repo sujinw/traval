@@ -77,6 +77,10 @@ class __TwigTemplate_889510dc776fbf5637824fd1aa99bfffa830fce0415725f48065a11af39
         // line 28
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Scripts/layer.m.js\" type=\"text/javascript\"></script>
+<script src=\"";
+        // line 29
+        echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
+        echo "/Scripts/tool.js\" type=\"text/javascript\"></script>
 </head>
 <style type=\"text/css\"></style>
 <body>
@@ -87,7 +91,7 @@ class __TwigTemplate_889510dc776fbf5637824fd1aa99bfffa830fce0415725f48065a11af39
 \t\t\t\t<span class=\"cityP\" style=\"font-size: 16px;\">
 \t\t\t\t\t&nbsp;&nbsp;
 \t\t\t\t\t<img src=\"";
-        // line 38
+        // line 39
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/images/tit1.png\" width=\"30\" height=\"30\"></span>
 \t\t\t</a>
@@ -96,7 +100,7 @@ class __TwigTemplate_889510dc776fbf5637824fd1aa99bfffa830fce0415725f48065a11af39
 \t\t\t<h3>
 \t\t\t\t<a href=\"/index/index\" style=\"display: inline-block; width: 100%; height: 30px;\">
 \t\t\t\t\t<img src=\"";
-        // line 44
+        // line 45
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/logo.png\" height=\"30\" />
 \t\t\t\t</a>
@@ -106,7 +110,7 @@ class __TwigTemplate_889510dc776fbf5637824fd1aa99bfffa830fce0415725f48065a11af39
 \t\t\t<div class=\"topR\" style=\"\">
 \t\t\t\t<a href=\"/user/index\">
 \t\t\t\t\t<img src=\"";
-        // line 51
+        // line 52
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/tit2.png\" width=\"\" height=\"30\" style=\"display: -webkit-box; -webkit-box-flex: 0.5; -webkit-box-align: center; -webkit-box-pack: center; -webkit-box-orient: vertical; text-align: center; margin-left: auto; margin-right: auto;\"></a>
 \t\t\t</div>
@@ -127,7 +131,7 @@ class __TwigTemplate_889510dc776fbf5637824fd1aa99bfffa830fce0415725f48065a11af39
 \t\t<div class=\"usercenter\">
 \t\t\t<header class=\"top_center cenetr_after\">
 \t\t\t\t<div class=\"ico_ceneter after\" id=\"img\"></div>
-\t\t\t\t欢迎来到菲趣
+\t\t\t\t欢迎来到***旅游
 \t\t\t\t<br>
 \t\t\t\t(18170873407)
 \t\t\t\t<br></header>
@@ -150,56 +154,56 @@ class __TwigTemplate_889510dc776fbf5637824fd1aa99bfffa830fce0415725f48065a11af39
 \t\t\t\t<ul class=\"list_page_1\">
 \t\t\t\t\t<li>
 \t\t\t\t\t\t<img src=\"";
-        // line 92
+        // line 93
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/c1.png\" width=\"30\" height=\"30\" style=\"float: left;\">
 \t\t\t\t\t\t<a href=\"/userorder/needpayorder\" class=\"list_page_t\" style=\"float: left;\">需支付</a>
 \t\t\t\t\t</li>
 \t\t\t\t\t<li>
 \t\t\t\t\t\t<img src=\"";
-        // line 96
+        // line 97
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/c2.png\" width=\"30\" height=\"30\" style=\"float: left;\">
 \t\t\t\t\t\t<a href=\"/userorder/overpayorder\" class=\"list_page_t\" style=\"float: left;\">待评价</a>
 \t\t\t\t\t</li>
 \t\t\t\t\t<li>
 \t\t\t\t\t\t<img src=\"";
-        // line 100
+        // line 101
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/c3.png\" width=\"30\" height=\"30\" style=\"float: left;\">
 \t\t\t\t\t\t<a href=\"/userorder/ywcpayorder\" class=\"list_page_t\" style=\"float: left;\">已完成</a>
 \t\t\t\t\t</li>
 \t\t\t\t\t<li>
 \t\t\t\t\t\t<img src=\"";
-        // line 104
+        // line 105
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/c4.png\" width=\"30\" height=\"30\" style=\"float: left;\">
 \t\t\t\t\t\t<a href=\"/userorder/mycollect\" class=\"list_page_t\" style=\"float: left;\">我的收藏</a>
 \t\t\t\t\t</li>
 \t\t\t\t\t<li>
 \t\t\t\t\t\t<img src=\"";
-        // line 108
+        // line 109
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/c5.png\" width=\"30\" height=\"30\" style=\"float: left;\">
 \t\t\t\t\t\t<a href=\"/user/coupon\" class=\"list_page_t\" style=\"float: left;\">优惠券</a>
 \t\t\t\t\t</li>
 \t\t\t\t\t<li>
 \t\t\t\t\t\t<img src=\"";
-        // line 112
+        // line 113
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/55.png\" width=\"30\" height=\"30\" style=\"float: left;\">
-\t\t\t\t\t\t<a href=\"/User/userinfo\" class=\"list_page_t\" style=\"float: left;\">个人信息</a>
+\t\t\t\t\t\t<a href=\"/user/userinfo\" class=\"list_page_t\" style=\"float: left;\">个人信息</a>
 \t\t\t\t\t</li>
 \t\t\t\t\t<li>
 \t\t\t\t\t\t<img src=\"";
-        // line 116
+        // line 117
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/66.png\" width=\"30\" height=\"30\" style=\"float: left;\">
 \t\t\t\t\t\t<a href=\"/Userinfo/add\" class=\"list_page_t\" style=\"float: left;\">出行人信息</a>
 \t\t\t\t\t</li>
 \t\t\t\t\t<li>
 \t\t\t\t\t\t<img src=\"";
-        // line 120
+        // line 121
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/22.png\" width=\"30\" height=\"30\" style=\"float: left;\">
 \t\t\t\t\t\t<a href=\"/login/login\" class=\"list_page_t\" style=\"float: left;\">切换账号</a>
@@ -234,7 +238,7 @@ class __TwigTemplate_889510dc776fbf5637824fd1aa99bfffa830fce0415725f48065a11af39
 
     public function getDebugInfo()
     {
-        return array (  203 => 120,  196 => 116,  189 => 112,  182 => 108,  175 => 104,  168 => 100,  161 => 96,  154 => 92,  110 => 51,  100 => 44,  91 => 38,  78 => 28,  74 => 27,  70 => 26,  66 => 25,  62 => 24,  58 => 23,  54 => 22,  47 => 18,  43 => 17,  39 => 16,  34 => 14,  19 => 1,);
+        return array (  207 => 121,  200 => 117,  193 => 113,  186 => 109,  179 => 105,  172 => 101,  165 => 97,  158 => 93,  114 => 52,  104 => 45,  95 => 39,  82 => 29,  78 => 28,  74 => 27,  70 => 26,  66 => 25,  62 => 24,  58 => 23,  54 => 22,  47 => 18,  43 => 17,  39 => 16,  34 => 14,  19 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -265,6 +269,7 @@ class __TwigTemplate_889510dc776fbf5637824fd1aa99bfffa830fce0415725f48065a11af39
 /* <script type="text/javascript" src="{{ static }}/Scripts/jquery.SuperSlide.2.1.1.js"></script>*/
 /* <link href="{{ static }}/Css/layer.css" rel="stylesheet" media="all" />*/
 /* <script src="{{ static }}/Scripts/layer.m.js" type="text/javascript"></script>*/
+/* <script src="{{ static }}/Scripts/tool.js" type="text/javascript"></script>*/
 /* </head>*/
 /* <style type="text/css"></style>*/
 /* <body>*/
@@ -306,7 +311,7 @@ class __TwigTemplate_889510dc776fbf5637824fd1aa99bfffa830fce0415725f48065a11af39
 /* 		<div class="usercenter">*/
 /* 			<header class="top_center cenetr_after">*/
 /* 				<div class="ico_ceneter after" id="img"></div>*/
-/* 				欢迎来到菲趣*/
+/* 				欢迎来到***旅游*/
 /* 				<br>*/
 /* 				(18170873407)*/
 /* 				<br></header>*/
@@ -349,7 +354,7 @@ class __TwigTemplate_889510dc776fbf5637824fd1aa99bfffa830fce0415725f48065a11af39
 /* 					</li>*/
 /* 					<li>*/
 /* 						<img src="{{ static }}/Images/55.png" width="30" height="30" style="float: left;">*/
-/* 						<a href="/User/userinfo" class="list_page_t" style="float: left;">个人信息</a>*/
+/* 						<a href="/user/userinfo" class="list_page_t" style="float: left;">个人信息</a>*/
 /* 					</li>*/
 /* 					<li>*/
 /* 						<img src="{{ static }}/Images/66.png" width="30" height="30" style="float: left;">*/

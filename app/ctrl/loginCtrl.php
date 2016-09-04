@@ -42,7 +42,7 @@ class loginCtrl extends authorCtrl{
 		if(IS_AJAX){
 			$data = array(
 				'username'		=>	I('Phone'),
-				'password'		=>	I('Pwd'),
+				'password'		=>	md5(I('Pwd')),
 			);
 			$user = new \admin\model\userModel();
 			if($userData = $user->addUser($data)){
