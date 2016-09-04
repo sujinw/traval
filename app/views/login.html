@@ -62,7 +62,7 @@
     <!--/forget-->
     <script>
             function win() {
-                window.location.href = '/user/Register';
+                window.location.href = '{{ APP }}/login/Register';
             }
             function sub() {
                 // alert("ss");
@@ -127,8 +127,8 @@
             }
             function qq() {
                 //使用QQ登录
-               // alert("暂未开通！");
-                window.location.href = "/User/LoginForQQ";
+               alert("暂未开通！");
+                // window.location.href = "/User/LoginForQQ";
             }
 
             $("#qqLoginBtn").click(function() {

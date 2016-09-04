@@ -11,5 +11,16 @@ class userCtrl extends authorCtrl{
 
 		$this->display("user-index.html");
 	}
+
+	/**
+	 * [userinfo 会员信息]
+	 * @Author   Rukic
+	 * @DateTime 2016-09-04T10:10:11+0800
+	 * @return   [type]                   [description]
+	 */
+	public function userinfo(){
+
+		$this->display('userinfo.html');
+	}
 }
 ?>

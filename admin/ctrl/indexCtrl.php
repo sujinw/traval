@@ -10,6 +10,6 @@ use core\lib\library\session;
 class indexCtrl extends authorCtrl{
 	
 	function index(){
-		$this->display('index.html');
+		$this->display('admin-index.html');
 	}
 }

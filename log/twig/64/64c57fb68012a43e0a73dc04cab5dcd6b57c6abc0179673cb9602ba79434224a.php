@@ -171,7 +171,7 @@ class __TwigTemplate_dceeb5b879ecab5a478da6747fec13e26ce710c21c725d23095f700608d
                 if (phone == \"\" || phone == null) {
                     alert(\"用户名不能为空\");
                 }
-                else if (phone.length <= 8 || phone.length >= 16) {
+                else if (phone.length < 6 || phone.length > 16) {
                     alert(\"用户名长度不符\");
                 }/*
                 else if (isNaN(n)) {
@@ -185,7 +185,7 @@ class __TwigTemplate_dceeb5b879ecab5a478da6747fec13e26ce710c21c725d23095f700608d
                 }
                 else if (pwd != pwd2) {
                     alert(\"两次密码不一致\");
-                } else if (pwd.length< 6) {
+                } else if (pwd.length< 8) {
                     alert(\"密码长度为6-16位\");
                 }
                 else if (pwd.length > 16) {
@@ -212,7 +212,7 @@ class __TwigTemplate_dceeb5b879ecab5a478da6747fec13e26ce710c21c725d23095f700608d
                                     url: \"";
         // line 137
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
-        echo "/login/adduser\",
+        echo "/login/register\",
                                     data: \$(\"#loginForm\").serialize(),
                                     success: function (msg) {
                                         if (msg.code != \"20001\") {
@@ -369,7 +369,7 @@ class __TwigTemplate_dceeb5b879ecab5a478da6747fec13e26ce710c21c725d23095f700608d
 /*                 if (phone == "" || phone == null) {*/
 /*                     alert("用户名不能为空");*/
 /*                 }*/
-/*                 else if (phone.length <= 8 || phone.length >= 16) {*/
+/*                 else if (phone.length < 6 || phone.length > 16) {*/
 /*                     alert("用户名长度不符");*/
 /*                 }/**/
 /*                 else if (isNaN(n)) {*/
@@ -383,7 +383,7 @@ class __TwigTemplate_dceeb5b879ecab5a478da6747fec13e26ce710c21c725d23095f700608d
 /*                 }*/
 /*                 else if (pwd != pwd2) {*/
 /*                     alert("两次密码不一致");*/
-/*                 } else if (pwd.length< 6) {*/
+/*                 } else if (pwd.length< 8) {*/
 /*                     alert("密码长度为6-16位");*/
 /*                 }*/
 /*                 else if (pwd.length > 16) {*/
@@ -404,7 +404,7 @@ class __TwigTemplate_dceeb5b879ecab5a478da6747fec13e26ce710c21c725d23095f700608d
 /*                                 //验证成功 */
 /*                                 $.ajax({*/
 /*                                     type: "POST",*/
-/*                                     url: "{{ APP }}/login/adduser",*/
+/*                                     url: "{{ APP }}/login/register",*/
 /*                                     data: $("#loginForm").serialize(),*/
 /*                                     success: function (msg) {*/
 /*                                         if (msg.code != "20001") {*/

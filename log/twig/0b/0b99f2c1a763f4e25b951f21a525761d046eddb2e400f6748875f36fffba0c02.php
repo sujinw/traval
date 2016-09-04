@@ -131,7 +131,10 @@ class __TwigTemplate_9a6be7c1d0ee4f5a27783194824256901927a09881fd16f5e4038148c3f
     <!--/forget-->
     <script>
             function win() {
-                window.location.href = '/user/Register';
+                window.location.href = '";
+        // line 65
+        echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
+        echo "/login/Register';
             }
             function sub() {
                 // alert(\"ss\");
@@ -208,8 +211,8 @@ class __TwigTemplate_9a6be7c1d0ee4f5a27783194824256901927a09881fd16f5e4038148c3f
             }
             function qq() {
                 //使用QQ登录
-               // alert(\"暂未开通！\");
-                window.location.href = \"/User/LoginForQQ\";
+               alert(\"暂未开通！\");
+                // window.location.href = \"/User/LoginForQQ\";
             }
 
             \$(\"#qqLoginBtn\").click(function() {
@@ -248,7 +251,7 @@ class __TwigTemplate_9a6be7c1d0ee4f5a27783194824256901927a09881fd16f5e4038148c3f
 
     public function getDebugInfo()
     {
-        return array (  198 => 118,  188 => 111,  174 => 100,  160 => 89,  107 => 39,  97 => 32,  93 => 31,  89 => 30,  85 => 29,  81 => 28,  77 => 27,  73 => 26,  69 => 25,  65 => 24,  61 => 23,  56 => 21,  52 => 20,  48 => 19,  44 => 18,  40 => 17,  35 => 15,  19 => 1,);
+        return array (  201 => 118,  191 => 111,  177 => 100,  163 => 89,  136 => 65,  107 => 39,  97 => 32,  93 => 31,  89 => 30,  85 => 29,  81 => 28,  77 => 27,  73 => 26,  69 => 25,  65 => 24,  61 => 23,  56 => 21,  52 => 20,  48 => 19,  44 => 18,  40 => 17,  35 => 15,  19 => 1,);
     }
 }
 /* ﻿<!DOCTYPE html>*/
@@ -315,7 +318,7 @@ class __TwigTemplate_9a6be7c1d0ee4f5a27783194824256901927a09881fd16f5e4038148c3f
 /*     <!--/forget-->*/
 /*     <script>*/
 /*             function win() {*/
-/*                 window.location.href = '/user/Register';*/
+/*                 window.location.href = '{{ APP }}/login/Register';*/
 /*             }*/
 /*             function sub() {*/
 /*                 // alert("ss");*/
@@ -380,8 +383,8 @@ class __TwigTemplate_9a6be7c1d0ee4f5a27783194824256901927a09881fd16f5e4038148c3f
 /*             }*/
 /*             function qq() {*/
 /*                 //使用QQ登录*/
-/*                // alert("暂未开通！");*/
-/*                 window.location.href = "/User/LoginForQQ";*/
+/*                alert("暂未开通！");*/
+/*                 // window.location.href = "/User/LoginForQQ";*/
 /*             }*/
 /* */
 /*             $("#qqLoginBtn").click(function() {*/

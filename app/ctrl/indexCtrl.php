@@ -2,8 +2,9 @@
 namespace app\ctrl;
 use core\lib;
 use core\lib\library\session;
-class indexCtrl extends lib\controller{
+class indexCtrl extends authorCtrl{
     public function index(){
-    	dump("index");
+    	
+    	$this->display("index.html");
     }
 } 

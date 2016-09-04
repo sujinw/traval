@@ -44,13 +44,13 @@ class code{
     /**
      * 生成验证码
      */
-    private function createCode($code='code') {
+    private function createCode($codes='code') {
         $code = '';
         for ($i = 0; $i < $this->codeLen; $i++) {
             $code .= $this->codeStr [mt_rand(0, strlen($this->codeStr) - 1)];
         }
         $this->code = strtoupper($code);
-        $_SESSION [$code] = $this->code;
+        $_SESSION[$codes] = $this->code;
     }
     /**
      * 返回验证码
@@ -61,7 +61,7 @@ class code{
     /**
      * 建画布
      */
-    public function create() {
+    public function create($codes="code") {
         if (!$this->checkGD())
             return false;
         $w = $this->width;
@@ -72,7 +72,7 @@ class code{
         imagefill($img, 0, 0, $bgColor);
         $this->img = $img;
         $this->createLine();
-        $this->createFont();
+        $this->createFont($codes);
         $this->createPix();
         $this->createRec();
     }
@@ -104,8 +104,8 @@ class code{
     /**
      * 写入验证码文字
      */
-    private function createFont() {
-        $this->createCode();
+    private function createFont($codes = "code") {
+        $this->createCode($codes);
         $color = $this->fontColor;
         if (!empty($color)) {
             $fontColor = imagecolorallocate($this->img, hexdec(substr($color, 1, 2)), hexdec(substr($color, 3, 2)), hexdec(substr($color, 5, 2)));
@@ -142,8 +142,8 @@ class code{
     /**
      * 显示验证码
      */
-    public function show() {
-        $this->create();//生成验证码
+    public function show($code="code") {
+        $this->create($code);//生成验证码
         header("Content-type:image/png");
         imagepng($this->img);
         imagedestroy($this->img);

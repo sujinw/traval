@@ -1,5 +1,6 @@
 <?php
 namespace app\ctrl;
+use admin\model;
 use core\lib\controller;
 use app\model\userModel;
 use core\lib\library\session;
@@ -38,8 +39,21 @@ class loginCtrl extends authorCtrl{
 	 * @return   [type]                   [description]
 	 */
 	public function register(){
-
-		$this->display("register.html");
+		if(IS_AJAX){
+			$data = array(
+				'username'		=>	I('Phone'),
+				'password'		=>	I('Pwd'),
+			);
+			$user = new \admin\model\userModel();
+			if($userData = $user->addUser($data)){
+				$this->json("ok",20001,"注册成功");
+			}else{
+				$this->json("error",40001,"注册失败");
+			}
+			return;
+		}else{
+			$this->display("register.html");
+		}
 	}
 
 	/**
@@ -56,6 +70,9 @@ class loginCtrl extends authorCtrl{
 	public function check(){
 		$code = I('code');
 		$session = new session();
+		//$_SESSION['']
+		// dump($code);
+		// print_r($_SESSION);
 		if(strtoupper($code) == strtoupper($session->get('register_code'))){
 			return $this->json("ok",20001,"验证码验证成功");
 		}else{

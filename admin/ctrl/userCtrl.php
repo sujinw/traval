@@ -86,6 +86,12 @@ class userCtrl extends authorCtrl{
 		$this->display("user-edit.html");
 	}
 
+	/**
+	 * [del 会员删除动作]
+	 * @Author   Rukic
+	 * @DateTime 2016-09-04T10:20:32+0800
+	 * @return   [type]                   [description]
+	 */
 	public function del(){
 		if(IS_AJAX){
 			$id = I("id");
@@ -97,4 +103,16 @@ class userCtrl extends authorCtrl{
 			}
 		}
 	}
+
+	/**
+	 * [userLeve 会员等级]
+	 * @Author   Rukic
+	 * @DateTime 2016-09-04T10:21:09+0800
+	 * @return   [type]                   [description]
+	 */
+	public function leve(){
+
+		$this->display('user-leve.html');
+	}
+
 }
