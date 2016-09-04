@@ -77,7 +77,10 @@ class userCtrl extends authorCtrl{
 	 * @DateTime 2016-09-03T11:47:23+0800
 	 */
 	public function editUser(){
+		$user = new userModel();
+		$userInfo = $user->selectUserById(I('get.id'));
 		if(IS_POST){
+
 			$path = 'Upload/UserImages/'.date("Y/m/d");
 			$upload= new Upload($path);
      		$userimg = $upload->upload();
@@ -99,13 +102,15 @@ class userCtrl extends authorCtrl{
      		//dump($userimg[0]['path']);die;
      		
      		$userModel = new userModel();
-     		$userId = $userModel->addUser($data);
+     		$userId = $userModel->editUser($data,I("get.id"));
      		if($userId){
-     			$this->success("会员添加成功！",__APP__."/user/index");
+     			if (file_exists(BASEDIR.$userInfo['userimg'])) {
+     				unlink(BASEDIR.$userInfo['userimg']);
+     			}
+     			$this->success("会员修改成功！",__APP__."/user/index");
      		}
 		}else{
-			$user = new userModel();
-			$userInfo = $user->selectUserById(I('get.id'));
+			
 			if($userInfo){
 				$this->assign("user",$userInfo);
 			}
@@ -197,6 +202,8 @@ class userCtrl extends authorCtrl{
 	 * @DateTime 2016-09-04T20:23:53+0800
 	 */
 	public function editUserLeve(){
+		$leve = new userleveModel();
+		$leveDate = $leve->getLeveById(I("get.id"));
 		if(IS_POST){
 			$leveId = I("id");
 			$path = 'Upload/UserLeveImages/'.date("Y/m/d");
@@ -219,6 +226,9 @@ class userCtrl extends authorCtrl{
 					$this->success("会员等级信息修改失败",__APP__."/user/leve");
 				}
 			}
+		}else{
+			$this->assign('leve',$leveDate);
+			$this->display("user-editleve.html");
 		}
 	}
 

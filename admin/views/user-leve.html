@@ -19,7 +19,7 @@
 		{% for user in leve %}
 		<tr>
 			<td align="center">
-				<input type="checkbox" value="{{ user.id }}" id="{{ user.id }}" />
+				<input type="checkbox" value="{{ user.leve_id }}" id="{{ user.leve_id }}" />
 				{{ user.leve_id }}
 			</td>
 			<td align="center">{{ user.leve_name }}</td>
@@ -27,8 +27,8 @@
 			<td align="center">{{ user.leve_rid }}</td>
 			<td align="center">{{ user.leve_des }}</td>
 			<td align="center">
-				<a href="{{ APP }}/user/editUserLeve/id/{{ user.id }}">编辑</a>
-				<a href="jsvascript:;" onclick="delUser({{ user.id }})" class="inner_btn">删除</a>
+				<a href="{{ APP }}/user/editUserLeve/id/{{ user.leve_id }}">编辑</a>
+				<a href="jsvascript:;" onclick="delUser({{ user.leve_id }})" class="inner_btn">删除</a>
 			</td>
 		</tr>
 		{% endfor %}

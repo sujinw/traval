@@ -45,6 +45,14 @@ class userleveModel extends Model{
 		return $userData;
 	}
 
+	public function getLeveById($id){
+		if($res=$this->get($this->t,"*",array("leve_id"=>$id))){
+			return $res;
+		}else{
+			return false;
+		}
+	}
+
 	/**
 	 * [setUserLeve 修改会员信息]
 	 * @param    [array]                   $data [description]

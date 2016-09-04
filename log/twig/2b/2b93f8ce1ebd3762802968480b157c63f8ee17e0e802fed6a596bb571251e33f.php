@@ -55,9 +55,9 @@ class __TwigTemplate_57ee67a9932129c6f91cce8772d5f3575147305bfeef333d0adcafcaa3e
 \t\t\t<td align=\"center\">
 \t\t\t\t<input type=\"checkbox\" value=\"";
             // line 22
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "id", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "leve_id", array()), "html", null, true);
             echo "\" id=\"";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "id", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "leve_id", array()), "html", null, true);
             echo "\" />
 \t\t\t\t";
             // line 23
@@ -86,12 +86,12 @@ class __TwigTemplate_57ee67a9932129c6f91cce8772d5f3575147305bfeef333d0adcafcaa3e
 \t\t\t\t<a href=\"";
             // line 30
             echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
-            echo "/user/editUser/id/";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "id", array()), "html", null, true);
+            echo "/user/editUserLeve/id/";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "leve_id", array()), "html", null, true);
             echo "\">编辑</a>
 \t\t\t\t<a href=\"jsvascript:;\" onclick=\"delUser(";
             // line 31
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "id", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "leve_id", array()), "html", null, true);
             echo ")\" class=\"inner_btn\">删除</a>
 \t\t\t</td>
 \t\t</tr>
@@ -211,7 +211,7 @@ function delUser(id){
 /* 		{% for user in leve %}*/
 /* 		<tr>*/
 /* 			<td align="center">*/
-/* 				<input type="checkbox" value="{{ user.id }}" id="{{ user.id }}" />*/
+/* 				<input type="checkbox" value="{{ user.leve_id }}" id="{{ user.leve_id }}" />*/
 /* 				{{ user.leve_id }}*/
 /* 			</td>*/
 /* 			<td align="center">{{ user.leve_name }}</td>*/
@@ -219,8 +219,8 @@ function delUser(id){
 /* 			<td align="center">{{ user.leve_rid }}</td>*/
 /* 			<td align="center">{{ user.leve_des }}</td>*/
 /* 			<td align="center">*/
-/* 				<a href="{{ APP }}/user/editUser/id/{{ user.id }}">编辑</a>*/
-/* 				<a href="jsvascript:;" onclick="delUser({{ user.id }})" class="inner_btn">删除</a>*/
+/* 				<a href="{{ APP }}/user/editUserLeve/id/{{ user.leve_id }}">编辑</a>*/
+/* 				<a href="jsvascript:;" onclick="delUser({{ user.leve_id }})" class="inner_btn">删除</a>*/
 /* 			</td>*/
 /* 		</tr>*/
 /* 		{% endfor %}*/
