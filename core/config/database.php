@@ -5,6 +5,6 @@ return array(
     'database_name' => 'traval',
     'server' => 'localhost',
     'username' => 'root',
-    'password' => 'zhcm1993',
+    'password' => 'root',
     'charset' => 'utf8',
 );

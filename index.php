@@ -6,6 +6,7 @@
  * 3.启动框架
  */
 session_start();
+header("Content-type:text/html;charset=utf-8");
 define('BASEDIR', realpath('./'));
 define('CORE', BASEDIR . '/core');
 define('APP', BASEDIR . '/app');

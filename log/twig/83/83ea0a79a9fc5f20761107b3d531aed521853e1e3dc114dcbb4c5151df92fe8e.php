@@ -113,7 +113,10 @@ class __TwigTemplate_588249f229ac95bb3275d93644940e195e2c249574c28daef7457e3cf86
   <li>
    <dl>
     <dt>基础设置</dt>
-    <dd><a href=\"#\">站点基础设置</a></dd>
+    <dd><a href=\"";
+        // line 67
+        echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
+        echo "/config/index\">站点基础设置</a></dd>
     <dd><a href=\"#\">SEO设置</a></dd>
     <dd><a href=\"#\">SQL语句查询</a></dd>
     <dd><a href=\"#\">模板管理</a></dd>
@@ -181,7 +184,7 @@ class __TwigTemplate_588249f229ac95bb3275d93644940e195e2c249574c28daef7457e3cf86
 
     public function getDebugInfo()
     {
-        return array (  168 => 105,  165 => 104,  157 => 107,  155 => 104,  109 => 61,  105 => 60,  101 => 59,  93 => 54,  79 => 43,  46 => 13,  42 => 12,  38 => 11,  33 => 9,  28 => 7,  20 => 1,);
+        return array (  171 => 105,  168 => 104,  160 => 107,  158 => 104,  118 => 67,  109 => 61,  105 => 60,  101 => 59,  93 => 54,  79 => 43,  46 => 13,  42 => 12,  38 => 11,  33 => 9,  28 => 7,  20 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -250,7 +253,7 @@ class __TwigTemplate_588249f229ac95bb3275d93644940e195e2c249574c28daef7457e3cf86
 /*   <li>*/
 /*    <dl>*/
 /*     <dt>基础设置</dt>*/
-/*     <dd><a href="#">站点基础设置</a></dd>*/
+/*     <dd><a href="{{ APP }}/config/index">站点基础设置</a></dd>*/
 /*     <dd><a href="#">SEO设置</a></dd>*/
 /*     <dd><a href="#">SQL语句查询</a></dd>*/
 /*     <dd><a href="#">模板管理</a></dd>*/

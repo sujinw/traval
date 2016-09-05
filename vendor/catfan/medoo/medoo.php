@@ -838,7 +838,6 @@ class medoo
 	public function update($table, $data, $where = null)
 	{
 		$fields = array();
-
 		foreach ($data as $key => $value)
 		{
 			preg_match('/([\w]+)(\[(\+|\-|\*|\/)\])?/i', $key, $match);
@@ -880,7 +879,6 @@ class medoo
 				}
 			}
 		}
-
 		return $this->exec('UPDATE ' . $this->table_quote($table) . ' SET ' . implode(', ', $fields) . $this->where_clause($where));
 	}
 
