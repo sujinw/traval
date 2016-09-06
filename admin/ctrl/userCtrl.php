@@ -78,7 +78,7 @@ class userCtrl extends authorCtrl{
 	 */
 	public function editUser(){
 		$user = new userModel();
-		$userInfo = $user->selectUserById(I('id'));
+		$userInfo = $user->selectUserById(I('get.id'));
 		if(IS_POST){
 
 			$path = 'Upload/UserImages/'.date("Y/m/d");
@@ -89,7 +89,7 @@ class userCtrl extends authorCtrl{
 				"password" => md5(I("post.password")),
 				"nickname" => I("post.nickname"),
 				"surname" =>  I("post.surname"),
-				"babayname" => I("post.babayname"),
+				"babayname" => I("post.babyname"),
 				"babaybirthday" => I("post.babaybirthday"),
 				"phone" => I("post.phone"),
 				"email" => I("post.email"),
@@ -102,8 +102,7 @@ class userCtrl extends authorCtrl{
      		//dump($userimg[0]['path']);die;
      		
      		$userModel = new userModel();
-     		$userId = $userModel->updateUser($data,I("id"));
-     		// dump($userId);
+     		$userId = $userModel->editUser($data,I("get.id"));
      		if($userId){
      			if (file_exists(BASEDIR.$userInfo['userimg'])) {
      				unlink(BASEDIR.$userInfo['userimg']);

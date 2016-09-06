@@ -7,7 +7,7 @@ use core\lib\model;
 class configModel extends model{
 	public $t="traval_siteconfig";
 	public function setConfig($data){
-		// dump($data);
+		dump($data);
 		$res=$this->update('traval_siteconfig',$data);
 		echo $this->last_query();
 		if($res){

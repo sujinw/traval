@@ -36,7 +36,7 @@ class __TwigTemplate_588249f229ac95bb3275d93644940e195e2c249574c28daef7457e3cf86
 <script type=\"text/javascript\" src=\"";
         // line 11
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/editor/dist/js/lib/jquery-1.10.2.min.js\"></script>
+        echo "/js/jquery.js\"></script>
 <script type=\"text/javascript\" src=\"";
         // line 12
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
@@ -133,10 +133,7 @@ class __TwigTemplate_588249f229ac95bb3275d93644940e195e2c249574c28daef7457e3cf86
   <li>
    <dl>
     <dt>旅游套餐管理</dt>
-    <dd><a href=\"";
-        // line 84
-        echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
-        echo "/traval/index\">旅游套餐</a></dd>
+    <dd><a href=\"#\">旅游套餐</a></dd>
     <dd><a href=\"#\">套餐分类</a></dd>
     <dd><a href=\"#\">地区管理</a></dd>
    </dl>
@@ -187,7 +184,7 @@ class __TwigTemplate_588249f229ac95bb3275d93644940e195e2c249574c28daef7457e3cf86
 
     public function getDebugInfo()
     {
-        return array (  174 => 105,  171 => 104,  163 => 107,  161 => 104,  138 => 84,  118 => 67,  109 => 61,  105 => 60,  101 => 59,  93 => 54,  79 => 43,  46 => 13,  42 => 12,  38 => 11,  33 => 9,  28 => 7,  20 => 1,);
+        return array (  171 => 105,  168 => 104,  160 => 107,  158 => 104,  118 => 67,  109 => 61,  105 => 60,  101 => 59,  93 => 54,  79 => 43,  46 => 13,  42 => 12,  38 => 11,  33 => 9,  28 => 7,  20 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -200,7 +197,7 @@ class __TwigTemplate_588249f229ac95bb3275d93644940e195e2c249574c28daef7457e3cf86
 /* <!--[if lt IE 9]>*/
 /* <script src="{{ static }}/js/html5.js"></script>*/
 /* <![endif]-->*/
-/* <script type="text/javascript" src="{{ static }}/editor/dist/js/lib/jquery-1.10.2.min.js"></script>*/
+/* <script type="text/javascript" src="{{ static }}/js/jquery.js"></script>*/
 /* <script type="text/javascript" src="{{ static }}/js/jquery.mCustomScrollbar.concat.min.js"></script>*/
 /* <script type="text/javascript" src="{{ static }}/laydate/laydate.js"></script>*/
 /* <script>*/
@@ -273,7 +270,7 @@ class __TwigTemplate_588249f229ac95bb3275d93644940e195e2c249574c28daef7457e3cf86
 /*   <li>*/
 /*    <dl>*/
 /*     <dt>旅游套餐管理</dt>*/
-/*     <dd><a href="{{ APP }}/traval/index">旅游套餐</a></dd>*/
+/*     <dd><a href="#">旅游套餐</a></dd>*/
 /*     <dd><a href="#">套餐分类</a></dd>*/
 /*     <dd><a href="#">地区管理</a></dd>*/
 /*    </dl>*/
