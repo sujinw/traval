@@ -53,6 +53,26 @@ class userModel extends Model{
 		}
 	}
 
+	/**
+	 * [updateUser description]
+	 * @Author   Rukic
+	 * @DateTime 2016-09-05T19:36:54+0800
+	 * @param    [type]                   $data [description]
+	 * @param    [type]                   $id   [description]
+	 * @return   [type]                         [description]
+	 */
+	public function updateUser($data,$id){
+		$res = $this->update($this->t,$data,array("id"=>$id));
+		// echo $this->last_query();
+		// dump($data);
+		// dump($res);
+		if($res){
+			return $res;
+		}else{
+			return false;
+		}
+
+	}
 	public function delUserById($id){
 		if($user = $this->delete($this->t,array("id"=>$id))){
 			return $user;

@@ -15,8 +15,7 @@ function I($name = NULL)
             }elseif(isset($_GET[$method[0]])){
                 return $_GET[$method[0]];
             }else{
-                throw new \Exception('输入参数不对');
-                exit();
+                return false;
             }
         }
         if ($method[0] == 'get') {
@@ -24,8 +23,7 @@ function I($name = NULL)
         } else if ($method[0] == 'post') {
             $input = $_POST;
         } else{
-            throw new \Exception('输入参数不对');
-            exit();
+            return false;
         }
 
         if ($method[1]) {
@@ -44,7 +42,7 @@ function I($name = NULL)
             return $_GET;
         }
     } else {
-        throw new \Exception('输入参数不对');
+        return false;
     }
 
 }
