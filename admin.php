@@ -5,6 +5,7 @@
  * 2.加载函数库
  * 3.启动框架
  */
+session_start();
 define('BASEDIR', realpath('./'));
 define('CORE', BASEDIR . '/core');
 define('APP', BASEDIR . '/admin');

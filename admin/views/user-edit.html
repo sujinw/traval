@@ -2,11 +2,12 @@
 {% extends "layout.html" %}
 
 {% block content %}
+
 <section>
 	<h2> <strong style="color:grey;">添加会员</strong>
 	</h2>
 	<ul class="ulColumn2">
-	<form action="{{ APP }}/user/edit" method="post" enctype="multipart/form-data" onsubmit="checkForm()">
+	<form action="{{ APP }}/user/editUser" method="post" enctype="multipart/form-data" onsubmit="checkForm()">
 		<li>
 			<span class="item_name" style="width:120px;">用户名：</span>
 			<input type="text" name="username" class="textbox textbox_295" value="{{ user.username }}" onblur="checkUsername(this)" />
@@ -95,12 +96,14 @@
 			</label>
 		</li>
 		<li>
+			<input type="hidden" name="id" value="{{ user.id }}" />
 			<span class="item_name" style="width:120px;"></span>
 			<input type="submit" class="link_btn"/>
 		</li>
 	</form>
 	</ul>
 </section>
+
 <script type="text/javascript">
 //图片预览
 document.getElementById('file').onchange = function(evt) {  
