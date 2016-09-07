@@ -9,6 +9,8 @@ use core\lib;
 * 初始化控制器
 */
 class userCtrl extends authorCtrl{
+
+	
 	
 	function index(){
 		$showrow = 2; //一页显示的行数

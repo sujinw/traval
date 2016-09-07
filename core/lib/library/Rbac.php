@@ -1,4 +1,9 @@
 <?php
+namespace core\lib\library;
+use admin\model\userModel;
+use core\lib\conf;
+use core\lib\model;
+
 /* CREATE TABLE IF NOT EXISTS `access` (
   `role_id` smallint(6) unsigned NOT NULL,
   `node_id` smallint(6) unsigned NOT NULL,
@@ -70,7 +75,7 @@ final class Rbac
         $tableName = array(
             "RBAC_USER_TABLE", "RBAC_ROLE_TABLE", "RBAC_NODE_TABLE", "RBAC_ROLE_USER_TABLE", "access_table"
         );
-        $preFix = C("DB_PREFIX");
+        $preFix = conf::get('DB_PREFIX', 'db');
         $tables = array();
         foreach ($tableName as $name) {
             $table = C($name);
@@ -88,7 +93,7 @@ final class Rbac
      */
     static public function isLogin()
     {
-        return session(C("RBAC_AUTH_KEY")) ? true : false;
+        return session(conf::get('RBAC_AUTH_KEY', 'rbac')) ? true : false;
     }
 
     /**
@@ -102,19 +107,19 @@ final class Rbac
      * @param string $fieldPassword         用户表中的密码字段名称
      * @return boolean
      */
-    static public function login($username, $password, $superadmin = null, $fieldUserName = null, $fieldPassword = null)
-    {
-        $superadmin = is_null($superadmin) ? C("RBAC_SUPER_ADMIN") : $superadmin;
-        $fieldUserName = is_null($fieldUserName) ? C("RBAC_USERNAME_FIELD") : $fieldUserName; //用户表中的用户名字段名称
-        $fieldPassword = is_null($fieldPassword) ? C("RBAC_PASSWORD_FIELD") : $fieldPassword; //用户表中的密码字段名称
-        if (!C("RBAC_USER_TABLE")) {
+    static public function login($username, $password, $superadmin = null, $fieldUserName = null, $fieldPassword = null){
+        $superadmin = is_null($superadmin) ? conf::get('RBAC_SUPER_ADMIN', 'rbac') : $superadmin;
+        $fieldUserName = is_null($fieldUserName) ? conf::get('RBAC_USERNAME_FIELD', 'rbac') : $fieldUserName; //用户表中的用户名字段名称
+        $fieldPassword = is_null($fieldPassword) ? conf::get('RBAC_PASSWORD_FIELD', 'rbac') : $fieldPassword; //用户表中的密码字段名称
+        if (!conf::get('RBAC_USER_TABLE', 'rbac')) {
             halt('用户表设置错误，请在配置文件中添加用户表');
         }
-        $table_user = str_ireplace(C('DB_PREFIX'), "", C("RBAC_USER_TABLE")); //验证有无前缀得到用户表
+        $table_user = str_ireplace(conf::get('DB_PREFIX', 'db'), "", conf::get('RBAC_USER_TABLE', 'rbac')); //验证有无前缀得到用户表
         // echo "$fieldUserName='$username'";die;
-        $db = M($table_user);
-        $user = $db->where("$fieldUserName='$username'")->all();
-        // p($user);//die;
+        // echo $fieldUserName."++".$username;
+        $db = new userModel();;
+        $user = $db->selectUserByName($fieldUserName,$username);
+        // dump($user);die;
         if (!$user) {
             self::$error = '用户不存在';
             return false;
@@ -123,18 +128,19 @@ final class Rbac
             self::$error = '密码输入错误';
             return false;
         }
-        $uid = C("RBAC_AUTH_KEY");//验证session中的key
-        $db->table=C("RBAC_ROLE_USER_TABLE");
-        $sql = "SELECT * FROM " . C("DB_PREFIX") . C("RBAC_ROLE_TABLE") . " AS r," .
-            C('DB_PREFIX') . C('RBAC_ROLE_USER_TABLE') .
+        $uid = conf::get('RBAC_AUTH_KEY', 'rbac');//验证session中的key
+        $db->table= conf::get('RBAC_ROLE_USER_TABLE', 'rbac');
+        $sql = "SELECT * FROM " . conf::get('DB_PREFIX', 'db') . conf::get('RBAC_ROLE_TABLE', 'rbac') . " AS r," .
+            conf::get('DB_PREFIX', 'db') .conf::get('RBAC_ROLE_USER_TABLE', 'rbac')  .
             " AS r_u WHERE r_u.role_id = r.id AND user_id = '" .
             $user[0]['id'] . "'";
         // echo $sql;die;
-        $userRoleInfo = $db->query($sql); //获得用户组信息
-        // p($userRoleInfo);
+        $mdb = new Model();
+        $userRoleInfo = $mdb->query($sql); //获得用户组信息
+        dump($userRoleInfo);exit;
 
         $_SESSION['username'] = $user[0]['username'];
-        $_SESSION[C("RBAC_AUTH_KEY")] = $user[0]['id'];
+        $_SESSION[conf::get('RBAC_AUTH_KEY', 'rbac')] = $user[0]['id'];
         $_SESSION['role'] = $userRoleInfo[0]['name'];
         $_SESSION['rid'] = $userRoleInfo[0]['role_id'];
         // 是否判断超管理员
@@ -145,7 +151,7 @@ final class Rbac
         if (strtoupper($user[0]['username']) == strtoupper($superadmin)) {
             //登录成功
             // echo C("RBAC_SUPER_ADMIN");die;
-            $_SESSION[C("RBAC_SUPER_ADMIN")] = 1;
+            $_SESSION[conf::get('RBAC_SUPER_ADMIN', 'rbac')] = 1;
             $_SESSION["RBAC"] = array();
             return true;
         }
@@ -257,14 +263,14 @@ final class Rbac
                 // p($_SESSION);die;
 
         //不验证标识
-        if (isset($_SESSION[C("RBAC_SUPER_ADMIN")]) && !empty($_SESSION[C("RBAC_SUPER_ADMIN")]))
+        if (isset($_SESSION[conf::get('RBAC_SUPER_ADMIN', 'rbac')]) && !empty($_SESSION[conf::get('RBAC_SUPER_ADMIN', 'rbac')]))
             return true;
         //不需要验证
         if (self::noAuth()) {
             return true;
         }
         //没有登录
-        if (!isset($_SESSION[C('RBAC_AUTH_KEY')])) {
+        if (!isset($_SESSION[conf::get('RBAC_AUTH_KEY', 'rbac')])) {
             return false;
         }
         //时时认证
@@ -300,7 +306,7 @@ final class Rbac
     //检测不需要验证的方法
     static private function noAuth()
     {
-        $noAuth = C("RBAC_NO_AUTH");
+        $noAuth = conf::get('RBAC_NO_AUTH', 'rbac');
         if (empty($noAuth) || !is_array($noAuth)) {
             return false;
         }

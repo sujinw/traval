@@ -1,0 +1,54 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+<section>
+	<h2> <strong style="color:grey;">添加管理员类型</strong>
+	</h2>
+	<form action="<gzphp>echo U('addAdminType')<gz/php>" id="addAdminType" method="post">
+	<ul class="ulColumn2">
+		<li>
+			<span class="item_name" style="width:120px;">管理员类型名称：</span>
+			<input type="text" name='name' class="textbox textbox_295" placeholder="类型名称"/>
+		</li>
+		<li>
+			<span class="item_name" style="width:120px;">是否显示：</span>
+			<label class="single_selection">
+				<input type="radio" checked value="1" name="status"/>
+				是
+			</label>
+			<label class="single_selection">
+				<input type="radio" value="0" name="status"/>
+				否
+			</label>
+		</li>
+		<li>
+			<span class="item_name" style="width:120px;">类型描述：</span>
+			<textarea name="remark" placeholder="类型描述" class="textarea" style="width:500px;height:100px;"></textarea>
+		</li>
+		<li>
+			<span class="item_name" style="width:120px;"></span>
+			<input type="submit" class="link_btn"/>
+		</li>
+	</ul>
+	</form>
+</section>
+<script>
+$(function(){
+  	$("#addAdminType").validate({
+    	name:{
+      		rule:{
+        	required: true,
+        	ajax:{
+          		url:"index.php?m=admin&c=adminUser&a=addAdminType"
+        	}
+      	},
+        error:{
+        		required: "名称不能为空",
+        		ajax:"角色已经存在"
+     		}
+    	}
+	});
+})
+</script>
+{% endblock %}

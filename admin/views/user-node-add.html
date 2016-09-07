@@ -1,0 +1,39 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+<section>
+	<h2> <strong style="color:grey;">添加权限节点</strong>
+	</h2>
+	<form action="<gzphp>echo U('addNode')<gz/php>" id="addAdminType" method="post">
+	<ul class="ulColumn2">
+		<li>
+			<span class="item_name" style="width:120px;"><gz$type>名称：</span>
+			<input type="text" name='name' class="textbox textbox_295" placeholder="<gz$type>名称"/>
+		</li>
+		<li>
+			<span class="item_name" style="width:120px;">是否显示：</span>
+			<label class="single_selection">
+				<input type="radio" checked value="1" name="status"/>
+				是
+			</label>
+			<label class="single_selection">
+				<input type="radio" value="0" name="status"/>
+				否
+			</label>
+		</li>
+		<li>
+			<span class="item_name" style="width:120px;"><gz$type>描述：</span>
+			<textarea name="remark" placeholder="<gz$type>描述" class="textarea" style="width:500px;height:100px;"></textarea>
+		</li>
+
+		<li>
+			<input type="hidden" name="pid" value="<gz$pid>" />
+            <input type="hidden" name="level" value="<gz$level>" />
+			<span class="item_name" style="width:120px;"></span>
+			<input type="submit" class="link_btn"/>
+		</li>
+	</ul>
+	</form>
+</section>
+{% endblock %}

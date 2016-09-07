@@ -1,0 +1,110 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+<section>
+	<div class="page_title">
+		<h2 class="fl">管理权限配置</h2>
+		
+	</div>
+	<table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th width="10%">ID</th>
+            <th width="30%">节点名称</th>
+            <th width="20%">节点描述</th>
+            <th width="10%">节点状态</th>
+        </tr>
+        </thead>
+        <tbody>
+	    <form action="<gzphp>echo U('access');<gz/php>" method="post">
+        <gzforeach from=$node item=app>
+        <tr>
+            <td><gz$app.id></td>
+            <td>
+            	<gz$app.name>
+            	<div class="checkbox">
+            		<label>
+            			<input type="checkbox" name="access[]" value="<gz$app.id>_1" id='<gz$app.id>'  <gzif $app.access eq 1> checked = "checked" <gz/if>></label>
+            	</div>
+            </td>
+            <td><gz$app.remark></td>
+            <td><gzif $app.status eq 1>正常<gzelse>禁用<gz/if></td>
+        </tr>
+        <gzforeach from=$app.child item=action>
+        <tr>
+            <td><gz$action.id></td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─<gz$action.name>
+            <div class="checkbox">
+            		<label>
+            			<input type="checkbox" name="access[]" value="<gz$action.id>_2" id='<gz$app.id>_<gz$action.id>' app="<gz$app.id>" action='true' <gzif $action.access eq 1> checked = "checked" <gz/if>>
+            		</label>
+            	</div>
+            </td>
+            <td><gz$action.remark></td>
+            <td><gzif $action.status eq 1>正常<gzelse>禁用<gz/if></td>
+        </tr>
+        <gzforeach from=$action.child item=method>
+        <tr>
+            <td><gz$method.id></td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─<gz$method.name>
+            <div class="checkbox">
+            		<label>
+            			<input type="checkbox" name="access[]" value="<gz$method.id>_3" id='<gz$app.id>_<gz$action.id>' app="<gz$app.id>" action="<gz$action.id>"<gzif $method.access eq 1> checked = "checked" <gz/if>>
+            		</label>
+            </div>
+            </td>
+            <td><gz$method.remark></td>
+            <td><gzif $method.status eq 1>正常<gzelse>禁用<gz/if></td>
+        </tr>
+        <gz/foreach>
+        <gz/foreach>
+        <gz/foreach>
+        <input type="hidden" name="rid" value="<gz$rid>" />
+
+		<input type="submit" class="link_btn" />
+	    </form>
+
+       </tbody>
+    </table>
+</section>
+<script type="text/javascript">
+(function(){
+	var check = $('input[type=checkbox]');
+	check.click(function(){
+		var thisid = $(this).attr('id').split('_');
+		if(thisid.length == 1){
+			// var inputs = $('*[id*='+ thisid[0] +']');
+			var inputs = $('input[app='+ thisid[0] +']')
+			console.log(inputs)
+			if(!$(this).prop('checked')){
+				$(this).prop('checked',false);
+				inputs.prop('checked',false);
+				// inputs.removeAttr('checked');
+				console.log(1)
+			}else{
+				$(this).prop('checked','checked');
+				inputs.prop('checked','checked');
+				console.log(2)
+			}		
+		}else if(thisid.length == 2){
+			// var inputs = $('*[id*='+ thisid[0] +']');
+			var inputs = $('input[action='+ thisid[1] +']')
+			console.log(inputs)
+			if(!$(this).prop('checked')){
+				$(this).prop('checked',false);
+				inputs.prop('checked',false);
+				// inputs.removeAttr('checked');
+				console.log(1)
+			}else{
+				$(this).prop('checked','checked');
+				inputs.prop('checked','checked');
+				console.log(2)
+			}
+						
+		}
+	});
+	
+})()
+</script>
+{% endblock %}

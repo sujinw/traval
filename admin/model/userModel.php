@@ -9,6 +9,19 @@ use core\lib\library\page;
 class userModel extends Model{
 	public $t = 'traval_user';
 	public static $total;
+
+
+	public function validate($data){
+		$res = $this->get($this->t,"*",array("username"=>$data['username']));
+		//dump($res);dump(md5($data['password']));exit;
+		if($res){
+			if($res['password'] != md5($data['password'])){
+				return false;
+			}
+		}else{
+			return false;
+		}
+	}
 	/**
 	 * [addUser 添加用户]
 	 * @param    [array]                   $data [description]
@@ -47,6 +60,14 @@ class userModel extends Model{
 
 	public function selectUserById($id){
 		if($userInfo = $this->get($this->t,"*",array('id'=>$id))){
+			return $userInfo;
+		}else{
+			return false;
+		}
+	}
+
+	public function selectUserByName($filed,$username){
+		if($userInfo = $this->select($this->t,"*",array($filed=>$username))){
 			return $userInfo;
 		}else{
 			return false;
