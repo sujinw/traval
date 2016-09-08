@@ -27,24 +27,32 @@ class __TwigTemplate_0228dea687043274364eede374b5e1c0dfe199ab88d8fb4345eca308946
         // line 7
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/css/style.css\" />
+<link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        // line 8
+        echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
+        echo "/css/hdjs.css\" />
 <!--[if lt IE 9]>
 <script src=\"";
-        // line 9
+        // line 10
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/js/html5.js\"></script>
 <![endif]-->
 <script type=\"text/javascript\" src=\"";
-        // line 11
-        echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/js/jquery.js\"></script>
-<script type=\"text/javascript\" src=\"";
         // line 12
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/js/jquery.mCustomScrollbar.concat.min.js\"></script>
+        echo "/editor/dist/js/lib/jquery-2.2.1.js\"></script>
 <script type=\"text/javascript\" src=\"";
         // line 13
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
+        echo "/js/jquery.mCustomScrollbar.concat.min.js\"></script>
+<script type=\"text/javascript\" src=\"";
+        // line 14
+        echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/laydate/laydate.js\"></script>
+<script type=\"text/javascript\" src=\"";
+        // line 15
+        echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
+        echo "/js/hdjs.js\"></script>
 <script>
 \t(function(\$){
 \t\t\$(window).load(function(){
@@ -75,7 +83,7 @@ class __TwigTemplate_0228dea687043274364eede374b5e1c0dfe199ab88d8fb4345eca308946
 <!--header-->
 <header>
  <h1><img src=\"";
-        // line 43
+        // line 45
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/images/admin_logo.png\"/></h1>
  <ul class=\"rt_nav\">
@@ -89,7 +97,7 @@ class __TwigTemplate_0228dea687043274364eede374b5e1c0dfe199ab88d8fb4345eca308946
 <!--aside nav-->
 <aside class=\"lt_aside_nav content mCustomScrollbar\">
  <h2><a href=\"";
-        // line 54
+        // line 56
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
         echo "/admin/index\">起始页</a></h2>
  <ul>
@@ -97,24 +105,32 @@ class __TwigTemplate_0228dea687043274364eede374b5e1c0dfe199ab88d8fb4345eca308946
    <dl>
     <dt>会员管理</dt>
     <dd><a href=\"";
-        // line 59
+        // line 61
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
         echo "/user/index\">会员列表</a></dd>
     <dd><a href=\"";
-        // line 60
+        // line 62
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
         echo "/user/add\">添加会员</a></dd>
     <dd><a href=\"";
-        // line 61
+        // line 63
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
         echo "/user/leve\">会员等级</a></dd>
+    <dd><a href=\"";
+        // line 64
+        echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
+        echo "/user/role\">会员角色</a></dd>
+    <dd><a href=\"";
+        // line 65
+        echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
+        echo "/user/node\">节点管理</a></dd>
    </dl>
   </li>
   <li>
    <dl>
     <dt>基础设置</dt>
     <dd><a href=\"";
-        // line 67
+        // line 71
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
         echo "/config/index\">站点基础设置</a></dd>
     <dd><a href=\"#\">SEO设置</a></dd>
@@ -133,8 +149,14 @@ class __TwigTemplate_0228dea687043274364eede374b5e1c0dfe199ab88d8fb4345eca308946
   <li>
    <dl>
     <dt>旅游套餐管理</dt>
-    <dd><a href=\"#\">旅游套餐</a></dd>
-    <dd><a href=\"#\">套餐分类</a></dd>
+    <dd><a href=\"";
+        // line 88
+        echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
+        echo "/traval/index\">旅游套餐</a></dd>
+    <dd><a href=\"";
+        // line 89
+        echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
+        echo "/traval/classify\">套餐分类</a></dd>
     <dd><a href=\"#\">地区管理</a></dd>
    </dl>
   </li>
@@ -154,9 +176,9 @@ class __TwigTemplate_0228dea687043274364eede374b5e1c0dfe199ab88d8fb4345eca308946
 <section class=\"rt_wrap content mCustomScrollbar\">
  <div class=\"rt_content\">
 \t";
-        // line 104
+        // line 108
         $this->displayBlock('content', $context, $blocks);
-        // line 107
+        // line 111
         echo "  </div>
 </section>
 </body>
@@ -164,10 +186,10 @@ class __TwigTemplate_0228dea687043274364eede374b5e1c0dfe199ab88d8fb4345eca308946
 ";
     }
 
-    // line 104
+    // line 108
     public function block_content($context, array $blocks = array())
     {
-        // line 105
+        // line 109
         echo "
 \t";
     }
@@ -184,7 +206,7 @@ class __TwigTemplate_0228dea687043274364eede374b5e1c0dfe199ab88d8fb4345eca308946
 
     public function getDebugInfo()
     {
-        return array (  171 => 105,  168 => 104,  160 => 107,  158 => 104,  118 => 67,  109 => 61,  105 => 60,  101 => 59,  93 => 54,  79 => 43,  46 => 13,  42 => 12,  38 => 11,  33 => 9,  28 => 7,  20 => 1,);
+        return array (  193 => 109,  190 => 108,  182 => 111,  180 => 108,  158 => 89,  154 => 88,  134 => 71,  125 => 65,  121 => 64,  117 => 63,  113 => 62,  109 => 61,  101 => 56,  87 => 45,  54 => 15,  50 => 14,  46 => 13,  42 => 12,  37 => 10,  32 => 8,  28 => 7,  20 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -194,12 +216,14 @@ class __TwigTemplate_0228dea687043274364eede374b5e1c0dfe199ab88d8fb4345eca308946
 /* <title>后台管理系统</title>*/
 /* <meta name="author" content="DeathGhost" />*/
 /* <link rel="stylesheet" type="text/css" href="{{ static }}/css/style.css" />*/
+/* <link rel="stylesheet" type="text/css" href="{{ static }}/css/hdjs.css" />*/
 /* <!--[if lt IE 9]>*/
 /* <script src="{{ static }}/js/html5.js"></script>*/
 /* <![endif]-->*/
-/* <script type="text/javascript" src="{{ static }}/js/jquery.js"></script>*/
+/* <script type="text/javascript" src="{{ static }}/editor/dist/js/lib/jquery-2.2.1.js"></script>*/
 /* <script type="text/javascript" src="{{ static }}/js/jquery.mCustomScrollbar.concat.min.js"></script>*/
 /* <script type="text/javascript" src="{{ static }}/laydate/laydate.js"></script>*/
+/* <script type="text/javascript" src="{{ static }}/js/hdjs.js"></script>*/
 /* <script>*/
 /* 	(function($){*/
 /* 		$(window).load(function(){*/
@@ -248,6 +272,8 @@ class __TwigTemplate_0228dea687043274364eede374b5e1c0dfe199ab88d8fb4345eca308946
 /*     <dd><a href="{{ APP }}/user/index">会员列表</a></dd>*/
 /*     <dd><a href="{{ APP }}/user/add">添加会员</a></dd>*/
 /*     <dd><a href="{{ APP }}/user/leve">会员等级</a></dd>*/
+/*     <dd><a href="{{ APP }}/user/role">会员角色</a></dd>*/
+/*     <dd><a href="{{ APP }}/user/node">节点管理</a></dd>*/
 /*    </dl>*/
 /*   </li>*/
 /*   <li>*/
@@ -270,8 +296,8 @@ class __TwigTemplate_0228dea687043274364eede374b5e1c0dfe199ab88d8fb4345eca308946
 /*   <li>*/
 /*    <dl>*/
 /*     <dt>旅游套餐管理</dt>*/
-/*     <dd><a href="#">旅游套餐</a></dd>*/
-/*     <dd><a href="#">套餐分类</a></dd>*/
+/*     <dd><a href="{{ APP }}/traval/index">旅游套餐</a></dd>*/
+/*     <dd><a href="{{ APP }}/traval/classify">套餐分类</a></dd>*/
 /*     <dd><a href="#">地区管理</a></dd>*/
 /*    </dl>*/
 /*   </li>*/

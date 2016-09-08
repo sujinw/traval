@@ -3,52 +3,90 @@
 
 {% block content %}
 <section>
-	<h2> <strong style="color:grey;">添加管理员类型</strong>
-	</h2>
-	<form action="{{ APP }}/user/classify" id="addAdminType" method="post">
-	<ul class="ulColumn2">
-		<li>
-			<span class="item_name" style="width:120px;">管理员类型名称：</span>
-			<input type="text" name='name' class="textbox textbox_295" placeholder="类型名称"/>
-		</li>
-		<li>
-			<span class="item_name" style="width:120px;">是否显示：</span>
-			<label class="single_selection">
-				<input type="radio" checked value="1" name="status"/>
-				是
-			</label>
-			<label class="single_selection">
-				<input type="radio" value="0" name="status"/>
-				否
-			</label>
-		</li>
-		<li>
-			<span class="item_name" style="width:120px;">类型描述：</span>
-			<textarea name="remark" placeholder="类型描述" class="textarea" style="width:500px;height:100px;"></textarea>
-		</li>
-		<li>
-			<span class="item_name" style="width:120px;"></span>
-			<input type="submit" class="link_btn"/>
-		</li>
-	</ul>
-	</form>
+	<div class="page_title">
+		<h2 class="fl">旅游套餐分类列表</h2>
+		<a href="{{ APP }}/traval/addClassify" class="fr top_rt_btn">添加分类</a>
+	</div>
+	<table class="table">
+		<tr>
+			<th>id</th>
+			<th>分类名称</th>
+			<th>分类图标</th>
+			<th>分类排序</th>
+			<th>分类描述</th>
+			<th>操作</th>
+		</tr>
+		{% for cl in class %}
+		<tr>
+			<td align="center">
+				<input type="checkbox" value="{{ cl.cid }}" id="{{ cl.cid }}" />
+				{{ cl.cid }}
+			</td>
+			<td align="center">{{ cl.title }}</td>
+			<td align="center"><img style="width:80px;height:80px;" src="{{ ROOT }}/{{ cl.classimg }}" /></td>
+			<td align="center">{{ cl.sort }}</td>
+			<td align="center">{{ cl.remark }}</td>
+			<td align="center">
+				<a href="{{ APP }}/traval/editClass/id/{{ cl.cid }}">编辑</a>
+				<a href="jsvascript:;" onclick="delUser({{ cl.cid }})" class="inner_btn">删除</a>
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
 </section>
-<script>
-$(function(){
-  	$("#addAdminType").validate({
-    	name:{
-      		rule:{
-        	required: true,
-        	ajax:{
-          		url:"{{ APP }}/user/checkRole"
-        	}
-      	},
-        error:{
-        		required: "名称不能为空",
-        		ajax:"角色已经存在"
-     		}
-    	}
+<section class="pop_bg">
+	<div class="pop_cont">
+		<!--title-->
+		<h3>弹出提示标题</h3>
+		<!--content-->
+		<div class="pop_cont_input">
+			
+		</div>
+		<!--以pop_cont_text分界-->
+		<div class="pop_cont_text">确定要删除这一条数据吗？</div>
+		<!--bottom:operate->
+		button-->
+		<div class="btm_btn">
+			<input type="button" value="确认" class="input_btn trueBtn"/>
+			<input type="button" value="关闭" class="input_btn falseBtn"/>
+		</div>
+	</div>
+</section>
+<!--结束：弹出框效果-->
+
+<script type="text/javascript">
+
+//弹出：取消或关闭按钮
+$(".falseBtn").click(function(){
+	$(".pop_bg").fadeOut();
+});
+</script>
+<script type="text/javascript">
+function callTips(txt){
+    $(document.body).append('<style>.new_tips{z-index:301;position:fixed;width:150px;border-radius:30px;line-height:40px;margin:0 auto;left:0;right:0;bottom:100px; background-color: rgba(0,0,0,0.7); color:#FFF;text-align:center;font-size:18px}</style><div class="new_tips">'+txt+'</div>');setTimeout(function () {$('.new_tips').prev('style').remove();$('.new_tips').remove();}, 2000);
+}
+function delUser(id){
+	$(".pop_bg").fadeIn();
+	//弹出：确认按钮
+	$(".trueBtn").bind('click',function(){
+		$.ajax({
+			url:"{{ APP }}/traval/delClass/id/"+id,
+			type:"POST",
+			dataType:"JSON",
+			timeout:30000,
+			success:function(data){
+				if(data.code == 20001){
+					callTips("会员删除成功!");
+					window.location.href=window.location.href;
+				}else{
+					callTips("会员删除失败!");
+				}
+			}
+		})
+		$(".pop_bg").fadeOut();
 	});
-})
+	
+
+}
 </script>
 {% endblock %}

@@ -64,17 +64,21 @@ canvas{z-index:-1;position:absolute;}
   <strong>站点后台管理系统</strong>
   <em>Management System</em>
  </dt>
+ <form action=\"";
+        // line 37
+        echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
+        echo "/login/adminLogin\" method=\"post\">
  <dd class=\"user_icon\">
-  <input type=\"text\" placeholder=\"账号\" class=\"login_txtbx\"/>
+  <input type=\"text\" placeholder=\"账号\" name=\"traval_username\" class=\"login_txtbx\"/>
  </dd>
  <dd class=\"pwd_icon\">
-  <input type=\"password\" placeholder=\"密码\" class=\"login_txtbx\"/>
+  <input type=\"password\" placeholder=\"密码\" name=\"traval_password\" class=\"login_txtbx\"/>
  </dd>
  <dd class=\"val_icon\">
   <div class=\"checkcode\" style=\"width:218px\">
-    <input type=\"text\" style=\"width:87px\" id=\"J_codetext\" placeholder=\"验证码\" maxlength=\"4\" class=\"login_txtbx\">
+    <input type=\"text\" style=\"width:87px\" id=\"J_codetext\" name=\"code\" placeholder=\"验证码\" maxlength=\"4\" class=\"login_txtbx\">
     <img class=\"J_codeimg\" src=\"";
-        // line 46
+        // line 47
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
         echo "/login/getcode\" onclick=\"this.src='";
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
@@ -83,14 +87,30 @@ canvas{z-index:-1;position:absolute;}
   <input type=\"button\" value=\"验证码核验\" class=\"ver_btn\" onClick=\"valiCode();\">
  </dd>
  <dd>
-  <input type=\"button\" value=\"立即登陆\" class=\"submit_btn\"/>
+  <input type=\"submit\" value=\"立即登陆\" class=\"submit_btn\"/>
  </dd>
+  </form>
  <dd>
   <p>© 2015-2016 **旅游 版权所有</p>
   <p>123345678</p>
  </dd>
 </dl>
 <script type=\"text/javascript\">
+\$(\"form\").submit(function(){
+  if(\$(\"input[name='traval_username']\").val() == \"\"){
+    alert(\"用户名不能为空！\")
+    return false;
+  }
+  if(\$(\"input[name='traval_password']\").val() == \"\"){
+    alert(\"密码不能为空！\")
+    return false;
+  }
+  if(\$(\"input[name='code']\").val() == \"\"){
+    alert(\"验证码不能为空！\")
+    return false;
+  }
+ 
+})
 function valiCode(){
   var inpvalue = \$('#J_codetext').val();
   \$.ajax({
@@ -98,7 +118,7 @@ function valiCode(){
     type:\"post\",
     dataType:\"json\",
     url:\"";
-        // line 65
+        // line 82
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
         echo "/login/check\",
     data:{'code':inpvalue},
@@ -127,7 +147,7 @@ function valiCode(){
 
     public function getDebugInfo()
     {
-        return array (  102 => 65,  78 => 46,  43 => 14,  39 => 13,  35 => 12,  27 => 7,  19 => 1,);
+        return array (  122 => 82,  82 => 47,  69 => 37,  43 => 14,  39 => 13,  35 => 12,  27 => 7,  19 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -166,28 +186,45 @@ function valiCode(){
 /*   <strong>站点后台管理系统</strong>*/
 /*   <em>Management System</em>*/
 /*  </dt>*/
+/*  <form action="{{ APP }}/login/adminLogin" method="post">*/
 /*  <dd class="user_icon">*/
-/*   <input type="text" placeholder="账号" class="login_txtbx"/>*/
+/*   <input type="text" placeholder="账号" name="traval_username" class="login_txtbx"/>*/
 /*  </dd>*/
 /*  <dd class="pwd_icon">*/
-/*   <input type="password" placeholder="密码" class="login_txtbx"/>*/
+/*   <input type="password" placeholder="密码" name="traval_password" class="login_txtbx"/>*/
 /*  </dd>*/
 /*  <dd class="val_icon">*/
 /*   <div class="checkcode" style="width:218px">*/
-/*     <input type="text" style="width:87px" id="J_codetext" placeholder="验证码" maxlength="4" class="login_txtbx">*/
+/*     <input type="text" style="width:87px" id="J_codetext" name="code" placeholder="验证码" maxlength="4" class="login_txtbx">*/
 /*     <img class="J_codeimg" src="{{ APP }}/login/getcode" onclick="this.src='{{ APP }}/login/getcode'" />*/
 /*   </div>*/
 /*   <input type="button" value="验证码核验" class="ver_btn" onClick="valiCode();">*/
 /*  </dd>*/
 /*  <dd>*/
-/*   <input type="button" value="立即登陆" class="submit_btn"/>*/
+/*   <input type="submit" value="立即登陆" class="submit_btn"/>*/
 /*  </dd>*/
+/*   </form>*/
 /*  <dd>*/
 /*   <p>© 2015-2016 **旅游 版权所有</p>*/
 /*   <p>123345678</p>*/
 /*  </dd>*/
 /* </dl>*/
 /* <script type="text/javascript">*/
+/* $("form").submit(function(){*/
+/*   if($("input[name='traval_username']").val() == ""){*/
+/*     alert("用户名不能为空！")*/
+/*     return false;*/
+/*   }*/
+/*   if($("input[name='traval_password']").val() == ""){*/
+/*     alert("密码不能为空！")*/
+/*     return false;*/
+/*   }*/
+/*   if($("input[name='code']").val() == ""){*/
+/*     alert("验证码不能为空！")*/
+/*     return false;*/
+/*   }*/
+/*  */
+/* })*/
 /* function valiCode(){*/
 /*   var inpvalue = $('#J_codetext').val();*/
 /*   $.ajax({*/
