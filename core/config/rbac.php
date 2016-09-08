@@ -10,7 +10,7 @@ return array(
     'RBAC_USER_TABLE'               => 'user',      //用户表
     'RBAC_ROLE_TABLE'               => 'role',      //角色表
     'RBAC_NODE_TABLE'               => 'node',      //节点表
-    'RBAC_ROLE_USER_TABLE'          => 'role_user', //角色与用户关联表
+    'RBAC_ROLE_USER_TABLE'          => 'user_role', //角色与用户关联表
     'ACCESS_TABLE'                  => 'access',    //权限分配表
 );
 ?>

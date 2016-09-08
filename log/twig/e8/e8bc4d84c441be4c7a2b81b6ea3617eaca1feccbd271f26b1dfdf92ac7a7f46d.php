@@ -34,7 +34,7 @@ class __TwigTemplate_3bcb4a4e4b93038411ff50320d886991dcbd7e37ef30da9d768a03514ff
 \t\t<a href=\"";
         // line 8
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
-        echo "/user/add\" class=\"fr top_rt_btn\">添加会员等级</a>
+        echo "/user/addleve\" class=\"fr top_rt_btn\">添加会员等级</a>
 \t</div>
 \t<table class=\"table\">
 \t\t<tr>
@@ -48,60 +48,50 @@ class __TwigTemplate_3bcb4a4e4b93038411ff50320d886991dcbd7e37ef30da9d768a03514ff
 \t\t";
         // line 19
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) ? $context["users"] : null));
+        $context['_seq'] = twig_ensure_traversable((isset($context["leve"]) ? $context["leve"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
             // line 20
             echo "\t\t<tr>
 \t\t\t<td align=\"center\">
 \t\t\t\t<input type=\"checkbox\" value=\"";
             // line 22
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "id", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "leve_id", array()), "html", null, true);
             echo "\" id=\"";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "id", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "leve_id", array()), "html", null, true);
             echo "\" />
 \t\t\t\t";
             // line 23
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "id", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "leve_id", array()), "html", null, true);
             echo "
 \t\t\t</td>
 \t\t\t<td align=\"center\">";
             // line 25
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "username", array()), "html", null, true);
-            echo "/";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "nickname", array()), "html", null, true);
-            echo "(";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "surname", array()), "html", null, true);
-            echo ")</td>
-\t\t\t<td align=\"center\">";
-            // line 26
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "babayname", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "leve_name", array()), "html", null, true);
             echo "</td>
+\t\t\t<td align=\"center\"><img style=\"width:80px;height:80px;\" src=\"";
+            // line 26
+            echo twig_escape_filter($this->env, (isset($context["ROOT"]) ? $context["ROOT"] : null), "html", null, true);
+            echo "/";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "leve_img", array()), "html", null, true);
+            echo "\" /></td>
 \t\t\t<td align=\"center\">";
             // line 27
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "babaybirthday", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "leve_rid", array()), "html", null, true);
             echo "</td>
 \t\t\t<td align=\"center\">";
             // line 28
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "phone", array()), "html", null, true);
-            echo "</td>
-\t\t\t<td align=\"center\">";
-            // line 29
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "email", array()), "html", null, true);
-            echo "</td>
-\t\t\t<td align=\"center\">";
-            // line 30
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "address", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "leve_des", array()), "html", null, true);
             echo "</td>
 \t\t\t<td align=\"center\">
 \t\t\t\t<a href=\"";
-            // line 32
+            // line 30
             echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
-            echo "/user/editUser/id/";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "id", array()), "html", null, true);
+            echo "/user/editUserLeve/id/";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "leve_id", array()), "html", null, true);
             echo "\">编辑</a>
 \t\t\t\t<a href=\"jsvascript:;\" onclick=\"delUser(";
-            // line 33
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "id", array()), "html", null, true);
+            // line 31
+            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "leve_id", array()), "html", null, true);
             echo ")\" class=\"inner_btn\">删除</a>
 \t\t\t</td>
 \t\t</tr>
@@ -110,7 +100,7 @@ class __TwigTemplate_3bcb4a4e4b93038411ff50320d886991dcbd7e37ef30da9d768a03514ff
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
+        // line 35
         echo "\t</table>
 \t<aside class=\"paging\"></aside>
 </section>
@@ -141,8 +131,8 @@ function escape2Html(str) {
 }
 \$().ready(function(){
 \tvar page = escape2Html(\"";
-        // line 66
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["userData"]) ? $context["userData"] : null), "page", array()), "html", null, true);
+        // line 64
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["leves"]) ? $context["leves"] : null), "page", array()), "html", null, true);
         echo "\");
 \t\$(\".paging\").html(page);
 });
@@ -161,7 +151,7 @@ function delUser(id){
 \t\$(\".trueBtn\").bind('click',function(){
 \t\t\$.ajax({
 \t\t\turl:\"";
-        // line 83
+        // line 81
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
         echo "/user/del/id/\"+id,
 \t\t\ttype:\"POST\",
@@ -197,7 +187,7 @@ function delUser(id){
 
     public function getDebugInfo()
     {
-        return array (  165 => 83,  145 => 66,  114 => 37,  104 => 33,  98 => 32,  93 => 30,  89 => 29,  85 => 28,  81 => 27,  77 => 26,  69 => 25,  64 => 23,  58 => 22,  54 => 20,  50 => 19,  36 => 8,  31 => 5,  28 => 4,  11 => 2,);
+        return array (  155 => 81,  135 => 64,  104 => 35,  94 => 31,  88 => 30,  83 => 28,  79 => 27,  73 => 26,  69 => 25,  64 => 23,  58 => 22,  54 => 20,  50 => 19,  36 => 8,  31 => 5,  28 => 4,  11 => 2,);
     }
 }
 /* */
@@ -207,7 +197,7 @@ function delUser(id){
 /* <section>*/
 /* 	<div class="page_title">*/
 /* 		<h2 class="fl">会员等级列表</h2>*/
-/* 		<a href="{{ APP }}/user/add" class="fr top_rt_btn">添加会员等级</a>*/
+/* 		<a href="{{ APP }}/user/addleve" class="fr top_rt_btn">添加会员等级</a>*/
 /* 	</div>*/
 /* 	<table class="table">*/
 /* 		<tr>*/
@@ -218,21 +208,19 @@ function delUser(id){
 /* 			<th>等级描述</th>*/
 /* 			<th>操作</th>*/
 /* 		</tr>*/
-/* 		{% for user in users %}*/
+/* 		{% for user in leve %}*/
 /* 		<tr>*/
 /* 			<td align="center">*/
-/* 				<input type="checkbox" value="{{ user.id }}" id="{{ user.id }}" />*/
-/* 				{{ user.id }}*/
+/* 				<input type="checkbox" value="{{ user.leve_id }}" id="{{ user.leve_id }}" />*/
+/* 				{{ user.leve_id }}*/
 /* 			</td>*/
-/* 			<td align="center">{{ user.username }}/{{ user.nickname }}({{ user.surname }})</td>*/
-/* 			<td align="center">{{ user.babayname }}</td>*/
-/* 			<td align="center">{{ user.babaybirthday }}</td>*/
-/* 			<td align="center">{{ user.phone }}</td>*/
-/* 			<td align="center">{{ user.email }}</td>*/
-/* 			<td align="center">{{ user.address }}</td>*/
+/* 			<td align="center">{{ user.leve_name }}</td>*/
+/* 			<td align="center"><img style="width:80px;height:80px;" src="{{ ROOT }}/{{ user.leve_img }}" /></td>*/
+/* 			<td align="center">{{ user.leve_rid }}</td>*/
+/* 			<td align="center">{{ user.leve_des }}</td>*/
 /* 			<td align="center">*/
-/* 				<a href="{{ APP }}/user/editUser/id/{{ user.id }}">编辑</a>*/
-/* 				<a href="jsvascript:;" onclick="delUser({{ user.id }})" class="inner_btn">删除</a>*/
+/* 				<a href="{{ APP }}/user/editUserLeve/id/{{ user.leve_id }}">编辑</a>*/
+/* 				<a href="jsvascript:;" onclick="delUser({{ user.leve_id }})" class="inner_btn">删除</a>*/
 /* 			</td>*/
 /* 		</tr>*/
 /* 		{% endfor %}*/
@@ -265,7 +253,7 @@ function delUser(id){
 /*  return str.replace(/&(lt|gt|nbsp|amp|quot);/ig,function(all,t){return arrEntities[t];});*/
 /* }*/
 /* $().ready(function(){*/
-/* 	var page = escape2Html("{{ userData.page }}");*/
+/* 	var page = escape2Html("{{ leves.page }}");*/
 /* 	$(".paging").html(page);*/
 /* });*/
 /* //弹出：取消或关闭按钮*/

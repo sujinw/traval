@@ -5,28 +5,29 @@
 <section>
 	<h2> <strong style="color:grey;">添加管理员类型</strong>
 	</h2>
-	<form action="{{ APP }}/user/addRole" id="addAdminType" method="post">
+	<form action="{{ APP }}/user/editRole" id="addAdminType" method="post">
 	<ul class="ulColumn2">
 		<li>
 			<span class="item_name" style="width:120px;">管理员类型名称：</span>
-			<input type="text" name='name' class="textbox textbox_295" placeholder="类型名称"/>
+			<input type="text" name='name' class="textbox textbox_295" value="{{ role.name }}" placeholder="类型名称"/>
 		</li>
 		<li>
 			<span class="item_name" style="width:120px;">是否显示：</span>
 			<label class="single_selection">
-				<input type="radio" checked value="1" name="status"/>
+				<input type="radio" value="1"{% if role.status==1 %}checked="checked"{% endif %} name="status"/>
 				是
 			</label>
 			<label class="single_selection">
-				<input type="radio" value="0" name="status"/>
+				<input type="radio" value="0"{% if role.status==0 %}checked="checked"{% endif %} name="status"/>
 				否
 			</label>
 		</li>
 		<li>
 			<span class="item_name" style="width:120px;">类型描述：</span>
-			<textarea name="remark" placeholder="类型描述" class="textarea" style="width:500px;height:100px;"></textarea>
+			<textarea name="remark" placeholder="类型描述" class="textarea" style="width:500px;height:100px;">{{ role.remark }}</textarea>
 		</li>
 		<li>
+			<input type="hidden" name="id" value="{{ id }}">
 			<span class="item_name" style="width:120px;"></span>
 			<input type="submit" class="link_btn"/>
 		</li>
@@ -38,14 +39,10 @@ $(function(){
   	$("#addAdminType").validate({
     	name:{
       		rule:{
-        	required: true,
-        	ajax:{
-          		url:"{{ APP }}/user/checkRole"
-        	}
+        		required: true,
       	},
         error:{
         		required: "名称不能为空",
-        		ajax:"角色已经存在"
      		}
     	}
 	});

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section>
+    <h2><strong style="color:grey;">分列内容布局</strong></h2>
+    <ul class="ulColumn2">
+        <form action="{{ APP }}/user/userToRole" method="post">
+        <li>
+            <span class="item_name" style="width:120px;">用户角色：</span>
+            <select name="role" class="select textbox_295">
+            	<option>选择用户角色</option>
+            	{% for r in role %}
+				<option value="{{ r.id }}">{{ r.name }}</option>
+            	{% endfor %}
+            </select>
+            <input type="hidden" name="uid" value="{{ uid }}" />
+        </li>
+        <li>
+            <span class="item_name" style="width:120px;"></span>
+            <input type="submit" class="link_btn"/>
+        </li>
+        </form>
+    </ul>
+</section>
+{% endblock %}

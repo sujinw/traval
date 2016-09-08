@@ -7,7 +7,7 @@ use core\lib;
 /**
 * 网站配置
 */
-class configCtrl extends authorCtrl{
+class configCtrl extends validateRbacCtrl{
 	
 	public function index(){
 		if(IS_POST){

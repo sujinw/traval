@@ -1,14 +1,16 @@
 <?php
 namespace admin\ctrl;
 use admin\model\userModel;
+use admin\model\rbacModel;
 use admin\model\userleveModel;
 use core\lib\library\upload;
+use core\lib\library\Data;
 use core\lib;
 
 /**
 * 初始化控制器
 */
-class userCtrl extends authorCtrl{
+class userCtrl extends validateRbacCtrl{
 
 	
 	
@@ -232,6 +234,269 @@ class userCtrl extends authorCtrl{
 		}else{
 			$this->assign('leve',$leveDate);
 			$this->display("user-editleve.html");
+		}
+	}
+
+	/**
+	 * [role 管理角色管理]
+	 * @Author   Rukic
+	 * @DateTime 2016-09-07T18:17:09+0800
+	 * @return   [type]                   [description]
+	 */
+	public function role(){
+		$rbac = new rbacModel();
+		$data = $rbac->selectAllRole();
+		if($data){
+			$this->assign('role',$data);
+		}
+		$this->display('user-role.html');
+	}
+
+	/**
+	 * [addRole 添加会员角色]
+	 * @Author   Rukic
+	 * @DateTime 2016-09-07T18:19:05+0800
+	 */
+	public function addRole(){
+		if(IS_POST){
+			$rbac = new rbacModel();
+			$data = I();
+			$res = $rbac->addRole($data);
+			if($res){
+				$this->success('角色添加成功!',__APP__."/user/role");
+			}else{
+				$this->error("角色添加失败!",__APP__."/user/addRole");
+			}
+		}else{
+			$this->display("user-role-add.html");
+		}
+	}
+
+	/**
+	 * [editRole 编辑角色]
+	 * @Author   Rukic
+	 * @DateTime 2016-09-07T21:48:34+0800
+	 * @return   [type]                   [description]
+	 */
+	public function editRole(){
+		$rbac = new rbacModel();
+		if(IS_POST){
+			$data = I();
+			$res = $rbac->updateRole(array(
+				'name'		=>	$data['name'],
+				'status'	=> 	$data['status'],
+				'remark'	=>	$data['remark']
+			),array(
+				'id'		=>	$data['id']
+			));
+			if($res){
+				$this->success('角色修改成功',__APP__."/user/role");
+			}else{
+				$this->error("角色修改失败",__APP__."/user/editRole");
+			}
+		}else{
+			$id = I('id');
+			$data = $rbac->selectRole(array("id"=>$id));
+			if($data){
+				$this->assign('id',$id);
+				$this->assign('role',$data);
+			}
+			$this->display('user-role-edit.html');
+		}
+	}
+	/**
+	 * [checkRole 检查角色是否存在]
+	 * @Author   Rukic
+	 * @DateTime 2016-09-07T20:30:46+0800
+	 * @return   [type]                   [description]
+	 */
+	public function checkRole(){
+		$rbac = new rbacModel();
+		$res = $rbac->selectRole(I());
+		//dump(I());
+		if($res){
+			echo 0;
+		}else{
+			echo 1;
+		}
+	}
+
+	public function userToRole(){
+		$uid = I('id');
+		$rbac = new rbacModel();
+		if(IS_POST){
+			$data = array(
+				'role_id'	=> I('role'),
+				'user_id'	=> I('uid')
+			);
+			$res = $rbac->userToRole($data);
+			// dump($res);exit;
+			if($res){
+				$this->success("配置管理角色成功",__APP__."/user/index");
+			}else{
+				$this->error("配置管理角色失败",__APP__."/user/userToRole/id".$data['uid']);
+			}
+		}else{
+			$role = $rbac->selectAllRole(array("status"=>1));
+			// dump($role);
+			$this->assign("uid",$uid);
+			$this->assign("role",$role);
+			$this->display('user-to-role.html');
+		}
+	}
+	/**
+	 * [node 节点]
+	 * @Author   Rukic
+	 * @DateTime 2016-09-08T15:10:25+0800
+	 * @return   [type]                   [description]
+	 */
+	public function node(){
+		$rbac = new rbacModel();
+		$node = $rbac->selectNode();
+		$data = new Data();
+		$tree = $data->tree($node,'name','id','pid');
+		// dump($tree);
+		$nodes = node_merge($tree);//递归重组数组
+		// dump($nodes);
+		$this->assign("node",$nodes);
+		$this->display("user-node.html");
+	}
+
+	public function addNode(){
+		$pid = I('pid') ? I('pid'): 0;
+		$level = I('level') ? I('level'): 1;
+		$rbac = new rbacModel();
+		if(IS_POST){
+			$data = I();
+			if($res = $rbac->addNode($data)){
+				$this->success('节点添加成功',__APP__."/user/node");
+			}else{
+				$this->error('节点添加失败','addNode',__APP__."/user/addNode/pid".$pid.'/level'.$level);
+			}
+			return;
+		}
+		switch ($level) {
+			case 1:
+				$this->assign('type','应用');
+				break;
+			case 2:
+				$this->assign('type','控制器');
+				break;
+			case 3:
+				$this->assign('type','动作方法');
+				break;
+		}
+		$this->assign('pid',$pid);
+		$this->assign('level',$level);
+		$this->display('user-node-add.html');
+	}
+
+	/**
+	 * [editNode 编辑]
+	 * @Author   Rukic
+	 * @DateTime 2016-09-08T09:30:00+0800
+	 * @return   [type]                   [description]
+	 */
+	public function editNode(){
+		$rbac = new rbacModel();
+		$data = I();
+		if(IS_POST){
+			$res = $rbac->updataNode(array(
+				"name"=>$data["name"],
+				"remark"=>$data['remark'],
+				'status'=>$data['status']
+			),array(
+				"id"=>I('id')
+			));
+			if($res){
+				$this->success("节点更新成功!",__APP__."/user/node");
+			}else{
+				$this->error("节点更新失败!",__APP__."/user/editNode/id/".$data['id']."level/".$data['level']);
+			}
+		}else{
+			
+			$id = I('id');
+			$level = I('level');
+			$res = $rbac->selectNodeBy(array("id"=>I('id')));
+			if($res){
+				$this->assign("node",$res);
+			}
+			switch ($level) {
+				case 1:
+					$this->assign('type','应用');
+					break;
+				case 2:
+					$this->assign('type','控制器');
+					break;
+				case 3:
+					$this->assign('type','动作方法');
+					break;
+			}
+			$this->assign('id',$id);
+			$this->assign('level',$level);
+			$this->display("user-node-edit.html");
+		}
+	}
+
+	/**
+	 * [delNode 删除节点]
+	 * @Author   Rukic
+	 * @DateTime 2016-09-08T11:07:47+0800
+	 * @return   [type]                   [description]
+	 */
+	public function delNode(){
+		if(IS_AJAX){
+			$id = I('id');
+			$rbac = new rbacModel();
+			$res = $rbac->delNode(array('id'=>$id));
+			if($res){
+				$this->json("ok",20001,"删除成功");
+			}else{
+				$this->json("error",40001,"删除失败");
+			}
+		}
+	}
+
+	public function access(){
+		$rbac = new rbacModel();
+		if(IS_POST){
+			$rid = I('rid') ? I('rid') : 0;
+			$arr = array();
+			$result = $rbac->delAccess(array('role_id'=>$rid));
+			foreach (I('access') as $v) {
+				$tmp = explode('_',$v);
+				// p($tmp);
+				$arr[] = array(
+					'role_id' => $rid,
+					'node_id' => $tmp[0],
+					'level'   => $tmp[1]
+				);
+			}
+			// dump($arr);#die;
+			$res = $rbac->addAccess($arr);
+			if($res){
+				$this->success('权限修改成功',__APP__."/user/role");
+			}else{
+				$this->error('权限修改失败',__APP__."/user/access/rid/".$rid);
+			}
+			return;
+		}else{
+			$node = $rbac->selectNode();
+			$access = $rbac->selectAccessBy(array("role_id"=>I('rid')));
+			$data = new Data();
+			$tree = $data->tree($node,'name','id','pid');
+			// dump($tree);
+			$role = array();
+			foreach ($access as $v) {
+				$role[] = $v['node_id'];
+			}
+			$res = node_merge($tree,$role);
+			//$nodes = node_merge($tree);//递归重组数组
+			// dump($nodes);
+			// dump($res);
+			$this->assign("rid",I('rid'));
+			$this->assign("node",$res);
+			$this->display('user-access.html');
 		}
 	}
 

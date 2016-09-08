@@ -17,51 +17,53 @@
         </tr>
         </thead>
         <tbody>
-	    <form action="<gzphp>echo U('access');<gz/php>" method="post">
-        <gzforeach from=$node item=app>
-        <tr>
-            <td><gz$app.id></td>
-            <td>
-            	<gz$app.name>
-            	<div class="checkbox">
-            		<label>
-            			<input type="checkbox" name="access[]" value="<gz$app.id>_1" id='<gz$app.id>'  <gzif $app.access eq 1> checked = "checked" <gz/if>></label>
-            	</div>
-            </td>
-            <td><gz$app.remark></td>
-            <td><gzif $app.status eq 1>正常<gzelse>禁用<gz/if></td>
-        </tr>
-        <gzforeach from=$app.child item=action>
-        <tr>
-            <td><gz$action.id></td>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─<gz$action.name>
-            <div class="checkbox">
-            		<label>
-            			<input type="checkbox" name="access[]" value="<gz$action.id>_2" id='<gz$app.id>_<gz$action.id>' app="<gz$app.id>" action='true' <gzif $action.access eq 1> checked = "checked" <gz/if>>
-            		</label>
-            	</div>
-            </td>
-            <td><gz$action.remark></td>
-            <td><gzif $action.status eq 1>正常<gzelse>禁用<gz/if></td>
-        </tr>
-        <gzforeach from=$action.child item=method>
-        <tr>
-            <td><gz$method.id></td>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─<gz$method.name>
-            <div class="checkbox">
-            		<label>
-            			<input type="checkbox" name="access[]" value="<gz$method.id>_3" id='<gz$app.id>_<gz$action.id>' app="<gz$app.id>" action="<gz$action.id>"<gzif $method.access eq 1> checked = "checked" <gz/if>>
-            		</label>
-            </div>
-            </td>
-            <td><gz$method.remark></td>
-            <td><gzif $method.status eq 1>正常<gzelse>禁用<gz/if></td>
-        </tr>
-        <gz/foreach>
-        <gz/foreach>
-        <gz/foreach>
-        <input type="hidden" name="rid" value="<gz$rid>" />
-
+	    <form action="{{ APP }}/user/access" method="post">
+        {% for app in node %}
+            <tr>
+                <td>{{ app.id }}</td>
+                <td>
+                	<div class="checkbox">
+                        {{ app.name }}
+                		<label>
+                			<input type="checkbox" name="access[]" value="{{ app.id }}_1" id='{{ app.id }}'  {% if app.access==1 %} checked = "checked" {% endif %}></label>
+                	</div>
+                </td>
+                <td>{{ app.remark }}</td>
+                <td>{% if app.status==1 %}正常{% else %}禁用{% endif %}</td>
+            </tr>
+            {% for action in app.child %}
+            <tr>
+                <td>{{ action.id }}</td>
+                <td>
+                    <div class="checkbox">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─{{ action.name }}
+                		<label>
+                			<input type="checkbox" name="access[]" value="{{ action.id }}_2" id='{{ app.id }}_{{ action.id }}' app="{{ app.id }}" action='true' {% if action.access==1 %} checked = "checked" {% endif %}>
+                		</label>
+                	</div>
+                </td>
+                <td>{{ action.remark }}</td>
+                <td>{% if action.status==1 %}正常{% else %} 禁用{% endif %}</td>
+            </tr>
+                {% for method in action.child %}
+                <tr>
+                    <td>{{ method.id }}</td>
+                    <td>
+                    <div class="checkbox">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                        └─{{ method.name }}
+                    		<label>
+                    			<input type="checkbox" name="access[]" value="{{ method.id }}_3" id='{{ app.id }}_{{ action.id }}' app="{{ app.id }}" action="{{ action.id }}"{% if method.access==1 %} checked = "checked" {% endif %}>
+                    		</label>
+                    </div>
+                    </td>
+                    <td>{{ method.remark }}</td>
+                    <td>{% if method.status== 1 %}正常{% else %}禁用{% endif %}</td>
+                </tr>
+                {% endfor %}
+            {% endfor %}
+        {% endfor %}
+        <input type="hidden" name="rid" value="{{ rid }}" />
 		<input type="submit" class="link_btn" />
 	    </form>
 

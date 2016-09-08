@@ -4,7 +4,7 @@ namespace admin\ctrl;
 /**
 * 套餐管理
 */
-class travalCtrl extends authorCtrl{
+class travalCtrl extends validateRbacCtrl{
 	
 	public function index(){
 
@@ -20,9 +20,9 @@ class travalCtrl extends authorCtrl{
 		}
 	}
 
-	public function uploads(){
-
+	public function classify(){
 		
+		$this->display('traval-classify.html');
 	}
 }
 ?>

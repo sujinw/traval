@@ -5,8 +5,7 @@
 <section>
 	<div class="page_title">
 		<h2 class="fl">管理员角色列表</h2>
-		<a href="<gzphp> echo U('addAdmin')<gz/php>" class="fr top_rt_btn">配置权限</a>
-		<a href="<gzphp> echo U('addAdminType')<gz/php>" class="fr top_rt_btn">添加管理员角色</a>
+		<a href="{{ APP }}/user/addRole" class="fr top_rt_btn">添加管理员角色</a>
 	</div>
 	<table class="table">
 		<tr>
@@ -15,20 +14,18 @@
 			<th>角色描述</th>
 			<th>操作</th>
 		</tr>
-		<gz if $role eq 0><tr>暂时没有角色<a href="<gzphp> echo U('addAdminType')<gz/php>" class="fr top_rt_btn">添加管理员角色</a></tr><gz else>
-		<gz foreach from=$role item=v>
+		{% for r in role %}
 		<tr>
-			<td><gz $v.id></td>
-			<td><gz $v.name></td>
-			<td><gz $v.remark></td>
+			<td>{{ r.id }}</td>
+			<td>{{ r.name }}</td>
+			<td>{{ r.remark }}</td>
 			<td>
-				<a href="<gz$smarty.const.__APP__>?m=admin&c=adminUser&a=access&rid=<gz$v.id>" class="inner_btn">配置权限</a>
-				<a href="#" class="inner_btn">编辑</a>
+				<a href="{{ APP }}/user/access/rid/{{ r.id }}" class="inner_btn">配置权限</a>
+				<a href="{{ APP }}/user/editRole/id/{{ r.id }}" class="inner_btn">编辑</a>
 				<a href="#" class="inner_btn">删除</a>
 			</td>
 		</tr>
-		<gz /foreach>
-		<gz /if>
+		{% endfor %}
 	</table>
 </section>
 {% endblock %}

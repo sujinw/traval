@@ -42,5 +42,9 @@ class route
             $this->ctrl = conf::get('CTRL', 'route');
             $this->action = conf::get('ACTION', 'route');
         }
+
+        define("CONTROLLER",$this->ctrl);
+        define('ACTION', $this->action);
+        
     }
 }

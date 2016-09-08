@@ -73,12 +73,13 @@ final class Rbac
     static private function getRbacTable()
     {
         $tableName = array(
-            "RBAC_USER_TABLE", "RBAC_ROLE_TABLE", "RBAC_NODE_TABLE", "RBAC_ROLE_USER_TABLE", "access_table"
+            "RBAC_USER_TABLE", "RBAC_ROLE_TABLE", "RBAC_NODE_TABLE", "RBAC_ROLE_USER_TABLE", "ACCESS_TABLE"
         );
         $preFix = conf::get('DB_PREFIX', 'db');
         $tables = array();
         foreach ($tableName as $name) {
-            $table = C($name);
+          // dump($name);exit;
+            $table = conf::get($name,"rbac");
             if (strpos($preFix, $name) !== 0) {
                 $table = $preFix . $table;
             }
@@ -132,12 +133,15 @@ final class Rbac
         $db->table= conf::get('RBAC_ROLE_USER_TABLE', 'rbac');
         $sql = "SELECT * FROM " . conf::get('DB_PREFIX', 'db') . conf::get('RBAC_ROLE_TABLE', 'rbac') . " AS r," .
             conf::get('DB_PREFIX', 'db') .conf::get('RBAC_ROLE_USER_TABLE', 'rbac')  .
-            " AS r_u WHERE r_u.role_id = r.id AND user_id = '" .
-            $user[0]['id'] . "'";
+            " AS r_u WHERE r_u.role_id = r.id AND user_id = " .
+            $user[0]['id'];
         // echo $sql;die;
         $mdb = new Model();
-        $userRoleInfo = $mdb->query($sql); //获得用户组信息
-        dump($userRoleInfo);exit;
+        // dump($mdb);
+        $userRoleInfo = $mdb->query($sql)->fetchAll(); //获得用户组信息
+        // $test = $mdb->query("SELECT id FROM traval_user")->fetchAll();
+        // dump($test);
+        // dump($userRoleInfo);exit;
 
         $_SESSION['username'] = $user[0]['username'];
         $_SESSION[conf::get('RBAC_AUTH_KEY', 'rbac')] = $user[0]['id'];
@@ -175,7 +179,7 @@ final class Rbac
         }
         $table = self::getRbacTable(); //获得所有RBAC表
         $nodeTable = $table['RBAC_NODE_TABLE']; //节点表
-        $accessTable = $table['access_table']; //权限表
+        $accessTable = $table['ACCESS_TABLE']; //权限表
         $roleTable = $table['RBAC_ROLE_TABLE']; //角色表
         $rid = intval($_SESSION['rid']); //角色ID
         //数据库权限
@@ -189,7 +193,7 @@ final class Rbac
             "ORDER BY n.level,n.sort";
         // echo $sql;die;
         $db = new Model();
-        $info =$db->query($sql);
+        $info =$db->query($sql)->fetchAll();
         // p($info);die;
         if (!$info)
             return false;
@@ -223,7 +227,7 @@ final class Rbac
     {
         $table = self::getRbacTable(); //获得所有RBAC表
         $nodeTable = $table['RBAC_NODE_TABLE']; //节点表
-        $accessTable = $table['access_table']; //权限表
+        $accessTable = $table['ACCESS_TABLE']; //权限表
         $where = $rid ? " WHERE rid =$rid" : "";
         $sql = "SELECT n.nid,n.name ,n.title,n.state,n.pid ,n.level, " .
             " a.rid AS rid FROM " .
@@ -231,7 +235,7 @@ final class Rbac
             "LEFT JOIN (select * from $accessTable  $where) AS a " .
             "ON n.nid = a.nid " .
             "ORDER BY n.level,n.sort ASC";
-        $data = M()->query($sql);
+        $data = M()->query($sql)->fetchAll();
         if (!$data)
             return array();
         $nodes = array(); //组合后的节点
@@ -274,7 +278,7 @@ final class Rbac
             return false;
         }
         //时时认证
-        if (C("RBAC_TYPE") == 1) {
+        if (conf::get("RBAC_TYPE",'rbac') == 1) {
             self::getAccess();
         }
         //不需要验证的方法 例app/control/method

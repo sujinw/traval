@@ -5,12 +5,14 @@
 <title>后台管理系统</title>
 <meta name="author" content="DeathGhost" />
 <link rel="stylesheet" type="text/css" href="{{ static }}/css/style.css" />
+<link rel="stylesheet" type="text/css" href="{{ static }}/css/hdjs.css" />
 <!--[if lt IE 9]>
 <script src="{{ static }}/js/html5.js"></script>
 <![endif]-->
-<script type="text/javascript" src="{{ static }}/editor/dist/js/lib/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="{{ static }}/editor/dist/js/lib/jquery-2.2.1.js"></script>
 <script type="text/javascript" src="{{ static }}/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript" src="{{ static }}/laydate/laydate.js"></script>
+<script type="text/javascript" src="{{ static }}/js/hdjs.js"></script>
 <script>
 	(function($){
 		$(window).load(function(){
@@ -61,7 +63,6 @@
     <dd><a href="{{ APP }}/user/leve">会员等级</a></dd>
     <dd><a href="{{ APP }}/user/role">会员角色</a></dd>
     <dd><a href="{{ APP }}/user/node">节点管理</a></dd>
-    <dd><a href="{{ APP }}/user/access">权限配置</a></dd>
    </dl>
   </li>
   <li>
@@ -85,7 +86,7 @@
    <dl>
     <dt>旅游套餐管理</dt>
     <dd><a href="{{ APP }}/traval/index">旅游套餐</a></dd>
-    <dd><a href="#">套餐分类</a></dd>
+    <dd><a href="{{ APP }}/traval/classify">套餐分类</a></dd>
     <dd><a href="#">地区管理</a></dd>
    </dl>
   </li>

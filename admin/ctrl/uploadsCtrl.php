@@ -4,7 +4,7 @@ use core\lib\library\upload;
 /**
 * 上传
 */
-class uploadsCtrl extends authorCtrl{
+class uploadsCtrl extends validateRbacCtrl{
 	
 	public function index(){
 		if(IS_POST){

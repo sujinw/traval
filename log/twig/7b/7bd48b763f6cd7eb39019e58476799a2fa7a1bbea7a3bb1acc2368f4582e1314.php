@@ -99,13 +99,19 @@ class __TwigTemplate_3789f3cf5eeb746cb7bd07a9ace654dda6ce8637b0b2a73f3907bdddf37
 \t\t\t\t<a href=\"";
             // line 34
             echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
+            echo "/user/userToRole/id/";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "id", array()), "html", null, true);
+            echo "\" class=\"inner_btn\">配置管理角色</a>
+\t\t\t\t<a href=\"";
+            // line 35
+            echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
             echo "/user/editUser/id/";
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "id", array()), "html", null, true);
-            echo "\">编辑</a>
+            echo "\" class=\"inner_btn\">编辑</a>
 \t\t\t\t<a href=\"jsvascript:;\" onclick=\"delUser(";
-            // line 35
+            // line 36
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "id", array()), "html", null, true);
-            echo ")\" class=\"inner_btn\">删除</a>
+            echo ")\">删除</a>
 \t\t\t</td>
 \t\t</tr>
 \t\t";
@@ -113,7 +119,7 @@ class __TwigTemplate_3789f3cf5eeb746cb7bd07a9ace654dda6ce8637b0b2a73f3907bdddf37
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 39
+        // line 40
         echo "\t</table>
 \t<aside class=\"paging\"></aside>
 </section>
@@ -144,7 +150,7 @@ function escape2Html(str) {
 }
 \$().ready(function(){
 \tvar page = escape2Html(\"";
-        // line 68
+        // line 69
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["userData"]) ? $context["userData"] : null), "page", array()), "html", null, true);
         echo "\");
 \t\$(\".paging\").html(page);
@@ -164,7 +170,7 @@ function delUser(id){
 \t\$(\".trueBtn\").bind('click',function(){
 \t\t\$.ajax({
 \t\t\turl:\"";
-        // line 85
+        // line 86
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
         echo "/user/del/id/\"+id,
 \t\t\ttype:\"POST\",
@@ -200,7 +206,7 @@ function delUser(id){
 
     public function getDebugInfo()
     {
-        return array (  168 => 85,  148 => 68,  117 => 39,  107 => 35,  101 => 34,  96 => 32,  92 => 31,  88 => 30,  84 => 29,  80 => 28,  72 => 27,  67 => 25,  61 => 24,  57 => 22,  53 => 21,  37 => 8,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  174 => 86,  154 => 69,  123 => 40,  113 => 36,  107 => 35,  101 => 34,  96 => 32,  92 => 31,  88 => 30,  84 => 29,  80 => 28,  72 => 27,  67 => 25,  61 => 24,  57 => 22,  53 => 21,  37 => 8,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends "layout.html" %}*/
@@ -236,8 +242,9 @@ function delUser(id){
 /* 			<td align="center">{{ user.email }}</td>*/
 /* 			<td align="center">{{ user.address }}</td>*/
 /* 			<td align="center">*/
-/* 				<a href="{{ APP }}/user/editUser/id/{{ user.id }}">编辑</a>*/
-/* 				<a href="jsvascript:;" onclick="delUser({{ user.id }})" class="inner_btn">删除</a>*/
+/* 				<a href="{{ APP }}/user/userToRole/id/{{ user.id }}" class="inner_btn">配置管理角色</a>*/
+/* 				<a href="{{ APP }}/user/editUser/id/{{ user.id }}" class="inner_btn">编辑</a>*/
+/* 				<a href="jsvascript:;" onclick="delUser({{ user.id }})">删除</a>*/
 /* 			</td>*/
 /* 		</tr>*/
 /* 		{% endfor %}*/

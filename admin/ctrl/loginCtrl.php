@@ -32,8 +32,10 @@ class loginCtrl extends authorCtrl{
 			$this->error("验证码错误，请检查验证码！",__APP__."/login/index");
 			return false;
 		}
-		// dump($data);exit;
-		Rbac::login($data['username'], md5($data['password']));exit;
+		// dump($_SESSION);
+		Rbac::login($data['username'], md5($data['password']));
+		// dump($_SESSION);
+		// exit;
 		$this->success("登录成功，正在跳转至管理首页",__APP__."/index/index");
 		
 	}
