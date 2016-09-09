@@ -1,0 +1,116 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+<section>
+	<div class="page_title">
+		<h2 class="fl">旅游套餐地区列表</h2>
+		<a href="{{ APP }}/traval/addArea" class="fr top_rt_btn">添加地区</a>
+	</div>
+	<table class="table">
+		<tr>
+			<th>id</th>
+			<th>地区名称</th>
+			<th>地区排序</th>
+			<th>地区描述</th>
+			<th>操作</th>
+		</tr>
+		{% for cl in area %}
+		<tr>
+			<td align="center">
+				<input type="checkbox" value="{{ cl.id }}" id="{{ cl.id }}" />
+				{{ cl.id }}
+			</td>
+			<td>{{ cl.name }}</td>
+			<td align="center">{{ cl.sort }}</td>
+			<td>{{ cl.remark }}</td>
+			<td align="center">
+				<a href="{{ APP }}/traval/editArea/id/{{ cl.id }}">编辑</a>
+				<a href="jsvascript:;" onclick="delUser({{ cl.id }})" class="inner_btn">删除</a>
+			</td>
+		</tr>
+		{% for cl1 in cl.child %}
+			<td align="center">
+				<input type="checkbox" value="{{ cl1.id }}" id="{{ cl1.id }}" />
+				{{ cl1.id }}
+			</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─{{ cl1.name }}</td>
+            <td align="center">{{ cl1.sort }}</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─{{ cl1.remark }}</td>
+            <td align="center">
+				<a href="{{ APP }}/traval/editArea/id/{{ cl1.id }}">编辑</a>
+				<a href="jsvascript:;" onclick="delUser({{ cl1.id }})" class="inner_btn">删除</a>
+			</td>
+		{% for method in cl1.child %}
+        <tr align="center">
+            <td><input type="checkbox" value="{{ method.id }}" id="{{ method.id }}" />{{ method.id }}</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─{{ method.name }}</td>
+            <td align="center">{{ cl1.sort }}</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─{{ method.remark }}</td>
+             <td align="center">
+				<a href="{{ APP }}/traval/editArea/id/{{ method.id }}">编辑</a>
+				<a href="jsvascript:;" onclick="delUser({{ method.id }})" class="inner_btn">删除</a>
+			</td>
+        </tr>
+        {% endfor %}
+		{% endfor %}
+		{% endfor %}
+	</table>
+</section>
+<section class="pop_bg">
+	<div class="pop_cont">
+		<!--title-->
+		<h3>弹出提示标题</h3>
+		<!--content-->
+		<div class="pop_cont_input">
+			
+		</div>
+		<!--以pop_cont_text分界-->
+		<div class="pop_cont_text">确定要删除这一条数据吗？</div>
+		<!--bottom:operate->
+		button-->
+		<div class="btm_btn">
+			<input type="button" value="确认" class="input_btn trueBtn"/>
+			<input type="button" value="关闭" class="input_btn falseBtn"/>
+		</div>
+	</div>
+</section>
+<!--结束：弹出框效果-->
+
+<script type="text/javascript">
+
+//弹出：取消或关闭按钮
+$(".falseBtn").click(function(){
+	$(".pop_bg").fadeOut();
+});
+</script>
+<script type="text/javascript">
+function callTips(txt){
+    $(document.body).append('<style>.new_tips{z-index:301;position:fixed;width:150px;border-radius:30px;line-height:40px;margin:0 auto;left:0;right:0;bottom:100px; background-color: rgba(0,0,0,0.7); color:#FFF;text-align:center;font-size:18px}</style><div class="new_tips">'+txt+'</div>');setTimeout(function () {$('.new_tips').prev('style').remove();$('.new_tips').remove();}, 2000);
+}
+function delUser(id){
+	$(".pop_bg").fadeIn();
+	//弹出：确认按钮
+	$(".trueBtn").bind('click',function(){
+		$.ajax({
+			url:"{{ APP }}/traval/delArea",
+			type:"POST",
+			data:{'id':id},
+			dataType:"JSON",
+			timeout:30000,
+			success:function(data){
+				if(data.code == 20001){
+					callTips("地区删除成功!");
+					window.location.href=window.location.href;
+				}else{
+					callTips("地区删除失败!");
+				}
+			}
+		})
+		$(".pop_bg").fadeOut();
+	});
+	
+
+}
+</script>
+{% endblock %}
