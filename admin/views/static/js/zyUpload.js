@@ -1,6 +1,6 @@
 
 (function($,undefined){
-	$.fn.zyUpload = function(options,param){
+	$.fn.sladeUpload = function(options,param){
 		var otherArgs = Array.prototype.slice.call(arguments, 1);
 		if (typeof options == 'string') {
 			var fn = this[0][options];

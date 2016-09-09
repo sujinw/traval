@@ -4,8 +4,8 @@
 
 <section>
 	<div class="page_title">
-		<h2 class="fl">会员列表</h2>
-		<a href="{{ APP }}/traval/add" class="fr top_rt_btn">添加会员</a>
+		<h2 class="fl">旅游套餐列表</h2>
+		<a href="{{ APP }}/traval/add" class="fr top_rt_btn">添加旅游套餐</a>
 	</div>
 	<table class="table">
 		<tr>
@@ -21,6 +21,7 @@
 			<th>报名人数</th>
 			<th>标签</th>
 			<th>所属栏目</th>
+			<th>所属地区</th>
 			<th>操作</th>
 		</tr>
 		{% for user in users %}
@@ -29,12 +30,18 @@
 				<input type="checkbox" value="{{ user.id }}" id="{{ user.id }}" />
 				{{ user.id }}
 			</td>
-			<td align="center">{{ user.username }}/{{ user.nickname }}({{ user.surname }})</td>
-			<td align="center">{{ user.babayname }}</td>
-			<td align="center">{{ user.babaybirthday }}</td>
-			<td align="center">{{ user.phone }}</td>
-			<td align="center">{{ user.email }}</td>
+			<td align="center">{{ user.title }}</td>
+			<td align="center"><img src="{{ROOT}}/{{ user.thumb }}" alt="img" /></td>
+			<td align="center">{{ user.yearold }}</td>
+			<td align="center">{{ user.signeuptime }}</td>
+			<td align="center">{{ user.gooutime }}</td>
+			<td align="center">{{ user.days }}</td>
+			<td align="center">{{ user.price }}</td>
 			<td align="center">{{ user.address }}</td>
+			<td align="center">{{ user.signnum }}</td>
+			<td align="center">{{ user.tags }}</td>
+			<td align="center">{{ user.cid }}</td>
+			<td align="center">{{ user.area_id }}</td>
 			<td align="center">
 				<a href="{{ APP }}/user/editUser/id/{{ user.id }}">编辑</a>
 				<a href="jsvascript:;" onclick="delUser({{ user.id }})" class="inner_btn">删除</a>

@@ -70,16 +70,17 @@ function delUser(id){
 	//弹出：确认按钮
 	$(".trueBtn").bind('click',function(){
 		$.ajax({
-			url:"{{ APP }}/traval/delClass/id/"+id,
+			url:"{{ APP }}/traval/delClass/",
 			type:"POST",
+			data:{'id':id},
 			dataType:"JSON",
 			timeout:30000,
 			success:function(data){
 				if(data.code == 20001){
-					callTips("会员删除成功!");
+					callTips("分类删除成功!");
 					window.location.href=window.location.href;
 				}else{
-					callTips("会员删除失败!");
+					callTips("分类删除失败!");
 				}
 			}
 		})

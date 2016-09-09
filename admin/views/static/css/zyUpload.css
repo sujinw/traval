@@ -165,6 +165,7 @@ pre{font-family:'simsun';}
 	-webkit-transition: all 0.5s;
 	-o-transition: all 0.5s;
 	overflow: hidden;
+	z-index: 10000;
 }
 .file_bar a{
 	color: #FFFFFF;

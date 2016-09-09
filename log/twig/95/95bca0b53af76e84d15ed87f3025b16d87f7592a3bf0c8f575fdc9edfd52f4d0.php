@@ -7,8 +7,8 @@ class __TwigTemplate_b4d1b3ab60842e352e3d8c1ec9f136ccd5196f061582f3ccc4a810d6e63
     {
         parent::__construct($env);
 
-        // line 2
-        $this->parent = $this->loadTemplate("layout.html", "traval-add.html", 2);
+        // line 1
+        $this->parent = $this->loadTemplate("layout.html", "traval-add.html", 1);
         $this->blocks = array(
             'content' => array($this, 'block_content'),
         );
@@ -24,123 +24,166 @@ class __TwigTemplate_b4d1b3ab60842e352e3d8c1ec9f136ccd5196f061582f3ccc4a810d6e63
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 4
+    // line 2
     public function block_content($context, array $blocks = array())
     {
-        // line 5
+        // line 3
         echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"";
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/css/wangEditor-1.4.0.css\" />
 <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 6
+        // line 4
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/css/zyUpload.css\" />
 <section>
 \t<h2> <strong style=\"color:grey;\">添加会员</strong>
 \t</h2>
 \t<ul class=\"ulColumn2\">
-\t<form action=\"";
-        // line 11
+\t\t<form action=\"";
+        // line 9
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
-        echo "/user/add\" method=\"post\" enctype=\"multipart/form-data\">
-\t\t<li>
-        \t<span class=\"item_name\" style=\"width:120px;\">所属分类：</span>
-        \t<select class=\"select\" name=\"cid\">
-         \t\t<option>选择品牌</option>
-        \t</select>
-\t        <span class=\"errorTips\">错误提示信息...</span>
-       </li>
-\t\t<li>
-\t\t\t<span class=\"item_name\" style=\"width:120px;\">标题：</span>
-\t\t\t<input type=\"text\" name=\"title\" class=\"textbox textbox_295\" placeholder=\"标题\" onblur=\"checkUsername(this)\" />
-\t\t\t<span class=\"errorTips\">错误提示信息...</span>
-\t\t</li>
-\t\t<li>
-\t\t\t<span class=\"item_name\" style=\"width:120px;\">儿童参与年龄：</span>
-\t\t\t<input type=\"text\" name=\"yearold\" class=\"textbox textbox_295\" placeholder=\"儿童参与年龄\" />
-\t\t\t<span class=\"errorTips\">错误提示信息...</span>
-\t\t</li>
-\t\t<li>
-\t\t\t<span class=\"item_name\" style=\"width:120px;\">报名时间：</span>
-\t\t\t<input type=\"text\" name=\"signeuptime\" class=\"textbox textbox_295\" placeholder=\"报名时间\" />
-\t\t\t<span class=\"errorTips\">错误提示信息...</span>
-\t\t</li>
-\t\t<li>
-\t\t\t<span class=\"item_name\" style=\"width:120px;\">出行时间：</span>
-\t\t\t<input type=\"text\" name=\"goouttime\" class=\"textbox textbox_295\" placeholder=\"出行时间\"/>
-\t\t\t<span class=\"errorTips\">错误提示信息...</span>
-\t\t</li>
-\t\t<li>
-\t\t\t<span class=\"item_name\" style=\"width:120px;\">出行地址：</span>
-\t\t\t<input type=\"text\" name=\"address\" class=\"textbox textbox_295\" placeholder=\"出行地址\"/>
-\t\t\t<span class=\"errorTips\">错误提示信息...</span>
-\t\t</li>
-\t\t<li style=\"width:80%\">
-\t\t\t<span class=\"item_name\" style=\"width:120px;\">套餐详情：</span>
-\t\t\t<textarea placeholder=\"套餐详情\" class=\"textarea\" name=\"contents\" id=\"contents\" style=\"width:83%;height:300px;\"></textarea>
-\t\t\t<span class=\"errorTips\">错误提示信息...</span>
-\t\t</li>
-\t\t<li  style=\"width:80%\">
-\t\t\t<span class=\"item_name\" style=\"width:120px;\">套餐宣传图片：</span>
-\t    \t<div id=\"demo\" class=\"demo\"></div>
-\t\t</li>
-\t\t<li>
-\t\t\t<span class=\"item_name\" style=\"width:120px;\">排序：</span>
-\t\t\t<input type=\"text\" name=\"sort\" class=\"textbox textbox_295\" value=\"0\"  placeholder=\"排序\" />
-\t\t\t<span class=\"errorTips\">错误提示信息...</span>
-\t\t</li>
-\t\t<li>
-\t\t\t<span class=\"item_name\" style=\"width:120px;\">价格：</span>
-\t\t\t<input type=\"text\" name=\"price\" class=\"textbox textbox_295\" placeholder=\"价格\"/>
-\t\t\t<span class=\"errorTips\">错误提示信息...</span>
-\t\t</li>
-\t\t<li>
-\t\t\t<span class=\"item_name\" style=\"width:120px;\">出行天数：</span>
-\t\t\t<input type=\"text\" name=\"days\" class=\"textbox textbox_295\" placeholder=\"邮箱\"/>
-\t\t\t<span class=\"errorTips\">错误提示信息...</span>
-\t\t</li>
-\t\t<li>
-\t\t\t<span class=\"item_name\" style=\"width:120px;\">缩略图：</span>
-\t\t\t<label class=\"uploadImg\">
-\t\t\t\t<input type=\"file\" id=\"file\" name=\"thumb\" accept=\"image/png,image/gif\" />
-\t\t\t\t<span>上传图片</span>
-\t\t\t\t<div class=\"previewImage\" style=\"width: 200px;height: 200px;overflow: hidden;border:1px solid #ddd;border-radius: 5px;\">
-\t\t\t\t\t<img style=\"width:100%;height:100%;
-\t\t\t\t\t\" src=\"\" id=\"img\">
-\t\t\t\t</div>
-\t\t\t</label>
-\t\t</li>
-\t\t<li>
-\t\t\t<span class=\"item_name\" style=\"width:120px;\"></span>
-\t\t\t<input type=\"submit\" class=\"link_btn\"/>
-\t\t</li>
-\t</form>
+        echo "/traval/add\" method=\"post\" enctype=\"multipart/form-data\">
+\t\t\t<li>
+\t\t\t\t<span class=\"item_name\" style=\"width:120px;\">所属地区：</span>
+\t\t\t\t<select class=\"select\" name=\"area_id\">
+\t\t\t\t\t<option value='0'>选择旅游套餐地区</option>
+\t\t\t\t\t";
+        // line 14
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["area"]) ? $context["area"] : null));
+        foreach ($context['_seq'] as $context["_key"] => $context["ar"]) {
+            // line 15
+            echo "\t\t\t\t\t<option value='";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["ar"], "id", array()), "html", null, true);
+            echo "'>";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["ar"], "_name", array()), "html", null, true);
+            echo "</option>
+\t\t\t\t\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ar'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 17
+        echo "\t\t\t\t</select>
+\t\t\t\t<span class=\"errorTips\">错误提示信息...</span>
+\t\t\t</li>
+\t\t\t<li>
+\t\t\t\t<span class=\"item_name\" style=\"width:120px;\">所属分类：</span>
+\t\t\t\t<select class=\"select\" name=\"cid\">
+\t\t\t\t\t<option value=\"0\">选择旅游套餐分类</option>
+\t\t\t\t\t";
+        // line 24
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["cla"]) ? $context["cla"] : null));
+        foreach ($context['_seq'] as $context["_key"] => $context["cl"]) {
+            // line 25
+            echo "\t\t\t\t\t<option value='";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["cl"], "cid", array()), "html", null, true);
+            echo "'>";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["cl"], "title", array()), "html", null, true);
+            echo "</option>
+\t\t\t\t\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['cl'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 27
+        echo "\t\t\t\t</select>
+\t\t\t\t<span class=\"errorTips\">错误提示信息...</span>
+\t\t\t</li>
+\t\t\t<li>
+\t\t\t\t<span class=\"item_name\" style=\"width:120px;\">标题：</span>
+\t\t\t\t<input type=\"text\" name=\"title\" class=\"textbox textbox_295\" placeholder=\"标题\" />
+\t\t\t\t<span class=\"errorTips\">错误提示信息...</span>
+\t\t\t</li>
+\t\t\t<li>
+\t\t\t\t<span class=\"item_name\" style=\"width:120px;\">儿童参与年龄：</span>
+\t\t\t\t<input type=\"text\" name=\"yearold\" class=\"textbox textbox_295\" placeholder=\"儿童参与年龄\" />
+\t\t\t\t<span class=\"errorTips\">错误提示信息...</span>
+\t\t\t</li>
+\t\t\t<li>
+\t\t\t\t<span class=\"item_name\" style=\"width:120px;\">报名时间：</span>
+\t\t\t\t<input type=\"text\" name=\"signeuptime\" class=\"textbox textbox_295\" placeholder=\"报名时间\" />
+\t\t\t\t<span class=\"errorTips\">错误提示信息...</span>
+\t\t\t</li>
+\t\t\t<li>
+\t\t\t\t<span class=\"item_name\" style=\"width:120px;\">出行时间：</span>
+\t\t\t\t<input type=\"text\" name=\"goouttime\" class=\"textbox textbox_295\" placeholder=\"出行时间\"/>
+\t\t\t\t<span class=\"errorTips\">错误提示信息...</span>
+\t\t\t</li>
+\t\t\t<li>
+\t\t\t\t<span class=\"item_name\" style=\"width:120px;\">出行地址：</span>
+\t\t\t\t<input type=\"text\" name=\"address\" class=\"textbox textbox_295\" placeholder=\"出行地址\"/>
+\t\t\t\t<span class=\"errorTips\">错误提示信息...</span>
+\t\t\t</li>
+\t\t\t<li style=\"width:80%\">
+\t\t\t\t<span class=\"item_name\" style=\"width:120px;\">套餐详情：</span>
+\t\t\t\t<textarea placeholder=\"套餐详情\" class=\"textarea\" name=\"contents\" id=\"contents\" style=\"width:83%;height:300px;\"></textarea>
+\t\t\t\t<span class=\"errorTips\">错误提示信息...</span>
+\t\t\t</li>
+\t\t\t<li  style=\"width:80%\">
+\t\t\t\t<span class=\"item_name\" style=\"width:120px;\">套餐宣传图片：</span>
+\t\t\t\t<div id=\"demo\" class=\"demo\"></div>
+\t\t\t\t<input type=\"hidden\" name=\"imgs\" id=\"imgs\" value=\"\" />
+\t\t\t</li>
+\t\t\t<li>
+\t\t\t\t<span class=\"item_name\" style=\"width:120px;\">排序：</span>
+\t\t\t\t<input type=\"text\" name=\"sort\" class=\"textbox textbox_295\" value=\"0\"  placeholder=\"排序\" />
+\t\t\t\t<span class=\"errorTips\">错误提示信息...</span>
+\t\t\t</li>
+\t\t\t<li>
+\t\t\t\t<span class=\"item_name\" style=\"width:120px;\">价格：</span>
+\t\t\t\t<input type=\"text\" name=\"price\" class=\"textbox textbox_295\" placeholder=\"价格\"/>
+\t\t\t\t<span class=\"errorTips\">错误提示信息...</span>
+\t\t\t</li>
+\t\t\t<li>
+\t\t\t\t<span class=\"item_name\" style=\"width:120px;\">出行天数：</span>
+\t\t\t\t<input type=\"text\" name=\"days\" class=\"textbox textbox_295\" placeholder=\"邮箱\"/>
+\t\t\t\t<span class=\"errorTips\">错误提示信息...</span>
+\t\t\t</li>
+\t\t\t<li>
+\t\t\t\t<span class=\"item_name\" style=\"width:120px;\">缩略图：</span>
+\t\t\t\t<label class=\"uploadImg\">
+\t\t\t\t\t<input type=\"file\" id=\"file\" name=\"thumb\" accept=\"image/png,image/gif\" />
+\t\t\t\t\t<span>上传图片</span>
+\t\t\t\t\t<div class=\"previewImage\" style=\"width: 200px;height: 200px;overflow: hidden;border:1px solid #ddd;border-radius: 5px;\">
+\t\t\t\t\t\t<img style=\"width:100%;height:100%;
+\t\t\t\t\t\" src=\"\" id=\"img\"></div>
+\t\t\t\t</label>
+\t\t\t</li>
+\t\t\t<li>
+\t\t\t\t<span class=\"item_name\" style=\"width:120px;\"></span>
+\t\t\t\t<input type=\"submit\" class=\"link_btn\"/>
+\t\t\t</li>
+\t\t</form>
 \t</ul>
 </section>
 <div id=\"uploadContainer\">
-        <input type=\"button\" value=\"选择文件\" id=\"btnBrowse\" style=\"background-color:red;\"/>
-\t    <input type=\"button\" value=\"上传文件\" id=\"btnUpload\">
-\t    <ul id=\"fileList\"></ul>
-    </div>
+\t<input type=\"button\" value=\"选择文件\" id=\"btnBrowse\" style=\"background-color:red;\"/>
+\t<input type=\"button\" value=\"上传文件\" id=\"btnUpload\">
+\t<ul id=\"fileList\"></ul>
+</div>
+
 <script type=\"text/javascript\" src=\"";
-        // line 91
+        // line 103
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/editor/dist/js/wangEditor-1.4.0.min.js\"></script>
 <script type=\"text/javascript\" src=\"";
-        // line 92
+        // line 104
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/editor/plupload/lib/plupload/plupload.full.min.js\"></script>
-
 <script type=\"text/javascript\" src=\"";
-        // line 94
+        // line 105
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/js/zyFile.js\"></script>
 <script type=\"text/javascript\" src=\"";
-        // line 95
+        // line 106
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/js/zyUpload.js\"></script>
 
 <script type=\"text/javascript\">
+\$(document).ready(function(){
+
 
 
  \t\t//获取dom节点
@@ -150,11 +193,12 @@ class __TwigTemplate_b4d1b3ab60842e352e3d8c1ec9f136ccd5196f061582f3ccc4a810d6e63
         var editor = \$('#contents').wangEditor({
             'uploadImgComponent': \$uploadContainer
         });
+        console.log(\$btnUpload)
         //实例化一个上传对象
         var uploader = new plupload.Uploader({
             browse_button: 'btnBrowse',
             url: '";
-        // line 110
+        // line 124
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
         echo "/uploads',
             filters: {
@@ -213,51 +257,22 @@ class __TwigTemplate_b4d1b3ab60842e352e3d8c1ec9f136ccd5196f061582f3ccc4a810d6e63
             uploader.start();
         });
 
-    var imgsArr = [];
 \t// 初始化插件
-\t\$(\"#demo\").zyUpload({
-\t\twidth            :   \"650px\",                 // 宽度
-\t\theight           :   \"400px\",                 // 宽度
+\t\$(\"#demo\").sladeUpload({
+\t\twidth            :   \"80%\",                 // 宽度
+\t\theight           :   \"300px\",                 // 宽度
 \t\titemWidth        :   \"120px\",                 // 文件项的宽度
 \t\titemHeight       :   \"100px\",                 // 文件项的高度
 \t\turl              :   \"";
-        // line 174
+        // line 187
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
         echo "/uploads\",     // 上传文件的路径
 \t\tmultiple         :   true,                    // 是否可以多个文件上传
 \t\tdragDrop         :   true,                    // 是否可以拖动上传文件
 \t\tdel              :   true,                    // 是否可以删除文件
 \t\tfinishDel        :   false,  \t\t\t\t  // 是否在上传文件完成后删除预览
-\t\t/* 外部获得的回调接口 */
-\t\tonSelect: function(files, allFiles){                    // 选择文件的回调方法
-\t\t\tconsole.info(\"当前选择了以下文件：\");
-\t\t\tconsole.info(files);
-\t\t\tconsole.info(\"之前没上传的文件：\");
-\t\t\tconsole.info(allFiles);
-\t\t},
-\t\tonDelete: function(file, surplusFiles){                     // 删除一个文件的回调方法
-\t\t\tconsole.info(\"当前删除了此文件：\");
-\t\t\tconsole.info(file);
-\t\t\tconsole.info(\"当前剩余的文件：\");
-\t\t\tconsole.info(surplusFiles);
-\t\t},
-\t\tonSuccess: function(file,responseInfo){                    // 文件上传成功的回调方法
-\t\t\tconsole.info(\"此文件上传成功：\");
-\t\t\tconsole.info(\"====\"+responseInfo);
-\t\t\talert(file)
-\t\t\timgsArr.push();
-\t\t},
-\t\tonFailure: function(file){                    // 文件上传失败的回调方法
-\t\t\tconsole.info(\"此文件上传失败：\");
-\t\t\tconsole.info(\"====\"+file);
-\t\t},
-\t\tonComplete: function(responseInfo){           // 上传完成的回调方法
-\t\t\tconsole.info(\"文件上传完成\");
-\t\t\tconsole.info(\"===============\"+responseInfo);
-\t\t}
 \t});
-
-   
+});  
 //图片预览
 document.getElementById('file').onchange = function(evt) {  
     // 如果浏览器不支持FileReader，则不处理  
@@ -397,12 +412,10 @@ function mySubmit(flag){
 
     public function getDebugInfo()
     {
-        return array (  225 => 174,  158 => 110,  140 => 95,  136 => 94,  131 => 92,  127 => 91,  44 => 11,  36 => 6,  31 => 5,  28 => 4,  11 => 2,);
+        return array (  268 => 187,  202 => 124,  181 => 106,  177 => 105,  173 => 104,  169 => 103,  91 => 27,  80 => 25,  76 => 24,  67 => 17,  56 => 15,  52 => 14,  44 => 9,  36 => 4,  31 => 3,  28 => 2,  11 => 1,);
     }
 }
-/* */
 /* {% extends "layout.html" %}*/
-/* */
 /* {% block content %}*/
 /* <link rel="stylesheet" type="text/css" href="{{ static }}/css/wangEditor-1.4.0.css" />*/
 /* <link rel="stylesheet" type="text/css" href="{{ static }}/css/zyUpload.css" />*/
@@ -410,93 +423,108 @@ function mySubmit(flag){
 /* 	<h2> <strong style="color:grey;">添加会员</strong>*/
 /* 	</h2>*/
 /* 	<ul class="ulColumn2">*/
-/* 	<form action="{{ APP }}/user/add" method="post" enctype="multipart/form-data">*/
-/* 		<li>*/
-/*         	<span class="item_name" style="width:120px;">所属分类：</span>*/
-/*         	<select class="select" name="cid">*/
-/*          		<option>选择品牌</option>*/
-/*         	</select>*/
-/* 	        <span class="errorTips">错误提示信息...</span>*/
-/*        </li>*/
-/* 		<li>*/
-/* 			<span class="item_name" style="width:120px;">标题：</span>*/
-/* 			<input type="text" name="title" class="textbox textbox_295" placeholder="标题" onblur="checkUsername(this)" />*/
-/* 			<span class="errorTips">错误提示信息...</span>*/
-/* 		</li>*/
-/* 		<li>*/
-/* 			<span class="item_name" style="width:120px;">儿童参与年龄：</span>*/
-/* 			<input type="text" name="yearold" class="textbox textbox_295" placeholder="儿童参与年龄" />*/
-/* 			<span class="errorTips">错误提示信息...</span>*/
-/* 		</li>*/
-/* 		<li>*/
-/* 			<span class="item_name" style="width:120px;">报名时间：</span>*/
-/* 			<input type="text" name="signeuptime" class="textbox textbox_295" placeholder="报名时间" />*/
-/* 			<span class="errorTips">错误提示信息...</span>*/
-/* 		</li>*/
-/* 		<li>*/
-/* 			<span class="item_name" style="width:120px;">出行时间：</span>*/
-/* 			<input type="text" name="goouttime" class="textbox textbox_295" placeholder="出行时间"/>*/
-/* 			<span class="errorTips">错误提示信息...</span>*/
-/* 		</li>*/
-/* 		<li>*/
-/* 			<span class="item_name" style="width:120px;">出行地址：</span>*/
-/* 			<input type="text" name="address" class="textbox textbox_295" placeholder="出行地址"/>*/
-/* 			<span class="errorTips">错误提示信息...</span>*/
-/* 		</li>*/
-/* 		<li style="width:80%">*/
-/* 			<span class="item_name" style="width:120px;">套餐详情：</span>*/
-/* 			<textarea placeholder="套餐详情" class="textarea" name="contents" id="contents" style="width:83%;height:300px;"></textarea>*/
-/* 			<span class="errorTips">错误提示信息...</span>*/
-/* 		</li>*/
-/* 		<li  style="width:80%">*/
-/* 			<span class="item_name" style="width:120px;">套餐宣传图片：</span>*/
-/* 	    	<div id="demo" class="demo"></div>*/
-/* 		</li>*/
-/* 		<li>*/
-/* 			<span class="item_name" style="width:120px;">排序：</span>*/
-/* 			<input type="text" name="sort" class="textbox textbox_295" value="0"  placeholder="排序" />*/
-/* 			<span class="errorTips">错误提示信息...</span>*/
-/* 		</li>*/
-/* 		<li>*/
-/* 			<span class="item_name" style="width:120px;">价格：</span>*/
-/* 			<input type="text" name="price" class="textbox textbox_295" placeholder="价格"/>*/
-/* 			<span class="errorTips">错误提示信息...</span>*/
-/* 		</li>*/
-/* 		<li>*/
-/* 			<span class="item_name" style="width:120px;">出行天数：</span>*/
-/* 			<input type="text" name="days" class="textbox textbox_295" placeholder="邮箱"/>*/
-/* 			<span class="errorTips">错误提示信息...</span>*/
-/* 		</li>*/
-/* 		<li>*/
-/* 			<span class="item_name" style="width:120px;">缩略图：</span>*/
-/* 			<label class="uploadImg">*/
-/* 				<input type="file" id="file" name="thumb" accept="image/png,image/gif" />*/
-/* 				<span>上传图片</span>*/
-/* 				<div class="previewImage" style="width: 200px;height: 200px;overflow: hidden;border:1px solid #ddd;border-radius: 5px;">*/
-/* 					<img style="width:100%;height:100%;*/
-/* 					" src="" id="img">*/
-/* 				</div>*/
-/* 			</label>*/
-/* 		</li>*/
-/* 		<li>*/
-/* 			<span class="item_name" style="width:120px;"></span>*/
-/* 			<input type="submit" class="link_btn"/>*/
-/* 		</li>*/
-/* 	</form>*/
+/* 		<form action="{{ APP }}/traval/add" method="post" enctype="multipart/form-data">*/
+/* 			<li>*/
+/* 				<span class="item_name" style="width:120px;">所属地区：</span>*/
+/* 				<select class="select" name="area_id">*/
+/* 					<option value='0'>选择旅游套餐地区</option>*/
+/* 					{% for ar in area %}*/
+/* 					<option value='{{ ar.id }}'>{{ ar._name }}</option>*/
+/* 					{% endfor %}*/
+/* 				</select>*/
+/* 				<span class="errorTips">错误提示信息...</span>*/
+/* 			</li>*/
+/* 			<li>*/
+/* 				<span class="item_name" style="width:120px;">所属分类：</span>*/
+/* 				<select class="select" name="cid">*/
+/* 					<option value="0">选择旅游套餐分类</option>*/
+/* 					{% for cl in cla %}*/
+/* 					<option value='{{ cl.cid }}'>{{ cl.title }}</option>*/
+/* 					{% endfor %}*/
+/* 				</select>*/
+/* 				<span class="errorTips">错误提示信息...</span>*/
+/* 			</li>*/
+/* 			<li>*/
+/* 				<span class="item_name" style="width:120px;">标题：</span>*/
+/* 				<input type="text" name="title" class="textbox textbox_295" placeholder="标题" />*/
+/* 				<span class="errorTips">错误提示信息...</span>*/
+/* 			</li>*/
+/* 			<li>*/
+/* 				<span class="item_name" style="width:120px;">儿童参与年龄：</span>*/
+/* 				<input type="text" name="yearold" class="textbox textbox_295" placeholder="儿童参与年龄" />*/
+/* 				<span class="errorTips">错误提示信息...</span>*/
+/* 			</li>*/
+/* 			<li>*/
+/* 				<span class="item_name" style="width:120px;">报名时间：</span>*/
+/* 				<input type="text" name="signeuptime" class="textbox textbox_295" placeholder="报名时间" />*/
+/* 				<span class="errorTips">错误提示信息...</span>*/
+/* 			</li>*/
+/* 			<li>*/
+/* 				<span class="item_name" style="width:120px;">出行时间：</span>*/
+/* 				<input type="text" name="goouttime" class="textbox textbox_295" placeholder="出行时间"/>*/
+/* 				<span class="errorTips">错误提示信息...</span>*/
+/* 			</li>*/
+/* 			<li>*/
+/* 				<span class="item_name" style="width:120px;">出行地址：</span>*/
+/* 				<input type="text" name="address" class="textbox textbox_295" placeholder="出行地址"/>*/
+/* 				<span class="errorTips">错误提示信息...</span>*/
+/* 			</li>*/
+/* 			<li style="width:80%">*/
+/* 				<span class="item_name" style="width:120px;">套餐详情：</span>*/
+/* 				<textarea placeholder="套餐详情" class="textarea" name="contents" id="contents" style="width:83%;height:300px;"></textarea>*/
+/* 				<span class="errorTips">错误提示信息...</span>*/
+/* 			</li>*/
+/* 			<li  style="width:80%">*/
+/* 				<span class="item_name" style="width:120px;">套餐宣传图片：</span>*/
+/* 				<div id="demo" class="demo"></div>*/
+/* 				<input type="hidden" name="imgs" id="imgs" value="" />*/
+/* 			</li>*/
+/* 			<li>*/
+/* 				<span class="item_name" style="width:120px;">排序：</span>*/
+/* 				<input type="text" name="sort" class="textbox textbox_295" value="0"  placeholder="排序" />*/
+/* 				<span class="errorTips">错误提示信息...</span>*/
+/* 			</li>*/
+/* 			<li>*/
+/* 				<span class="item_name" style="width:120px;">价格：</span>*/
+/* 				<input type="text" name="price" class="textbox textbox_295" placeholder="价格"/>*/
+/* 				<span class="errorTips">错误提示信息...</span>*/
+/* 			</li>*/
+/* 			<li>*/
+/* 				<span class="item_name" style="width:120px;">出行天数：</span>*/
+/* 				<input type="text" name="days" class="textbox textbox_295" placeholder="邮箱"/>*/
+/* 				<span class="errorTips">错误提示信息...</span>*/
+/* 			</li>*/
+/* 			<li>*/
+/* 				<span class="item_name" style="width:120px;">缩略图：</span>*/
+/* 				<label class="uploadImg">*/
+/* 					<input type="file" id="file" name="thumb" accept="image/png,image/gif" />*/
+/* 					<span>上传图片</span>*/
+/* 					<div class="previewImage" style="width: 200px;height: 200px;overflow: hidden;border:1px solid #ddd;border-radius: 5px;">*/
+/* 						<img style="width:100%;height:100%;*/
+/* 					" src="" id="img"></div>*/
+/* 				</label>*/
+/* 			</li>*/
+/* 			<li>*/
+/* 				<span class="item_name" style="width:120px;"></span>*/
+/* 				<input type="submit" class="link_btn"/>*/
+/* 			</li>*/
+/* 		</form>*/
 /* 	</ul>*/
 /* </section>*/
 /* <div id="uploadContainer">*/
-/*         <input type="button" value="选择文件" id="btnBrowse" style="background-color:red;"/>*/
-/* 	    <input type="button" value="上传文件" id="btnUpload">*/
-/* 	    <ul id="fileList"></ul>*/
-/*     </div>*/
+/* 	<input type="button" value="选择文件" id="btnBrowse" style="background-color:red;"/>*/
+/* 	<input type="button" value="上传文件" id="btnUpload">*/
+/* 	<ul id="fileList"></ul>*/
+/* </div>*/
+/* */
 /* <script type="text/javascript" src="{{ static }}/editor/dist/js/wangEditor-1.4.0.min.js"></script>*/
 /* <script type="text/javascript" src="{{ static }}/editor/plupload/lib/plupload/plupload.full.min.js"></script>*/
-/* */
 /* <script type="text/javascript" src="{{ static }}/js/zyFile.js"></script>*/
 /* <script type="text/javascript" src="{{ static }}/js/zyUpload.js"></script>*/
 /* */
 /* <script type="text/javascript">*/
+/* $(document).ready(function(){*/
+/* */
 /* */
 /* */
 /*  		//获取dom节点*/
@@ -506,6 +534,7 @@ function mySubmit(flag){
 /*         var editor = $('#contents').wangEditor({*/
 /*             'uploadImgComponent': $uploadContainer*/
 /*         });*/
+/*         console.log($btnUpload)*/
 /*         //实例化一个上传对象*/
 /*         var uploader = new plupload.Uploader({*/
 /*             browse_button: 'btnBrowse',*/
@@ -566,11 +595,10 @@ function mySubmit(flag){
 /*             uploader.start();*/
 /*         });*/
 /* */
-/*     var imgsArr = [];*/
 /* 	// 初始化插件*/
-/* 	$("#demo").zyUpload({*/
-/* 		width            :   "650px",                 // 宽度*/
-/* 		height           :   "400px",                 // 宽度*/
+/* 	$("#demo").sladeUpload({*/
+/* 		width            :   "80%",                 // 宽度*/
+/* 		height           :   "300px",                 // 宽度*/
 /* 		itemWidth        :   "120px",                 // 文件项的宽度*/
 /* 		itemHeight       :   "100px",                 // 文件项的高度*/
 /* 		url              :   "{{ APP }}/uploads",     // 上传文件的路径*/
@@ -578,36 +606,8 @@ function mySubmit(flag){
 /* 		dragDrop         :   true,                    // 是否可以拖动上传文件*/
 /* 		del              :   true,                    // 是否可以删除文件*/
 /* 		finishDel        :   false,  				  // 是否在上传文件完成后删除预览*/
-/* 		/* 外部获得的回调接口 *//* */
-/* 		onSelect: function(files, allFiles){                    // 选择文件的回调方法*/
-/* 			console.info("当前选择了以下文件：");*/
-/* 			console.info(files);*/
-/* 			console.info("之前没上传的文件：");*/
-/* 			console.info(allFiles);*/
-/* 		},*/
-/* 		onDelete: function(file, surplusFiles){                     // 删除一个文件的回调方法*/
-/* 			console.info("当前删除了此文件：");*/
-/* 			console.info(file);*/
-/* 			console.info("当前剩余的文件：");*/
-/* 			console.info(surplusFiles);*/
-/* 		},*/
-/* 		onSuccess: function(file,responseInfo){                    // 文件上传成功的回调方法*/
-/* 			console.info("此文件上传成功：");*/
-/* 			console.info("===="+responseInfo);*/
-/* 			alert(file)*/
-/* 			imgsArr.push();*/
-/* 		},*/
-/* 		onFailure: function(file){                    // 文件上传失败的回调方法*/
-/* 			console.info("此文件上传失败：");*/
-/* 			console.info("===="+file);*/
-/* 		},*/
-/* 		onComplete: function(responseInfo){           // 上传完成的回调方法*/
-/* 			console.info("文件上传完成");*/
-/* 			console.info("==============="+responseInfo);*/
-/* 		}*/
 /* 	});*/
-/* */
-/*    */
+/* });  */
 /* //图片预览*/
 /* document.getElementById('file').onchange = function(evt) {  */
 /*     // 如果浏览器不支持FileReader，则不处理  */

@@ -264,3 +264,23 @@ function node_merge($node,$access=NULL,$pid=0){
     }
     return $arr;
 }
+/**
+ * [area_merge 递归重组地区节点]
+ * @Author   Rukic
+ * @DateTime 2016-09-09T14:10:00+0800
+ * @param    [type]                   $area [description]
+ * @param    integer                  $pid  [description]
+ * @return   [type]                         [description]
+ */
+function area_merge($area,$pid=0){
+    $arr = array();
+
+    foreach ($area as $v) {
+        if($v['pid'] == $pid){
+            $v['child'] = area_merge($area,$v['id']);
+            $arr[] = $v;
+        }
+    }
+
+    return $arr;
+}

@@ -40,7 +40,7 @@ class __TwigTemplate_588249f229ac95bb3275d93644940e195e2c249574c28daef7457e3cf86
 <script type=\"text/javascript\" src=\"";
         // line 12
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/editor/dist/js/lib/jquery-2.2.1.js\"></script>
+        echo "/js/jquery.js\"></script>
 <script type=\"text/javascript\" src=\"";
         // line 13
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
@@ -58,7 +58,7 @@ class __TwigTemplate_588249f229ac95bb3275d93644940e195e2c249574c28daef7457e3cf86
 \t\t\$(window).load(function(){
 \t\t\t 
        //初始化日期选择插件
-       laydate.skin('huanglv')
+       laydate.skin('huanglv');
 
 \t\t\t\$(\"a[rel='load-content']\").click(function(e){
 \t\t\t\te.preventDefault();
@@ -157,7 +157,10 @@ class __TwigTemplate_588249f229ac95bb3275d93644940e195e2c249574c28daef7457e3cf86
         // line 89
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
         echo "/traval/classify\">套餐分类</a></dd>
-    <dd><a href=\"#\">地区管理</a></dd>
+    <dd><a href=\"";
+        // line 90
+        echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
+        echo "/traval/area\">地区管理</a></dd>
    </dl>
   </li>
   <li>
@@ -206,7 +209,7 @@ class __TwigTemplate_588249f229ac95bb3275d93644940e195e2c249574c28daef7457e3cf86
 
     public function getDebugInfo()
     {
-        return array (  193 => 109,  190 => 108,  182 => 111,  180 => 108,  158 => 89,  154 => 88,  134 => 71,  125 => 65,  121 => 64,  117 => 63,  113 => 62,  109 => 61,  101 => 56,  87 => 45,  54 => 15,  50 => 14,  46 => 13,  42 => 12,  37 => 10,  32 => 8,  28 => 7,  20 => 1,);
+        return array (  196 => 109,  193 => 108,  185 => 111,  183 => 108,  162 => 90,  158 => 89,  154 => 88,  134 => 71,  125 => 65,  121 => 64,  117 => 63,  113 => 62,  109 => 61,  101 => 56,  87 => 45,  54 => 15,  50 => 14,  46 => 13,  42 => 12,  37 => 10,  32 => 8,  28 => 7,  20 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -220,7 +223,7 @@ class __TwigTemplate_588249f229ac95bb3275d93644940e195e2c249574c28daef7457e3cf86
 /* <!--[if lt IE 9]>*/
 /* <script src="{{ static }}/js/html5.js"></script>*/
 /* <![endif]-->*/
-/* <script type="text/javascript" src="{{ static }}/editor/dist/js/lib/jquery-2.2.1.js"></script>*/
+/* <script type="text/javascript" src="{{ static }}/js/jquery.js"></script>*/
 /* <script type="text/javascript" src="{{ static }}/js/jquery.mCustomScrollbar.concat.min.js"></script>*/
 /* <script type="text/javascript" src="{{ static }}/laydate/laydate.js"></script>*/
 /* <script type="text/javascript" src="{{ static }}/js/hdjs.js"></script>*/
@@ -229,7 +232,7 @@ class __TwigTemplate_588249f229ac95bb3275d93644940e195e2c249574c28daef7457e3cf86
 /* 		$(window).load(function(){*/
 /* 			 */
 /*        //初始化日期选择插件*/
-/*        laydate.skin('huanglv')*/
+/*        laydate.skin('huanglv');*/
 /* */
 /* 			$("a[rel='load-content']").click(function(e){*/
 /* 				e.preventDefault();*/
@@ -298,7 +301,7 @@ class __TwigTemplate_588249f229ac95bb3275d93644940e195e2c249574c28daef7457e3cf86
 /*     <dt>旅游套餐管理</dt>*/
 /*     <dd><a href="{{ APP }}/traval/index">旅游套餐</a></dd>*/
 /*     <dd><a href="{{ APP }}/traval/classify">套餐分类</a></dd>*/
-/*     <dd><a href="#">地区管理</a></dd>*/
+/*     <dd><a href="{{ APP }}/traval/area">地区管理</a></dd>*/
 /*    </dl>*/
 /*   </li>*/
 /*   <li>*/

@@ -197,7 +197,6 @@ var ZYFILE = {
 					self.funGetFiles(e); 
 				}, false);	
 			}
-			
 			// 如果上传按钮存在
 			if(self.uploadInput){
 				// 绑定click事件
