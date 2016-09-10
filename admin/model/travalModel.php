@@ -2,6 +2,7 @@
 namespace admin\model;
 use core\lib\model;
 use core\lib\library\page;
+use core\lib\conf;
 /**
 * 旅游套餐
 */
@@ -18,15 +19,19 @@ class travalModel extends Model{
 	 * @return   [type]                   [description]
 	 */
 	public function slectTraval($curpage,$showrow,$url){
-		$userData['lists'] = $this->select($this->tr,array('id','title','thumb','yearold','signeuptime','gooutime','address','days','signnum','tags','cid','area_id','price'),["LIMIT" => [($curpage - 1)*$showrow,$showrow]]);
-		
-		$userData['page'] = null;
+
+		$sql = "SELECT tr.id,tr.title,tr.thumb,tr.yearold,tr.signeuptime,tr.gooutime,tr.address,tr.days,tr.signnum,tr.tags,tr.cid,tr.area_id,tr.price,c.title ctitle,a.name cname FROM ".$this->tr." AS tr, ".$this->class." AS c, ".$this->area." AS a ORDER BY tr.create_time DESC LIMIT ".($curpage - 1)*$showrow.",".$showrow;
+		// echo $sql;exit;
+
+		$userData['lists'] = $this->query($sql)->fetchAll(\PDO::FETCH_ASSOC);
+		$userData['page']  = null;
 
 		//总记录数大于每页显示数，显示分页
 		if ($this->countTotal() > $showrow) {
             $page = new page($this->countTotal(), $showrow, $curpage, $url, 2);
             $userData['page']=htmlspecialchars_decode($page->myde_write());
         }
+
 		return $userData;
 	}
 
@@ -39,6 +44,41 @@ class travalModel extends Model{
 	public function addDetailes($data){
 		$res = $this->insert($this->tr,$data);
 		if($res){
+			return $res;
+		}else{
+			return false;
+		}
+	}
+
+	/**
+	 * [updateDetailes 更新]
+	 * @Author   Rukic
+	 * @DateTime 2016-09-09T22:49:06+0800
+	 * @param    [type]                   $data  [description]
+	 * @param    [type]                   $where [description]
+	 * @return   [type]                          [description]
+	 */
+	public function updateDetailes($data,$where){
+		// dump($data);
+		$res = $this->update($this->tr,$data,$where);
+		// dump($this->last_query());exit;
+		if($res){
+			return $res;
+		}else{
+			return false;
+		}
+	}
+
+	/**
+	 * [selectDetailsBy 查询]
+	 * @Author   Rukic
+	 * @DateTime 2016-09-09T22:48:32+0800
+	 * @param    [type]                   $where [description]
+	 * @return   [type]                          [description]
+	 */
+	public function selectDetailsBy($where){
+		if($res = $this->select($this->tr,"*",$where)){
+			// dump($this->last_query());
 			return $res;
 		}else{
 			return false;

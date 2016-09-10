@@ -117,17 +117,17 @@ class __TwigTemplate_2277aea1c52e37bd7136d2e059574a809adc89ea3b911fc82d5e4d0c06b
             echo "</td>
 \t\t\t<td align=\"center\">";
             // line 43
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "cid", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "ctitle", array()), "html", null, true);
             echo "</td>
 \t\t\t<td align=\"center\">";
             // line 44
-            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "area_id", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "cname", array()), "html", null, true);
             echo "</td>
 \t\t\t<td align=\"center\">
 \t\t\t\t<a href=\"";
             // line 46
             echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
-            echo "/user/editUser/id/";
+            echo "/traval/editDetails/id/";
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "id", array()), "html", null, true);
             echo "\">编辑</a>
 \t\t\t\t<a href=\"jsvascript:;\" onclick=\"delUser(";
@@ -273,10 +273,10 @@ function delUser(id){
 /* 			<td align="center">{{ user.address }}</td>*/
 /* 			<td align="center">{{ user.signnum }}</td>*/
 /* 			<td align="center">{{ user.tags }}</td>*/
-/* 			<td align="center">{{ user.cid }}</td>*/
-/* 			<td align="center">{{ user.area_id }}</td>*/
+/* 			<td align="center">{{ user.ctitle }}</td>*/
+/* 			<td align="center">{{ user.cname }}</td>*/
 /* 			<td align="center">*/
-/* 				<a href="{{ APP }}/user/editUser/id/{{ user.id }}">编辑</a>*/
+/* 				<a href="{{ APP }}/traval/editDetails/id/{{ user.id }}">编辑</a>*/
 /* 				<a href="jsvascript:;" onclick="delUser({{ user.id }})" class="inner_btn">删除</a>*/
 /* 			</td>*/
 /* 		</tr>*/

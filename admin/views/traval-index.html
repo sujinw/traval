@@ -40,10 +40,10 @@
 			<td align="center">{{ user.address }}</td>
 			<td align="center">{{ user.signnum }}</td>
 			<td align="center">{{ user.tags }}</td>
-			<td align="center">{{ user.cid }}</td>
-			<td align="center">{{ user.area_id }}</td>
+			<td align="center">{{ user.ctitle }}</td>
+			<td align="center">{{ user.cname }}</td>
 			<td align="center">
-				<a href="{{ APP }}/user/editUser/id/{{ user.id }}">编辑</a>
+				<a href="{{ APP }}/traval/editDetails/id/{{ user.id }}">编辑</a>
 				<a href="jsvascript:;" onclick="delUser({{ user.id }})" class="inner_btn">删除</a>
 			</td>
 		</tr>

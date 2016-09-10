@@ -24,7 +24,7 @@ class travalCtrl extends validateRbacCtrl{
 		    $curpage = ceil($total_rows / $showrow); 
 		}
 		$userData = $traval->slectTraval($curpage,$showrow,$url);
-		dump($userData);
+		// dump($userData);
 		if($userData){
 			$this->assign("cont",$userData);
 			$this->assign("users",$userData['lists']);
@@ -36,6 +36,12 @@ class travalCtrl extends validateRbacCtrl{
 	public function add(){
 		$traval = new travalModel();
 		if(IS_POST){
+
+			// dump($_FILES);exit;
+			$path = 'Upload/DetailsImages/'.date("Y/m/d");
+			$upload= new Upload($path);
+     		$userimg = $upload->upload();
+
 			$data = array(
 				'area_id'		=>		(int)I('area_id'),
 				'cid'			=>		(int)I('cid'),
@@ -50,6 +56,7 @@ class travalCtrl extends validateRbacCtrl{
 				'price'			=>		(int)I('price'),
 				'days'			=>		(int)I('days'),
 				'create_time'	=>		time(),
+				'thumb'			=>		$userimg[0]['path']
 			);
 			$res = $traval->addDetailes($data);
 			// dump($res);
@@ -74,7 +81,73 @@ class travalCtrl extends validateRbacCtrl{
 			return;
 		}
 	}
+	/**
+	 * [editDetails 编辑]
+	 * @Author   Rukic
+	 * @DateTime 2016-09-09T22:26:55+0800
+	 * @return   [type]                   [description]
+	 */
+	public function editDetails(){
+		$id = I('id');
+		$traval = new travalModel();
+		if(IS_POST){
+			$thumb = I('thumbs');
+			if(isset($_FILES['thumb']) && !empty($_FILES['thumb']) && $_FILES['thumb']['name'] != ""){
+				$path = 'Upload/DetailsImages/'.date("Y/m/d");
+				$upload= new Upload($path);
+	     		$thumb = $upload->upload()[0]['path'];
 
+	     		if(file_exists(I('thumbs'))){
+	     			unlink(I('thumbs'));
+	     		}
+			}
+			$data = array(
+				'area_id'		=>		(int)I('area_id'),
+				'cid'			=>		(int)I('cid'),
+				'title'			=>		I('title'),
+				'yearold'		=>		I('yearold'),
+				'signeuptime'	=>		I('signeuptime'),
+				'gooutime'		=>		I('goouttime'),
+				'address'		=>		I('address'),
+				'contents'		=>		htmlentities(I('contents')),
+				'imgs'			=>		I('imgs'),
+				'sort'			=>		(int)I('sort'),
+				'price'			=>		(int)I('price'),
+				'days'			=>		(int)I('days'),
+				'create_time'	=>		time(),
+				'thumb'			=>		$thumb,
+			);
+			$res = $traval->updateDetailes($data,array('id'=>$id));
+			// dump($res);
+			// exit;
+			if($res){
+				$this->success("旅游套餐修改成功!",__APP__."/traval/index");
+			}else{
+				$this->error("旅游套餐修改失败!",__APP__."/traval/editDetails/id".$id);
+			}
+		}else{
+			$res =$traval->selectDetailsBy(array('id'=>$id))[0];
+			$res['contents'] = html_entity_decode($res['contents']);
+			$class = $traval->selectClassBy(array('is_display'=>1));
+			$area  = $traval->selectAreaBy(array('is_display'=>1));
+
+			$data = new Data();
+			$result = $data->tree($area,'name','id','pid');
+			// dump(area_merge($result,0));
+			$this->assign('area',$result);
+
+			$this->assign('cla',$class);
+			// dump($res);
+			$this->assign('details',$res);
+			$this->display('traval-edit.html');
+		}
+	}
+	/**
+	 * [classify class]
+	 * @Author   Rukic
+	 * @DateTime 2016-09-09T22:26:42+0800
+	 * @return   [type]                   [description]
+	 */
 	public function classify(){
 		$traval = new travalModel();
 		$res = $traval->slectClass();
