@@ -31,7 +31,7 @@
 				{{ user.id }}
 			</td>
 			<td align="center">{{ user.title }}</td>
-			<td align="center"><img src="{{ROOT}}/{{ user.thumb }}" alt="img" /></td>
+			<td align="center"><img style="width:120px;height: 80px;" src="{{ROOT}}/{{ user.thumb }}" alt="img" /></td>
 			<td align="center">{{ user.yearold }}</td>
 			<td align="center">{{ user.signeuptime }}</td>
 			<td align="center">{{ user.gooutime }}</td>
@@ -94,8 +94,9 @@ function delUser(id){
 	//弹出：确认按钮
 	$(".trueBtn").bind('click',function(){
 		$.ajax({
-			url:"{{ APP }}/user/del/id/"+id,
+			url:"{{ APP }}/traval/del",
 			type:"POST",
+			data:{'id':id},
 			dataType:"JSON",
 			timeout:30000,
 			success:function(data){

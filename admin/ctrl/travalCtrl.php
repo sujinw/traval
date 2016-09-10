@@ -301,6 +301,23 @@ class travalCtrl extends validateRbacCtrl{
 		}
 	}
 
+	public function del(){
+
+		$id = I('id');
+		$traval = new travalModel();
+		if($traval->delDetails(array('id'=>$id))){
+			$this->json("ok",20001,"删除成功");
+		}else{
+			$this->json('error',40001,"删除失败");
+		}
+	}
+
+	/**
+	 * [editArea 编辑地区]
+	 * @Author   Rukic
+	 * @DateTime 2016-09-10T14:42:33+0800
+	 * @return   [type]                   [description]
+	 */
 	public function editArea(){
 		$id = I('id');
 

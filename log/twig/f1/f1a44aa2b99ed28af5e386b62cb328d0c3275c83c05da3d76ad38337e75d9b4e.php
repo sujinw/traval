@@ -77,7 +77,7 @@ class __TwigTemplate_2277aea1c52e37bd7136d2e059574a809adc89ea3b911fc82d5e4d0c06b
             // line 33
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "title", array()), "html", null, true);
             echo "</td>
-\t\t\t<td align=\"center\"><img src=\"";
+\t\t\t<td align=\"center\"><img style=\"width:120px;height: 80px;\" src=\"";
             // line 34
             echo twig_escape_filter($this->env, (isset($context["ROOT"]) ? $context["ROOT"] : null), "html", null, true);
             echo "/";
@@ -194,8 +194,9 @@ function delUser(id){
 \t\t\turl:\"";
         // line 97
         echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
-        echo "/user/del/id/\"+id,
+        echo "/traval/del\",
 \t\t\ttype:\"POST\",
+\t\t\tdata:{'id':id},
 \t\t\tdataType:\"JSON\",
 \t\t\ttimeout:30000,
 \t\t\tsuccess:function(data){
@@ -264,7 +265,7 @@ function delUser(id){
 /* 				{{ user.id }}*/
 /* 			</td>*/
 /* 			<td align="center">{{ user.title }}</td>*/
-/* 			<td align="center"><img src="{{ROOT}}/{{ user.thumb }}" alt="img" /></td>*/
+/* 			<td align="center"><img style="width:120px;height: 80px;" src="{{ROOT}}/{{ user.thumb }}" alt="img" /></td>*/
 /* 			<td align="center">{{ user.yearold }}</td>*/
 /* 			<td align="center">{{ user.signeuptime }}</td>*/
 /* 			<td align="center">{{ user.gooutime }}</td>*/
@@ -327,8 +328,9 @@ function delUser(id){
 /* 	//弹出：确认按钮*/
 /* 	$(".trueBtn").bind('click',function(){*/
 /* 		$.ajax({*/
-/* 			url:"{{ APP }}/user/del/id/"+id,*/
+/* 			url:"{{ APP }}/traval/del",*/
 /* 			type:"POST",*/
+/* 			data:{'id':id},*/
 /* 			dataType:"JSON",*/
 /* 			timeout:30000,*/
 /* 			success:function(data){*/

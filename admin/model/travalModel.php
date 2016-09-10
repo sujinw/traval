@@ -20,12 +20,14 @@ class travalModel extends Model{
 	 */
 	public function slectTraval($curpage,$showrow,$url){
 
-		$sql = "SELECT tr.id,tr.title,tr.thumb,tr.yearold,tr.signeuptime,tr.gooutime,tr.address,tr.days,tr.signnum,tr.tags,tr.cid,tr.area_id,tr.price,c.title ctitle,a.name cname FROM ".$this->tr." AS tr, ".$this->class." AS c, ".$this->area." AS a ORDER BY tr.create_time DESC LIMIT ".($curpage - 1)*$showrow.",".$showrow;
+		$sql = "SELECT tr.id,tr.title,tr.thumb,tr.yearold,tr.signeuptime,tr.gooutime,tr.address,tr.days,tr.signnum,tr.tags,tr.cid,tr.area_id,tr.price,c.title ctitle,a.name cname FROM ".$this->tr." AS tr, ".$this->class." AS c, ".$this->area." AS a  WHERE tr.cid=c.cid AND tr.area_id=a.id ORDER BY tr.create_time DESC LIMIT ".($curpage - 1)*$showrow.",".$showrow;
 		// echo $sql;exit;
 
 		$userData['lists'] = $this->query($sql)->fetchAll(\PDO::FETCH_ASSOC);
 		$userData['page']  = null;
-
+		// dump($this->query($sql)->fetchAll(\PDO::FETCH_ASSOC));
+		// dump($this->last_query());exit;
+		// exit;
 		//总记录数大于每页显示数，显示分页
 		if ($this->countTotal() > $showrow) {
             $page = new page($this->countTotal(), $showrow, $curpage, $url, 2);
@@ -64,6 +66,21 @@ class travalModel extends Model{
 		// dump($this->last_query());exit;
 		if($res){
 			return $res;
+		}else{
+			return false;
+		}
+	}
+
+	/**
+	 * [delDetails 删除旅游]
+	 * @Author   Rukic
+	 * @DateTime 2016-09-10T14:45:57+0800
+	 * @param    [type]                   $where [description]
+	 * @return   [type]                          [description]
+	 */
+	public function delDetails($where){
+		if($this->delete($this->tr,$where)){
+			return true;
 		}else{
 			return false;
 		}
