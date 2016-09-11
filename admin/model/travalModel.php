@@ -94,10 +94,13 @@ class travalModel extends Model{
 	 * @return   [type]                          [description]
 	 */
 	public function selectDetailsBy($where){
+		// dump($where);
 		if($res = $this->select($this->tr,"*",$where)){
 			// dump($this->last_query());
 			return $res;
 		}else{
+			// dump($this->last_query());
+
 			return false;
 		}
 	}
