@@ -24,6 +24,15 @@ class travalCtrl extends authorCtrl{
 		$this->assign('info',$arr[0]);
 		$this->display('info.html');
 	}
+
+	/**
+	 * 订单
+	 */
+	public function setOrder(){
+		$id = I('id');
+
+		$this->display('order.html');
+	}
 }
 
 ?>

@@ -256,6 +256,8 @@
                                     </script>
                                     <a href="javascript:void(0)" style="color: #fff;">已下架</a>
 
+                                    {% else %}
+                                    <a href="{{ ROOT }}/traval/setOrder/id/{{ info.id }}" style="color: #fff;">预定</a>
                                     {% endif %}
                             </p>
 

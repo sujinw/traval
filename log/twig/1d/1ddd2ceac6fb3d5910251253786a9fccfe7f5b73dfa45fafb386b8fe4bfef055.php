@@ -385,8 +385,16 @@ class __TwigTemplate_dbc313a701cf14c6b6405bf5c53c7a97fba09580fb914bdc8e5815f4642
                                     <a href=\"javascript:void(0)\" style=\"color: #fff;\">已下架</a>
 
                                     ";
+        } else {
+            // line 260
+            echo "                                    <a href=\"";
+            echo twig_escape_filter($this->env, (isset($context["ROOT"]) ? $context["ROOT"] : null), "html", null, true);
+            echo "/traval/setOrder/id/";
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "id", array()), "html", null, true);
+            echo "\" style=\"color: #fff;\">预定</a>
+                                    ";
         }
-        // line 260
+        // line 262
         echo "                            </p>
 
                         </div>
@@ -414,7 +422,7 @@ class __TwigTemplate_dbc313a701cf14c6b6405bf5c53c7a97fba09580fb914bdc8e5815f4642
 \t\t\t\t\t return str.replace(/&(lt|gt|nbsp|amp|quot);/ig,function(all,t){return arrEntities[t];});
 \t\t\t\t\t}
                 \tvar html = escape2Html(\"";
-        // line 286
+        // line 288
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "contents", array()), "html", null, true);
         echo "\");
                 \t\$(html).appendTo(\".div1\");
@@ -535,7 +543,7 @@ class __TwigTemplate_dbc313a701cf14c6b6405bf5c53c7a97fba09580fb914bdc8e5815f4642
 
     public function getDebugInfo()
     {
-        return array (  418 => 286,  390 => 260,  382 => 254,  380 => 253,  376 => 252,  355 => 234,  350 => 232,  345 => 230,  340 => 228,  335 => 226,  330 => 224,  325 => 222,  320 => 220,  315 => 218,  310 => 216,  305 => 214,  297 => 209,  293 => 208,  286 => 204,  275 => 196,  269 => 195,  244 => 173,  237 => 169,  231 => 166,  91 => 29,  87 => 28,  83 => 27,  79 => 26,  75 => 25,  71 => 24,  67 => 23,  63 => 22,  59 => 21,  55 => 20,  51 => 19,  47 => 18,  43 => 17,  39 => 16,  35 => 15,  19 => 1,);
+        return array (  426 => 288,  398 => 262,  390 => 260,  382 => 254,  380 => 253,  376 => 252,  355 => 234,  350 => 232,  345 => 230,  340 => 228,  335 => 226,  330 => 224,  325 => 222,  320 => 220,  315 => 218,  310 => 216,  305 => 214,  297 => 209,  293 => 208,  286 => 204,  275 => 196,  269 => 195,  244 => 173,  237 => 169,  231 => 166,  91 => 29,  87 => 28,  83 => 27,  79 => 26,  75 => 25,  71 => 24,  67 => 23,  63 => 22,  59 => 21,  55 => 20,  51 => 19,  47 => 18,  43 => 17,  39 => 16,  35 => 15,  19 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -796,6 +804,8 @@ class __TwigTemplate_dbc313a701cf14c6b6405bf5c53c7a97fba09580fb914bdc8e5815f4642
 /*                                     </script>*/
 /*                                     <a href="javascript:void(0)" style="color: #fff;">已下架</a>*/
 /* */
+/*                                     {% else %}*/
+/*                                     <a href="{{ ROOT }}/traval/setOrder/id/{{ info.id }}" style="color: #fff;">预定</a>*/
 /*                                     {% endif %}*/
 /*                             </p>*/
 /* */
