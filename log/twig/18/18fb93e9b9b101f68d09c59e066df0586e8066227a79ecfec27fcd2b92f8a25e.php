@@ -54,44 +54,48 @@ class __TwigTemplate_f829504fca30a0490b73d3d346034e9fe319d112710e77cc70ce21f0452
         // line 23
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Scripts/frozen.js\"></script>
+<script src=\"http://libs.baidu.com/jquery/1.9.1/jquery.min.js\"></script>
 <script type=\"text/javascript\" src=\"";
-        // line 24
-        echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Scripts/jquery1.42.min.js\"></script>
-<script src=\"../..";
         // line 25
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Scripts/jquery-1.8.2.min.js\"></script>
-<script type=\"text/javascript\" src=\"";
+        echo "/Scripts/jquery.SuperSlide.2.1.1.js\"></script>
+<script src=\"";
         // line 26
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Scripts/jquery.SuperSlide.2.1.1.js\"></script>
-<link href=\"";
+        echo "/layer/layer.js\" type=\"text/javascript\"></script>
+<script src=\"";
         // line 27
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/styles/layer.css\" rel=\"stylesheet\" media=\"all\" />
-<script src=\"";
-        // line 28
-        echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Scripts/layer.m.js\" type=\"text/javascript\"></script>
-<script src=\"";
-        // line 29
-        echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Scripts/laydate/laydate.js\"></script>
-<link href=\"";
-        // line 30
-        echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Css/laydate.css\" rel=\"stylesheet\" />
+        echo "/laydate/laydate.js\" type=\"text/javascript\"></script>
 </head>
 
 <script>
     function alert(data) {
+
         layer.open({
             content: data,
             style: 'background-color:#06c1bf; color:#fff; border:none;text-align: center;',
             time: 2
         });
     }
+\tlaydate.skin('molv');
+\tfunction setUserOut(){
+\t\tlayer.alert('内容', {
+\t\t\ticon: 1,
+\t\t\tskin: 'layer-ext-moon' 
+\t\t})
+\t\t//询问框
+\t\tlayer.confirm('您是如何看待前端开发？', {
+\t\t\t btn: ['重要','奇葩'] //按钮
+\t\t}, function(){
+\t\t\tlayer.msg('的确很重要', {icon: 1});
+\t\t}, function(){
+\t\t\tlayer.msg('也可以这样', {
+\t\t\ttime: 20000, //20s后自动关闭
+\t\t\tbtn: ['明白了', '知道了']
+\t\t});
+\t\t});
+\t}
 </script>
 <style type=\"text/css\">
     .ui-form-item select
@@ -138,7 +142,7 @@ class __TwigTemplate_f829504fca30a0490b73d3d346034e9fe319d112710e77cc70ce21f0452
 \t\t\t<span class=\"cityP\" style=\"font-size: 16px;\">
 \t\t\t\t&nbsp;&nbsp;
 \t\t\t\t<img src=\"";
-        // line 86
+        // line 102
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/images/tit1.png\" width=\"30\" height=\"30\"></span>
 \t\t</a>
@@ -148,7 +152,7 @@ class __TwigTemplate_f829504fca30a0490b73d3d346034e9fe319d112710e77cc70ce21f0452
 \t\t<h3>
 \t\t\t<a href=\"/index/index\" style=\"display: inline-block; width: 100%; height: 30px;\">
 \t\t\t\t<img src=\"";
-        // line 93
+        // line 109
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/logo.png\" height=\"30\" />
 \t\t\t</a>
@@ -159,7 +163,7 @@ class __TwigTemplate_f829504fca30a0490b73d3d346034e9fe319d112710e77cc70ce21f0452
 \t\t<div class=\"topR\" style=\"\">
 \t\t\t<a href=\"/user/index\">
 \t\t\t\t<img src=\"";
-        // line 101
+        // line 117
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/tit2.png\" width=\"\" height=\"30\" style=\"display: -webkit-box; -webkit-box-flex: 0.5; -webkit-box-align: center; -webkit-box-pack: center; -webkit-box-orient: vertical; text-align: center; margin-left: auto; margin-right: auto;\"></a>
 \t\t</div>
@@ -196,7 +200,7 @@ class __TwigTemplate_f829504fca30a0490b73d3d346034e9fe319d112710e77cc70ce21f0452
 \t\t\t\t<li style=\"background: #fff; padding-left: 15px !important; height: auto;\">
 
 \t\t\t\t\t<div class=\"aaa\" style=\"text-align: center\">
-\t\t\t\t\t\t<input type=\"date\"  value=\"2016-09-13\" name=\"Time\" id=\"indate\" />
+\t\t\t\t\t\t<input type=\"text\"  value=\"2016-09-13\" name=\"Time\" onclick=\"laydate({ele:this,format: 'YYYY-MM-DD'});\" id=\"indate\" />
 
 \t\t\t\t\t</div>
 \t\t\t\t\t<script>
@@ -305,10 +309,10 @@ class __TwigTemplate_f829504fca30a0490b73d3d346034e9fe319d112710e77cc70ce21f0452
 
 \t\t\t\t<li style=\"background: none; padding-left: 15px !important; height: 25px; line-height: 25px; overflow: hidden;\">
 \t\t\t\t\t<span class=\"moeny\" style=\"float: left;\">出行人信息</span>
-\t\t\t\t\t<a href=\"/userinfo?j=1&jid=485&gid=519\" style=\"display: block; width: 60px; height: 25px; line-height: 25px; float: right;  font-family: '微软雅黑'; font-size: 16px; color: #06c1bf;\">
+\t\t\t\t\t<a href=\"javascript:;\" onclick=\"setUserOut()\" style=\"display: block; width: 60px; height: 25px; line-height: 25px; float: right;  font-family: '微软雅黑'; font-size: 16px; color: #06c1bf;\">
 \t\t\t\t\t\t添加
 \t\t\t\t\t\t<img src=\"";
-        // line 247
+        // line 263
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/add.png\" style=\"display: inline-block; width: 25px; height: 25px; float: right; vertical-align: middle;\" />
 \t\t\t\t\t</a>
@@ -449,6 +453,8 @@ class __TwigTemplate_f829504fca30a0490b73d3d346034e9fe319d112710e77cc70ce21f0452
                     
          
 }
+
+
             </script></div>
 <!--/content-->
 </div>
@@ -478,7 +484,7 @@ class __TwigTemplate_f829504fca30a0490b73d3d346034e9fe319d112710e77cc70ce21f0452
 
     public function getDebugInfo()
     {
-        return array (  312 => 247,  163 => 101,  152 => 93,  142 => 86,  83 => 30,  79 => 29,  75 => 28,  71 => 27,  67 => 26,  63 => 25,  59 => 24,  55 => 23,  51 => 22,  44 => 18,  40 => 17,  36 => 16,  19 => 1,);
+        return array (  316 => 263,  167 => 117,  156 => 109,  146 => 102,  68 => 27,  64 => 26,  60 => 25,  55 => 23,  51 => 22,  44 => 18,  40 => 17,  36 => 16,  19 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -504,23 +510,39 @@ class __TwigTemplate_f829504fca30a0490b73d3d346034e9fe319d112710e77cc70ce21f0452
 /* -->*/
 /* <script type="text/javascript" src="{{ static }}/Scripts/zepto.min.js"></script>*/
 /* <script type="text/javascript" src="{{ static }}/Scripts/frozen.js"></script>*/
-/* <script type="text/javascript" src="{{ static }}/Scripts/jquery1.42.min.js"></script>*/
-/* <script src="../..{{ static }}/Scripts/jquery-1.8.2.min.js"></script>*/
+/* <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>*/
 /* <script type="text/javascript" src="{{ static }}/Scripts/jquery.SuperSlide.2.1.1.js"></script>*/
-/* <link href="{{ static }}/styles/layer.css" rel="stylesheet" media="all" />*/
-/* <script src="{{ static }}/Scripts/layer.m.js" type="text/javascript"></script>*/
-/* <script src="{{ static }}/Scripts/laydate/laydate.js"></script>*/
-/* <link href="{{ static }}/Css/laydate.css" rel="stylesheet" />*/
+/* <script src="{{ static }}/layer/layer.js" type="text/javascript"></script>*/
+/* <script src="{{ static }}/laydate/laydate.js" type="text/javascript"></script>*/
 /* </head>*/
 /* */
 /* <script>*/
 /*     function alert(data) {*/
+/* */
 /*         layer.open({*/
 /*             content: data,*/
 /*             style: 'background-color:#06c1bf; color:#fff; border:none;text-align: center;',*/
 /*             time: 2*/
 /*         });*/
 /*     }*/
+/* 	laydate.skin('molv');*/
+/* 	function setUserOut(){*/
+/* 		layer.alert('内容', {*/
+/* 			icon: 1,*/
+/* 			skin: 'layer-ext-moon' */
+/* 		})*/
+/* 		//询问框*/
+/* 		layer.confirm('您是如何看待前端开发？', {*/
+/* 			 btn: ['重要','奇葩'] //按钮*/
+/* 		}, function(){*/
+/* 			layer.msg('的确很重要', {icon: 1});*/
+/* 		}, function(){*/
+/* 			layer.msg('也可以这样', {*/
+/* 			time: 20000, //20s后自动关闭*/
+/* 			btn: ['明白了', '知道了']*/
+/* 		});*/
+/* 		});*/
+/* 	}*/
 /* </script>*/
 /* <style type="text/css">*/
 /*     .ui-form-item select*/
@@ -616,7 +638,7 @@ class __TwigTemplate_f829504fca30a0490b73d3d346034e9fe319d112710e77cc70ce21f0452
 /* 				<li style="background: #fff; padding-left: 15px !important; height: auto;">*/
 /* */
 /* 					<div class="aaa" style="text-align: center">*/
-/* 						<input type="date"  value="2016-09-13" name="Time" id="indate" />*/
+/* 						<input type="text"  value="2016-09-13" name="Time" onclick="laydate({ele:this,format: 'YYYY-MM-DD'});" id="indate" />*/
 /* */
 /* 					</div>*/
 /* 					<script>*/
@@ -725,7 +747,7 @@ class __TwigTemplate_f829504fca30a0490b73d3d346034e9fe319d112710e77cc70ce21f0452
 /* */
 /* 				<li style="background: none; padding-left: 15px !important; height: 25px; line-height: 25px; overflow: hidden;">*/
 /* 					<span class="moeny" style="float: left;">出行人信息</span>*/
-/* 					<a href="/userinfo?j=1&jid=485&gid=519" style="display: block; width: 60px; height: 25px; line-height: 25px; float: right;  font-family: '微软雅黑'; font-size: 16px; color: #06c1bf;">*/
+/* 					<a href="javascript:;" onclick="setUserOut()" style="display: block; width: 60px; height: 25px; line-height: 25px; float: right;  font-family: '微软雅黑'; font-size: 16px; color: #06c1bf;">*/
 /* 						添加*/
 /* 						<img src="{{ static }}/Images/add.png" style="display: inline-block; width: 25px; height: 25px; float: right; vertical-align: middle;" />*/
 /* 					</a>*/
@@ -866,6 +888,8 @@ class __TwigTemplate_f829504fca30a0490b73d3d346034e9fe319d112710e77cc70ce21f0452
 /*                     */
 /*          */
 /* }*/
+/* */
+/* */
 /*             </script></div>*/
 /* <!--/content-->*/
 /* </div>*/

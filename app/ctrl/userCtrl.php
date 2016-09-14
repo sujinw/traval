@@ -75,5 +75,17 @@ class userCtrl extends valiCtrl{
 			exit("no accesss");
 		}
 	}
+	//出行人员信息
+	public function userOut(){
+	
+		
+		$this->display('outUserinfo.html');
+
+	}
+
+	public function outUserAdd(){
+		
+		$this->display('addUserOutinfo.html');
+	}
 }
 ?>

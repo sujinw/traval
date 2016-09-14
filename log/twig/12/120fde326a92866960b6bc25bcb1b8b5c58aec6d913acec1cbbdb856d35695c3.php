@@ -199,7 +199,7 @@ class __TwigTemplate_889510dc776fbf5637824fd1aa99bfffa830fce0415725f48065a11af39
         // line 117
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/66.png\" width=\"30\" height=\"30\" style=\"float: left;\">
-\t\t\t\t\t\t<a href=\"/Userinfo/add\" class=\"list_page_t\" style=\"float: left;\">出行人信息</a>
+\t\t\t\t\t\t<a href=\"/user/userOut\" class=\"list_page_t\" style=\"float: left;\">出行人信息</a>
 \t\t\t\t\t</li>
 \t\t\t\t\t<li>
 \t\t\t\t\t\t<img src=\"";
@@ -358,7 +358,7 @@ class __TwigTemplate_889510dc776fbf5637824fd1aa99bfffa830fce0415725f48065a11af39
 /* 					</li>*/
 /* 					<li>*/
 /* 						<img src="{{ static }}/Images/66.png" width="30" height="30" style="float: left;">*/
-/* 						<a href="/Userinfo/add" class="list_page_t" style="float: left;">出行人信息</a>*/
+/* 						<a href="/user/userOut" class="list_page_t" style="float: left;">出行人信息</a>*/
 /* 					</li>*/
 /* 					<li>*/
 /* 						<img src="{{ static }}/Images/22.png" width="30" height="30" style="float: left;">*/

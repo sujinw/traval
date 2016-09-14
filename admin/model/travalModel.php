@@ -93,9 +93,9 @@ class travalModel extends Model{
 	 * @param    [type]                   $where [description]
 	 * @return   [type]                          [description]
 	 */
-	public function selectDetailsBy($where){
+	public function selectDetailsBy($where,$filed="*"){
 		// dump($where);
-		if($res = $this->select($this->tr,"*",$where)){
+		if($res = $this->select($this->tr,$filed,$where)){
 			// dump($this->last_query());
 			return $res;
 		}else{

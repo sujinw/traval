@@ -30,8 +30,15 @@ class travalCtrl extends authorCtrl{
 	 */
 	public function setOrder(){
 		$id = I('id');
+		$traval = new travalModel();
+		$info = $traval->selectDetailsBy(array('id','title','signeuptime','orderTotalNum','orderYesNum','price','signnum'),array('id'=>$id))[0];
 
 		$this->display('order.html');
+	}
+
+	public function getUserOut(){
+		$uid = I('uid');
+
 	}
 }
 
