@@ -22,6 +22,10 @@ class ComposerStaticInit728bc219abce5b89705d7f18de54f4fe
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
         ),
+        'P' => 
+        array (
+            'PFinal\\Cache\\' => 13,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -36,6 +40,10 @@ class ComposerStaticInit728bc219abce5b89705d7f18de54f4fe
         'Symfony\\Component\\VarDumper\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
+        ),
+        'PFinal\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pfinal/cache/src',
         ),
     );
 

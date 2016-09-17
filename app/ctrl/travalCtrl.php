@@ -31,8 +31,9 @@ class travalCtrl extends authorCtrl{
 	public function setOrder(){
 		$id = I('id');
 		$traval = new travalModel();
-		$info = $traval->selectDetailsBy(array('id','title','signeuptime','orderTotalNum','orderYesNum','price','signnum'),array('id'=>$id))[0];
-
+		$info = $traval->selectDetailsBy(array('id'=>$id),array('id','title','signeuptime','orderTotalNum','orderYesNum','price','signnum'))[0];
+		//dump($info);
+		$this->assign("info",$info);
 		$this->display('order.html');
 	}
 

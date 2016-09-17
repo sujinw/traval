@@ -20,7 +20,7 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
 <html lang=\"\">
 <head>
     <meta charset=\"UTF-8\">
-    <title>菲趣</title>
+    <title>**</title>
     <meta name=\"Keywords\" content=\"\" />
     <meta name=\"author\" content=\"slade\" />
     <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">
@@ -81,7 +81,7 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
 <body>
     <div id=\"onediv\" style=\"margin-left: auto; margin-right: auto\">
         <ul id=\"nav\" class=\"nav clearfix\">
-            
+
                     <li class=\"nLi nLiOne\"><a href=\"/index\"><span class=\"cityP\" style=\"font-size: 16px;\">&nbsp;&nbsp;<img src=\"";
         // line 40
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
@@ -103,7 +103,7 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/tit2.png\" width=\"\" height=\"30\" style=\"display: -webkit-box; -webkit-box-flex: 0.5; -webkit-box-align: center; -webkit-box-pack: center; -webkit-box-orient: vertical; text-align: center; margin-left: auto; margin-right: auto;\"></a>
                 </div>
-                
+
             </li>
         </ul>
         <script id=\"jsID\" type=\"text/javascript\">
@@ -143,7 +143,7 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
     }
 </style>
 <body style=\"background: #fff\">
-    <form action=\"/userinfo/addgouser\" id=\"LoginForm\">
+    <form action=\"/user/outUserAdd\" id=\"LoginForm\" method=\"post\">
         <div class=\"ui-form-item ui-border-b ui-form-itemUser\">
             <label for=\"#\">出行人姓名</label>
             <input type=\"text\" name=\"Name\" value=\"\" placeholder=\"姓名\" />
@@ -160,26 +160,10 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
                 <option value=\"1\">女</option>
             </select>
         </div>
-        
-        <input type=\"hidden\" value=\"\" name=\"goodid\">
-        <input type=\"hidden\" value=\"\" name=\"time\">
-        <input type=\"hidden\" value=\"\" name=\"cnum\">
-        <input type=\"hidden\" value=\"\" name=\"rnum\">
-        <input type=\"hidden\" value=\"\" name=\"timeid\">
-        <input type=\"hidden\" value=\"\" name=\"jid\">
-        <input type=\"hidden\" value=\"\" name=\"j\">
-        <input type=\"hidden\" value=\"\" name=\"gid\">
-        <input type=\"hidden\" value=\"\" name=\"c\">
-        <input type=\"hidden\" value=\"\" name=\"cid\">
-        <input type=\"hidden\" value=\"\" name=\"cgid\">
-        <input type=\"hidden\" value=\"\" name=\"shopid\">
-        <input type=\"hidden\" value=\"\" name=\"ji\">
-        <input type=\"hidden\" value=\"\" name=\"isp\">
-        <input type=\"hidden\" value=\"\" name=\"p\">
-        <input type=\"hidden\" value=\"False\" name=\"isgroups\">
+
         <div class=\"ui-form-item ui-border-b ui-form-itemUser\">
             <label for=\"#\">年龄范围 </label>
-            
+
             <select name=\"AgeArea\">
                 <option value=\"\">--请选择--</option>
                 <option value=\"1\">成人</option>
@@ -188,14 +172,17 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
         </div>
         <div class=\"ui-form-item ui-border-b ui-form-itemUser\">
             <label for=\"#\">证件类型</label>
-            <select>
-                <option>身份证</option>
+            <select name=\"id_type\">
+                <option value=\"1\">身份证</option>
             </select>
         </div>
         <div class=\"ui-form-item ui-border-b ui-form-itemUser\">
             <label for=\"#\">证件号码</label>
-            <input type=\"text\" value=\"\" placeholder=\"可不填\" name=\"CaidNO\" />
-            <input type=\"hidden\" value=\"\" name=\"Id\" />
+            <input type=\"text\" value=\"\" placeholder=\"可不填\" name=\"idNum\" />
+            <input type=\"hidden\" value=\"";
+        // line 128
+        echo twig_escape_filter($this->env, (isset($context["uid"]) ? $context["uid"] : null), "html", null, true);
+        echo "\" name=\"uid\" />
         </div>
         <div class=\"ui-btn-wrap\">
                 <button class=\"ui-btn-lg ui-btn-danger2\" type=\"button\" onclick=\"sub(0)\">完成</button>
@@ -291,14 +278,14 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
 
     public function getDebugInfo()
     {
-        return array (  103 => 50,  94 => 44,  87 => 40,  68 => 24,  64 => 23,  60 => 22,  56 => 21,  52 => 20,  48 => 19,  42 => 16,  38 => 15,  34 => 14,  19 => 1,);
+        return array (  184 => 128,  103 => 50,  94 => 44,  87 => 40,  68 => 24,  64 => 23,  60 => 22,  56 => 21,  52 => 20,  48 => 19,  42 => 16,  38 => 15,  34 => 14,  19 => 1,);
     }
 }
 /* <!DOCTYPE HTML>*/
 /* <html lang="">*/
 /* <head>*/
 /*     <meta charset="UTF-8">*/
-/*     <title>菲趣</title>*/
+/*     <title>**</title>*/
 /*     <meta name="Keywords" content="" />*/
 /*     <meta name="author" content="slade" />*/
 /*     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">*/
@@ -332,7 +319,7 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
 /* <body>*/
 /*     <div id="onediv" style="margin-left: auto; margin-right: auto">*/
 /*         <ul id="nav" class="nav clearfix">*/
-/*             */
+/* */
 /*                     <li class="nLi nLiOne"><a href="/index"><span class="cityP" style="font-size: 16px;">&nbsp;&nbsp;<img src="{{ static }}/images/tit1.png" width="30" height="30"></span></a></li>*/
 /* */
 /*             <li class="nLi nLiTwo">*/
@@ -345,7 +332,7 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
 /*                     <a href="/user/index">*/
 /*                         <img src="{{ static }}/Images/tit2.png" width="" height="30" style="display: -webkit-box; -webkit-box-flex: 0.5; -webkit-box-align: center; -webkit-box-pack: center; -webkit-box-orient: vertical; text-align: center; margin-left: auto; margin-right: auto;"></a>*/
 /*                 </div>*/
-/*                 */
+/* */
 /*             </li>*/
 /*         </ul>*/
 /*         <script id="jsID" type="text/javascript">*/
@@ -385,7 +372,7 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
 /*     }*/
 /* </style>*/
 /* <body style="background: #fff">*/
-/*     <form action="/userinfo/addgouser" id="LoginForm">*/
+/*     <form action="/user/outUserAdd" id="LoginForm" method="post">*/
 /*         <div class="ui-form-item ui-border-b ui-form-itemUser">*/
 /*             <label for="#">出行人姓名</label>*/
 /*             <input type="text" name="Name" value="" placeholder="姓名" />*/
@@ -402,26 +389,10 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
 /*                 <option value="1">女</option>*/
 /*             </select>*/
 /*         </div>*/
-/*         */
-/*         <input type="hidden" value="" name="goodid">*/
-/*         <input type="hidden" value="" name="time">*/
-/*         <input type="hidden" value="" name="cnum">*/
-/*         <input type="hidden" value="" name="rnum">*/
-/*         <input type="hidden" value="" name="timeid">*/
-/*         <input type="hidden" value="" name="jid">*/
-/*         <input type="hidden" value="" name="j">*/
-/*         <input type="hidden" value="" name="gid">*/
-/*         <input type="hidden" value="" name="c">*/
-/*         <input type="hidden" value="" name="cid">*/
-/*         <input type="hidden" value="" name="cgid">*/
-/*         <input type="hidden" value="" name="shopid">*/
-/*         <input type="hidden" value="" name="ji">*/
-/*         <input type="hidden" value="" name="isp">*/
-/*         <input type="hidden" value="" name="p">*/
-/*         <input type="hidden" value="False" name="isgroups">*/
+/* */
 /*         <div class="ui-form-item ui-border-b ui-form-itemUser">*/
 /*             <label for="#">年龄范围 </label>*/
-/*             */
+/* */
 /*             <select name="AgeArea">*/
 /*                 <option value="">--请选择--</option>*/
 /*                 <option value="1">成人</option>*/
@@ -430,14 +401,14 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
 /*         </div>*/
 /*         <div class="ui-form-item ui-border-b ui-form-itemUser">*/
 /*             <label for="#">证件类型</label>*/
-/*             <select>*/
-/*                 <option>身份证</option>*/
+/*             <select name="id_type">*/
+/*                 <option value="1">身份证</option>*/
 /*             </select>*/
 /*         </div>*/
 /*         <div class="ui-form-item ui-border-b ui-form-itemUser">*/
 /*             <label for="#">证件号码</label>*/
-/*             <input type="text" value="" placeholder="可不填" name="CaidNO" />*/
-/*             <input type="hidden" value="" name="Id" />*/
+/*             <input type="text" value="" placeholder="可不填" name="idNum" />*/
+/*             <input type="hidden" value="{{ uid }}" name="uid" />*/
 /*         </div>*/
 /*         <div class="ui-btn-wrap">*/
 /*                 <button class="ui-btn-lg ui-btn-danger2" type="button" onclick="sub(0)">完成</button>*/

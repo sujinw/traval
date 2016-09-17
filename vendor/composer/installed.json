@@ -306,5 +306,42 @@
         "keywords": [
             "templating"
         ]
+    },
+    {
+        "name": "pfinal/cache",
+        "version": "1.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/pfinal/cache.git",
+            "reference": "8e25d8b3b3c99337163f5ad886b5ab836896f244"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/pfinal/cache/8e25d8b3b3c99337163f5ad886b5ab836896f244.zip",
+            "reference": "8e25d8b3b3c99337163f5ad886b5ab836896f244",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "time": "2016-06-22 03:19:14",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "PFinal\\Cache\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Zou Yiliang"
+            }
+        ],
+        "description": "缓存(Memcache、File、Array)"
     }
 ]

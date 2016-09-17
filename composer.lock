@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "68eaa7d7571fe7f3cd5c35fc9b1714be",
-    "content-hash": "c396232942d151f86cac13b14a73d375",
+    "hash": "3fb173338e691887cfff1496fcc86e62",
+    "content-hash": "cc4a41189c19d416ae46bf87d31f4791",
     "packages": [
         {
             "name": "catfan/medoo",
@@ -121,6 +121,41 @@
                 "zf2"
             ],
             "time": "2016-05-06 18:25:35"
+        },
+        {
+            "name": "pfinal/cache",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pfinal/cache.git",
+                "reference": "8e25d8b3b3c99337163f5ad886b5ab836896f244"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/pfinal/cache/8e25d8b3b3c99337163f5ad886b5ab836896f244.zip",
+                "reference": "8e25d8b3b3c99337163f5ad886b5ab836896f244",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PFinal\\Cache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Zou Yiliang"
+                }
+            ],
+            "description": "缓存(Memcache、File、Array)",
+            "time": "2016-06-22 03:19:14"
         },
         {
             "name": "symfony/polyfill-mbstring",

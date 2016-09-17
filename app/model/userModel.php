@@ -3,7 +3,7 @@ namespace app\model;
 use core\lib\model;
 class userModel extends model{
 	public $t = "traval_user";
-
+	public $out = "traval_outuser";
     /**
      * [getUserById 通过username获取用户信息]
      * @param    [type]                   $username [description]
@@ -32,5 +32,15 @@ class userModel extends model{
             return false;
         }
     }
+
+
+		public function addOutUser($data){
+
+			if($res = $this->insert($data)){
+				return $res;
+			}else{
+				return false;
+			}
+		}
 }
 ?>

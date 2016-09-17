@@ -7,9 +7,11 @@ use core\lib\library\session;
 * 前台登录功能
 */
 class userCtrl extends valiCtrl{
-	
-	public function index(){
 
+	public function index(){
+		$uid = session::get('traval_userId') ? session::get('traval_userId') : "";
+
+		$this->assign("uid",$uid);
 		$this->display("user-index.html");
 	}
 
@@ -77,15 +79,36 @@ class userCtrl extends valiCtrl{
 	}
 	//出行人员信息
 	public function userOut(){
-	
-		
-		$this->display('outUserinfo.html');
+			$uid = session::get('traval_userId') ? session::get('traval_userId') : "";
+			$this->assign('uid',$uid);
+			$this->display('outUserinfo.html');
 
 	}
-
+	// 添加出行人员
 	public function outUserAdd(){
-		
-		$this->display('addUserOutinfo.html');
+		$uid = I('id');
+		if(IS_POST){
+			//dump(I());
+			$data = array(
+				'uid' => I('uid'),
+				'name' => I('Name'),
+				'mobile' => I('Phone'),
+				'sex' => I('SEX'),
+				'AgeArea' => I('AgeArea'),
+				'id_type' => I('id_type'),
+				'idNum' => I('idNum'),
+			);
+			$user = new userModel();
+			if($res = $user->addOutUser($user)){
+				$this->tips("出行人信息添加成功！","/user/userOut/id/".$uid);
+			}else{
+					$this->tips("出行人信息添加失败！","/user/outUserAdd/id/".$uid);
+			}
+
+		}else{
+			$this->assign('uid',$uid);
+			$this->display('addUserOutinfo.html');
+		}
 	}
 }
 ?>

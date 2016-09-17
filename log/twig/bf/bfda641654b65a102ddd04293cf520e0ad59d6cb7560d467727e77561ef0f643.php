@@ -82,7 +82,7 @@ class __TwigTemplate_3a355774ed1b3db57b29f0af529bc2b38cce6972fe374ed55611fb767ee
 <body>
     <div id=\"onediv\" style=\"margin-left: auto; margin-right: auto\">
         <ul id=\"nav\" class=\"nav clearfix\">
-            
+
                     <li class=\"nLi nLiOne\"><a href=\"/index\"><span class=\"cityP\" style=\"font-size: 16px;\">&nbsp;&nbsp;<img src=\"";
         // line 41
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
@@ -104,7 +104,7 @@ class __TwigTemplate_3a355774ed1b3db57b29f0af529bc2b38cce6972fe374ed55611fb767ee
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/tit2.png\" width=\"\" height=\"30\" style=\"display: -webkit-box; -webkit-box-flex: 0.5; -webkit-box-align: center; -webkit-box-pack: center; -webkit-box-orient: vertical; text-align: center; margin-left: auto; margin-right: auto;\"></a>
                 </div>
-                
+
             </li>
         </ul>
         <script id=\"jsID\" type=\"text/javascript\">
@@ -182,14 +182,17 @@ class __TwigTemplate_3a355774ed1b3db57b29f0af529bc2b38cce6972fe374ed55611fb767ee
     <div class=\"content\">
 
         <ul class=\"list_page_1\" style=\"background: #fff; margin-top: 10px;\">
-            <li style=\"border: none; background: none; padding-left: 15px !important; height: 35px; line-height: 35px;\"><a href=\"/user/outUserAdd\" class=\"addInfo\" style=\"\">添加出行人<font>+</font></a></li>
+            <li style=\"border: none; background: none; padding-left: 15px !important; height: 35px; line-height: 35px;\"><a href=\"/user/outUserAdd/id/";
+        // line 131
+        echo twig_escape_filter($this->env, (isset($context["uid"]) ? $context["uid"] : null), "html", null, true);
+        echo "\" class=\"addInfo\" style=\"\">添加出行人<font>+</font></a></li>
         </ul>
 
         <dl class=\"list_1\">
             <dt class=\"t_4\"></dt>
             <dd>
                 <ul class=\"list_page_1\">
-                    
+
                      <li style=\"padding: 0px 10px !important; height: auto; overflow: hidden; line-height: 20px !important;\">
                         <a href=\"/userinfo?Id=8167\" class=\"addInfoP\" style=\"\">
                             <p class=\"addInfoPl fl\"><span style=\"color: #333;\">test1</span><span style=\"color: #999; font-size: 0.7em;\">成人 &nbsp;&nbsp;男</span></p>
@@ -243,7 +246,7 @@ class __TwigTemplate_3a355774ed1b3db57b29f0af529bc2b38cce6972fe374ed55611fb767ee
 
     public function getDebugInfo()
     {
-        return array (  104 => 51,  95 => 45,  88 => 41,  69 => 25,  65 => 24,  61 => 23,  57 => 22,  53 => 21,  49 => 20,  43 => 17,  39 => 16,  35 => 15,  19 => 1,);
+        return array (  187 => 131,  104 => 51,  95 => 45,  88 => 41,  69 => 25,  65 => 24,  61 => 23,  57 => 22,  53 => 21,  49 => 20,  43 => 17,  39 => 16,  35 => 15,  19 => 1,);
     }
 }
 /* <!DOCTYPE HTML>*/
@@ -285,7 +288,7 @@ class __TwigTemplate_3a355774ed1b3db57b29f0af529bc2b38cce6972fe374ed55611fb767ee
 /* <body>*/
 /*     <div id="onediv" style="margin-left: auto; margin-right: auto">*/
 /*         <ul id="nav" class="nav clearfix">*/
-/*             */
+/* */
 /*                     <li class="nLi nLiOne"><a href="/index"><span class="cityP" style="font-size: 16px;">&nbsp;&nbsp;<img src="{{ static }}/images/tit1.png" width="30" height="30"></span></a></li>*/
 /* */
 /*             <li class="nLi nLiTwo">*/
@@ -298,7 +301,7 @@ class __TwigTemplate_3a355774ed1b3db57b29f0af529bc2b38cce6972fe374ed55611fb767ee
 /*                     <a href="/user/index">*/
 /*                         <img src="{{ static }}/Images/tit2.png" width="" height="30" style="display: -webkit-box; -webkit-box-flex: 0.5; -webkit-box-align: center; -webkit-box-pack: center; -webkit-box-orient: vertical; text-align: center; margin-left: auto; margin-right: auto;"></a>*/
 /*                 </div>*/
-/*                 */
+/* */
 /*             </li>*/
 /*         </ul>*/
 /*         <script id="jsID" type="text/javascript">*/
@@ -376,14 +379,14 @@ class __TwigTemplate_3a355774ed1b3db57b29f0af529bc2b38cce6972fe374ed55611fb767ee
 /*     <div class="content">*/
 /* */
 /*         <ul class="list_page_1" style="background: #fff; margin-top: 10px;">*/
-/*             <li style="border: none; background: none; padding-left: 15px !important; height: 35px; line-height: 35px;"><a href="/user/outUserAdd" class="addInfo" style="">添加出行人<font>+</font></a></li>*/
+/*             <li style="border: none; background: none; padding-left: 15px !important; height: 35px; line-height: 35px;"><a href="/user/outUserAdd/id/{{ uid }}" class="addInfo" style="">添加出行人<font>+</font></a></li>*/
 /*         </ul>*/
 /* */
 /*         <dl class="list_1">*/
 /*             <dt class="t_4"></dt>*/
 /*             <dd>*/
 /*                 <ul class="list_page_1">*/
-/*                     */
+/* */
 /*                      <li style="padding: 0px 10px !important; height: auto; overflow: hidden; line-height: 20px !important;">*/
 /*                         <a href="/userinfo?Id=8167" class="addInfoP" style="">*/
 /*                             <p class="addInfoPl fl"><span style="color: #333;">test1</span><span style="color: #999; font-size: 0.7em;">成人 &nbsp;&nbsp;男</span></p>*/

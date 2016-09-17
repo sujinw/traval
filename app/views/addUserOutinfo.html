@@ -2,7 +2,7 @@
 <html lang="">
 <head>
     <meta charset="UTF-8">
-    <title>菲趣</title>
+    <title>**</title>
     <meta name="Keywords" content="" />
     <meta name="author" content="slade" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -36,7 +36,7 @@
 <body>
     <div id="onediv" style="margin-left: auto; margin-right: auto">
         <ul id="nav" class="nav clearfix">
-            
+
                     <li class="nLi nLiOne"><a href="/index"><span class="cityP" style="font-size: 16px;">&nbsp;&nbsp;<img src="{{ static }}/images/tit1.png" width="30" height="30"></span></a></li>
 
             <li class="nLi nLiTwo">
@@ -49,7 +49,7 @@
                     <a href="/user/index">
                         <img src="{{ static }}/Images/tit2.png" width="" height="30" style="display: -webkit-box; -webkit-box-flex: 0.5; -webkit-box-align: center; -webkit-box-pack: center; -webkit-box-orient: vertical; text-align: center; margin-left: auto; margin-right: auto;"></a>
                 </div>
-                
+
             </li>
         </ul>
         <script id="jsID" type="text/javascript">
@@ -89,7 +89,7 @@
     }
 </style>
 <body style="background: #fff">
-    <form action="/userinfo/addgouser" id="LoginForm">
+    <form action="/user/outUserAdd" id="LoginForm" method="post">
         <div class="ui-form-item ui-border-b ui-form-itemUser">
             <label for="#">出行人姓名</label>
             <input type="text" name="Name" value="" placeholder="姓名" />
@@ -106,26 +106,10 @@
                 <option value="1">女</option>
             </select>
         </div>
-        
-        <input type="hidden" value="" name="goodid">
-        <input type="hidden" value="" name="time">
-        <input type="hidden" value="" name="cnum">
-        <input type="hidden" value="" name="rnum">
-        <input type="hidden" value="" name="timeid">
-        <input type="hidden" value="" name="jid">
-        <input type="hidden" value="" name="j">
-        <input type="hidden" value="" name="gid">
-        <input type="hidden" value="" name="c">
-        <input type="hidden" value="" name="cid">
-        <input type="hidden" value="" name="cgid">
-        <input type="hidden" value="" name="shopid">
-        <input type="hidden" value="" name="ji">
-        <input type="hidden" value="" name="isp">
-        <input type="hidden" value="" name="p">
-        <input type="hidden" value="False" name="isgroups">
+
         <div class="ui-form-item ui-border-b ui-form-itemUser">
             <label for="#">年龄范围 </label>
-            
+
             <select name="AgeArea">
                 <option value="">--请选择--</option>
                 <option value="1">成人</option>
@@ -134,14 +118,14 @@
         </div>
         <div class="ui-form-item ui-border-b ui-form-itemUser">
             <label for="#">证件类型</label>
-            <select>
-                <option>身份证</option>
+            <select name="id_type">
+                <option value="1">身份证</option>
             </select>
         </div>
         <div class="ui-form-item ui-border-b ui-form-itemUser">
             <label for="#">证件号码</label>
-            <input type="text" value="" placeholder="可不填" name="CaidNO" />
-            <input type="hidden" value="" name="Id" />
+            <input type="text" value="" placeholder="可不填" name="idNum" />
+            <input type="hidden" value="{{ uid }}" name="uid" />
         </div>
         <div class="ui-btn-wrap">
                 <button class="ui-btn-lg ui-btn-danger2" type="button" onclick="sub(0)">完成</button>

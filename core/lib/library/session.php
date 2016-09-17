@@ -5,16 +5,16 @@
 namespace core\lib\library;
 class session
 {
-    public function set($name, $value)
+    public static function set($name, $value)
     {
         return $_SESSION[$name] = $value;
     }
 
-    public function get($name)
+    public static function get($name)
     {
         return isset($_SESSION[$name]) ? $_SESSION[$name] : '';
     }
-    
+
     public function all(){
         return isset($_SESSION) ? $_SESSION : '';
     }
