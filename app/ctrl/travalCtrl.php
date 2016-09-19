@@ -7,7 +7,7 @@ use core\lib;
 * 旅游套餐
 */
 class travalCtrl extends authorCtrl{
-	
+
 	public function detail(){
 		$id = I('id');
 		$traval = new travalModel();
@@ -37,9 +37,12 @@ class travalCtrl extends authorCtrl{
 		$this->display('order.html');
 	}
 
+	//异步获取出行人员数据
 	public function getUserOut(){
 		$uid = I('uid');
+		if(IS_AJAX){
 
+		}
 	}
 }
 
