@@ -192,20 +192,44 @@ class __TwigTemplate_3a355774ed1b3db57b29f0af529bc2b38cce6972fe374ed55611fb767ee
             <dt class=\"t_4\"></dt>
             <dd>
                 <ul class=\"list_page_1\">
-
-                     <li style=\"padding: 0px 10px !important; height: auto; overflow: hidden; line-height: 20px !important;\">
-                        <a href=\"/userinfo?Id=8167\" class=\"addInfoP\" style=\"\">
-                            <p class=\"addInfoPl fl\"><span style=\"color: #333;\">test1</span><span style=\"color: #999; font-size: 0.7em;\">成人 &nbsp;&nbsp;男</span></p>
-                            <p class=\"addInfoPr fl\"><span style=\"color: #999; font-size: 0.7em;\">身份证</span><span style=\"color: #333;\">暂无身份证信息</span></p>
+                  ";
+        // line 138
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["data"]) ? $context["data"] : null));
+        foreach ($context['_seq'] as $context["_key"] => $context["d"]) {
+            // line 139
+            echo "                     <li style=\"padding: 0px 10px !important; height: auto; overflow: hidden; line-height: 20px !important;\">
+                        <a href=\"/user/editOutUser/Id/";
+            // line 140
+            echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "id", array()), "html", null, true);
+            echo "\" class=\"addInfoP\" style=\"height:auto;\">
+                            <p class=\"addInfoPl fl\"><span style=\"color: #333;\">";
+            // line 141
+            echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "name", array()), "html", null, true);
+            echo "</span><span style=\"color: #999; font-size: 0.7em;\">";
+            if (($this->getAttribute($context["d"], "sex", array()) == 0)) {
+                echo " &nbsp;&nbsp;男";
+            } elseif (($this->getAttribute($context["d"], "sex", array()) == 1)) {
+                echo "&nbsp;&nbsp;女";
+            }
+            echo "</span></p>
+                            <p class=\"addInfoPr fl\"><span style=\"color: #999; font-size: 0.7em;\">身份证</span><span style=\"color: #333;\">";
+            // line 142
+            if (($this->getAttribute($context["d"], "idNum", array()) == "")) {
+                echo "暂无身份证信息";
+            } else {
+                echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "idNum", array()), "html", null, true);
+            }
+            echo "</span></p>
                         </a>
                     </li>
-                     <li style=\"padding: 0px 10px !important; height: auto; overflow: hidden; line-height: 20px !important;\">
-                        <a href=\"/userinfo?Id=8168\" class=\"addInfoP\" style=\"\">
-                            <p class=\"addInfoPl fl\"><span style=\"color: #333;\">shenm</span><span style=\"color: #999; font-size: 0.7em;\">儿童 &nbsp;&nbsp;女</span></p>
-                            <p class=\"addInfoPr fl\"><span style=\"color: #999; font-size: 0.7em;\">身份证</span><span style=\"color: #333;\">暂无身份证信息</span></p>
-                        </a>
-                    </li>
-                </ul>
+                  ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['d'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 146
+        echo "                </ul>
             </dd>
         </dl>
 
@@ -246,7 +270,7 @@ class __TwigTemplate_3a355774ed1b3db57b29f0af529bc2b38cce6972fe374ed55611fb767ee
 
     public function getDebugInfo()
     {
-        return array (  187 => 131,  104 => 51,  95 => 45,  88 => 41,  69 => 25,  65 => 24,  61 => 23,  57 => 22,  53 => 21,  49 => 20,  43 => 17,  39 => 16,  35 => 15,  19 => 1,);
+        return array (  232 => 146,  218 => 142,  208 => 141,  204 => 140,  201 => 139,  197 => 138,  187 => 131,  104 => 51,  95 => 45,  88 => 41,  69 => 25,  65 => 24,  61 => 23,  57 => 22,  53 => 21,  49 => 20,  43 => 17,  39 => 16,  35 => 15,  19 => 1,);
     }
 }
 /* <!DOCTYPE HTML>*/
@@ -386,19 +410,14 @@ class __TwigTemplate_3a355774ed1b3db57b29f0af529bc2b38cce6972fe374ed55611fb767ee
 /*             <dt class="t_4"></dt>*/
 /*             <dd>*/
 /*                 <ul class="list_page_1">*/
-/* */
+/*                   {% for d in data %}*/
 /*                      <li style="padding: 0px 10px !important; height: auto; overflow: hidden; line-height: 20px !important;">*/
-/*                         <a href="/userinfo?Id=8167" class="addInfoP" style="">*/
-/*                             <p class="addInfoPl fl"><span style="color: #333;">test1</span><span style="color: #999; font-size: 0.7em;">成人 &nbsp;&nbsp;男</span></p>*/
-/*                             <p class="addInfoPr fl"><span style="color: #999; font-size: 0.7em;">身份证</span><span style="color: #333;">暂无身份证信息</span></p>*/
+/*                         <a href="/user/editOutUser/Id/{{ d.id }}" class="addInfoP" style="height:auto;">*/
+/*                             <p class="addInfoPl fl"><span style="color: #333;">{{ d.name }}</span><span style="color: #999; font-size: 0.7em;">{% if d.sex==0 %} &nbsp;&nbsp;男{% elseif d.sex==1 %}&nbsp;&nbsp;女{% endif %}</span></p>*/
+/*                             <p class="addInfoPr fl"><span style="color: #999; font-size: 0.7em;">身份证</span><span style="color: #333;">{% if d.idNum=="" %}暂无身份证信息{% else %}{{d.idNum}}{% endif %}</span></p>*/
 /*                         </a>*/
 /*                     </li>*/
-/*                      <li style="padding: 0px 10px !important; height: auto; overflow: hidden; line-height: 20px !important;">*/
-/*                         <a href="/userinfo?Id=8168" class="addInfoP" style="">*/
-/*                             <p class="addInfoPl fl"><span style="color: #333;">shenm</span><span style="color: #999; font-size: 0.7em;">儿童 &nbsp;&nbsp;女</span></p>*/
-/*                             <p class="addInfoPr fl"><span style="color: #999; font-size: 0.7em;">身份证</span><span style="color: #333;">暂无身份证信息</span></p>*/
-/*                         </a>*/
-/*                     </li>*/
+/*                   {% endfor %}*/
 /*                 </ul>*/
 /*             </dd>*/
 /*         </dl>*/

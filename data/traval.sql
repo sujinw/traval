@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2016-09-17 22:12:42
+Date: 2016-09-19 21:39:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -185,22 +185,26 @@ CREATE TABLE `traval_order` (
 -- ----------------------------
 DROP TABLE IF EXISTS `traval_outuser`;
 CREATE TABLE `traval_outuser` (
-  `id` int(11) NOT NULL,
-  `uid` int(11) DEFAULT '0' COMMENT '所属会员',
-  `name` varchar(16) DEFAULT NULL COMMENT '出行人姓名',
-  `mobile` int(11) DEFAULT NULL COMMENT '出行人联系手机',
-  `sex` int(2) DEFAULT NULL COMMENT '出行人性别',
-  `AgeArea` int(2) DEFAULT NULL COMMENT '出行人年龄范围1儿童，2年龄',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL DEFAULT '0' COMMENT '所属会员',
+  `name` varchar(16) NOT NULL COMMENT '出行人姓名',
+  `mobile` varchar(11) DEFAULT NULL COMMENT '出行人联系手机',
+  `sex` int(2) DEFAULT NULL COMMENT '出行人性别1男0女',
+  `AgeArea` int(2) NOT NULL COMMENT '出行人年龄范围1儿童，2年龄',
   `id_type` int(2) DEFAULT NULL COMMENT '证件类型',
-  `idNum` int(22) DEFAULT NULL COMMENT '证件号码',
+  `idNum` varchar(22) DEFAULT NULL COMMENT '证件号码',
   `create_time` int(11) DEFAULT NULL COMMENT '创建时间',
-  `is_diplay` int(2) DEFAULT NULL COMMENT '是否显示',
+  `is_display` int(2) DEFAULT '1' COMMENT '是否显示',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of traval_outuser
 -- ----------------------------
+INSERT INTO `traval_outuser` VALUES ('2', '2', '测试33', '13670704506', '0', '1', '1', '', '1474205383', '0');
+INSERT INTO `traval_outuser` VALUES ('4', '2', '测试1', '13670704506', '1', '1', '1', '', '1474291737', '1');
+INSERT INTO `traval_outuser` VALUES ('6', '2', '测试33', '13698054623', '1', '1', '1', '', '1474291796', '1');
+INSERT INTO `traval_outuser` VALUES ('7', '2', 'sdas', '13670704506', '0', '1', '1', '', '1474292001', '1');
 
 -- ----------------------------
 -- Table structure for traval_role

@@ -80,6 +80,10 @@ class userCtrl extends valiCtrl{
 	//出行人员信息
 	public function userOut(){
 			$uid = session::get('traval_userId') ? session::get('traval_userId') : "";
+			$user = new userModel();
+			$data = $user->getOutUserBy("*",array('is_display'=>1));
+			//dump($data);
+			$this->assign("data",$data);
 			$this->assign('uid',$uid);
 			$this->display('outUserinfo.html');
 
@@ -88,26 +92,71 @@ class userCtrl extends valiCtrl{
 	public function outUserAdd(){
 		$uid = I('id');
 		if(IS_POST){
-			//dump(I());
+			// dump(I());echo (int)I('Phone');die;
 			$data = array(
-				'uid' => I('uid'),
+				'uid' => (int)I('uid'),
 				'name' => I('Name'),
 				'mobile' => I('Phone'),
-				'sex' => I('SEX'),
-				'AgeArea' => I('AgeArea'),
-				'id_type' => I('id_type'),
+				'sex' => (int)I('SEX'),
+				'AgeArea' => (int)I('AgeArea'),
+				'id_type' => (int)I('id_type'),
 				'idNum' => I('idNum'),
+				'create_time'=>(int)time()
 			);
 			$user = new userModel();
-			if($res = $user->addOutUser($user)){
-				$this->tips("出行人信息添加成功！","/user/userOut/id/".$uid);
+			if($res = $user->addOutUser($data)){
+				$this->tips("出行人信息添加成功！","/user/userOut/id/".$data['uid']);
 			}else{
-					$this->tips("出行人信息添加失败！","/user/outUserAdd/id/".$uid);
+					$this->tips("出行人信息添加失败！","/user/outUserAdd/id/".$data['uid']);
 			}
 
 		}else{
 			$this->assign('uid',$uid);
 			$this->display('addUserOutinfo.html');
+		}
+	}
+
+	//出行人员编辑
+	public function editOutUser(){
+		$id = I('Id');
+
+		$user = new userModel();
+		if(IS_POST){
+			$data = array(
+				'uid' => (int)I('uid'),
+				'name' => I('Name'),
+				'mobile' => I('Phone'),
+				'sex' => (int)I('SEX'),
+				'AgeArea' => (int)I('AgeArea'),
+				'id_type' => (int)I('id_type'),
+				'idNum' => I('idNum'),
+				'create_time'=>(int)time()
+			);
+			//dump(I());die;
+			$user = new userModel();
+			if($res = $user->editOutUser($data,array('id'=>(int)$id))){
+				$this->tips("出行人信息修改成功！","/user/userOut/id/".$data['uid']);
+			}else{
+					$this->tips("出行人信息修改失败！","/user/editOutUser/id/".$data['uid']);
+			}
+		}else{
+			$info = $user->getOutUserBy('*',array('id'=>$id))[0];
+			$this->assign("info",$info);
+			$this->display('editUserOutinfo.html');
+		}
+	}
+
+	//删除出行人员
+	public function delUserOut(){
+		$id = I('Id');
+		if(IS_AJAX){
+			$user = new userModel();
+			$res = $user->delOutUser(array('id'=>$id));
+			if($res){
+				$this->json("ok",20001,"删除成功！");
+			}else{
+				$this->json("error",40001,"删除失败!");
+			}
 		}
 	}
 }

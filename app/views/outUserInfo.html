@@ -135,19 +135,14 @@
             <dt class="t_4"></dt>
             <dd>
                 <ul class="list_page_1">
-
+                  {% for d in data %}
                      <li style="padding: 0px 10px !important; height: auto; overflow: hidden; line-height: 20px !important;">
-                        <a href="/userinfo?Id=8167" class="addInfoP" style="">
-                            <p class="addInfoPl fl"><span style="color: #333;">test1</span><span style="color: #999; font-size: 0.7em;">成人 &nbsp;&nbsp;男</span></p>
-                            <p class="addInfoPr fl"><span style="color: #999; font-size: 0.7em;">身份证</span><span style="color: #333;">暂无身份证信息</span></p>
+                        <a href="/user/editOutUser/Id/{{ d.id }}" class="addInfoP" style="height:auto;">
+                            <p class="addInfoPl fl"><span style="color: #333;">{{ d.name }}</span><span style="color: #999; font-size: 0.7em;">{% if d.sex==0 %} &nbsp;&nbsp;男{% elseif d.sex==1 %}&nbsp;&nbsp;女{% endif %}</span></p>
+                            <p class="addInfoPr fl"><span style="color: #999; font-size: 0.7em;">身份证</span><span style="color: #333;">{% if d.idNum=="" %}暂无身份证信息{% else %}{{d.idNum}}{% endif %}</span></p>
                         </a>
                     </li>
-                     <li style="padding: 0px 10px !important; height: auto; overflow: hidden; line-height: 20px !important;">
-                        <a href="/userinfo?Id=8168" class="addInfoP" style="">
-                            <p class="addInfoPl fl"><span style="color: #333;">shenm</span><span style="color: #999; font-size: 0.7em;">儿童 &nbsp;&nbsp;女</span></p>
-                            <p class="addInfoPr fl"><span style="color: #999; font-size: 0.7em;">身份证</span><span style="color: #333;">暂无身份证信息</span></p>
-                        </a>
-                    </li>
+                  {% endfor %}
                 </ul>
             </dd>
         </dl>

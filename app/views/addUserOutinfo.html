@@ -112,8 +112,8 @@
 
             <select name="AgeArea">
                 <option value="">--请选择--</option>
-                <option value="1">成人</option>
-                <option value="0">儿童</option>
+                <option value="2">成人</option>
+                <option value="1">儿童</option>
             </select>
         </div>
         <div class="ui-form-item ui-border-b ui-form-itemUser">
@@ -128,12 +128,12 @@
             <input type="hidden" value="{{ uid }}" name="uid" />
         </div>
         <div class="ui-btn-wrap">
-                <button class="ui-btn-lg ui-btn-danger2" type="button" onclick="sub(0)">完成</button>
+                <button class="ui-btn-lg ui-btn-danger2" type="button" onclick="sub({{ uid }})">完成</button>
         </div>
     </form>
     <script>
         function sub(data) {
-            $("input[name='Id']").val(data);
+            $("input[name='uid']").val(data);
             var name = $("input[name='Name']").val();
             //   var bir = $("input[name='Birthday']").val();
             // var caid = $("input[name='CaidNO']").val();

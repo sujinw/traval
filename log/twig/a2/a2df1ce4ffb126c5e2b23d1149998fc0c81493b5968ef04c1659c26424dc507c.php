@@ -1,7 +1,7 @@
 <?php
 
-/* addUserOutinfo.html */
-class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a4655f extends Twig_Template
+/* editUserOutinfo.html */
+class __TwigTemplate_862dc07cbfe7c297a09da2d25e1c4a5c03afd10ceb05c4ca10f512ad746427d7 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -28,45 +28,46 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no\">
     <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">
     <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\">
+
     <!-- <link rel=\"stylesheet\" type=\"text/css\" href=\"http://i.gtimg.cn/vipstyle/frozenui/1.2.1/css/global.css?_bid=306\"/> -->
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 14
-        echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Css/global.css\">
     <link rel=\"stylesheet\" type=\"text/css\" href=\"";
         // line 15
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/Css/demo.css\">
+        echo "/Css/global.css\">
     <link rel=\"stylesheet\" type=\"text/css\" href=\"";
         // line 16
+        echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
+        echo "/Css/demo.css\">
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        // line 17
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Css/main.css\">
     <!-- <script src=\"http://i.gtimg.cn/vipstyle/frozenjs/lib/zepto.min.js?_bid=304\"></script>
             <script src=\"http://i.gtimg.cn/vipstyle/frozenjs/1.0.1/frozen.js?_bid=304\"></script> -->
     <script type=\"text/javascript\" src=\"";
-        // line 19
+        // line 20
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Scripts/zepto.min.js\"></script>
     <script type=\"text/javascript\" src=\"";
-        // line 20
+        // line 21
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Scripts/frozen.js\"></script>
     <script type=\"text/javascript\" src=\"";
-        // line 21
+        // line 22
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Scripts/jquery1.42.min.js\"></script>
     <script type=\"text/javascript\" src=\"";
-        // line 22
-        echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/scripts/jquery.SuperSlide.2.1.1.js\"></script>
-    <link href=\"";
         // line 23
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/layer/layer.css\" rel=\"stylesheet\" media=\"all\" />
-    <script src=\"";
+        echo "/Scripts/jquery.SuperSlide.2.1.1.js\"></script>
+    <link href=\"";
         // line 24
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
-        echo "/scripts/layer.m.js\" type=\"text/javascript\"></script>
+        echo "/Css/layer.css\" rel=\"stylesheet\" media=\"all\" />
+    <script src=\"";
+        // line 25
+        echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
+        echo "/Scripts/layer.m.js\" type=\"text/javascript\"></script>
         <script>
             function alert(data) {
                 layer.open({
@@ -82,30 +83,30 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
     <div id=\"onediv\" style=\"margin-left: auto; margin-right: auto\">
         <ul id=\"nav\" class=\"nav clearfix\">
 
-                    <li class=\"nLi nLiOne\"><a href=\"/index\"><span class=\"cityP\" style=\"font-size: 16px;\">&nbsp;&nbsp;<img src=\"";
-        // line 40
+    <li class=\"nLi nLiOne\"><a href=\"/index\"><span class=\"cityP\" style=\"font-size: 16px;\">&nbsp;&nbsp;<img src=\"";
+        // line 41
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/images/tit1.png\" width=\"30\" height=\"30\"></span></a></li>
 
-            <li class=\"nLi nLiTwo\">
-                <h3><a href=\"/index/index\" style=\"display: inline-block; width: 100%; height: 30px;\">
+    <li class=\"nLi nLiTwo\">
+        <h3><a href=\"/index/index\" style=\"display: inline-block; width: 100%; height: 30px;\">
                     <img src=\"";
-        // line 44
+        // line 45
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/logo.png\" height=\"30\" /></a></h3>
-            </li>
+    </li>
 
-            <li class=\"nLi nLiThree\">
-                <div class=\"topR\" style=\"\">
-                    <a href=\"/user/index\">
-                        <img src=\"";
-        // line 50
+    <li class=\"nLi nLiThree\">
+        <div class=\"topR\" style=\"\">
+            <a href=\"/user/index\">
+                <img src=\"";
+        // line 51
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/tit2.png\" width=\"\" height=\"30\" style=\"display: -webkit-box; -webkit-box-flex: 0.5; -webkit-box-align: center; -webkit-box-pack: center; -webkit-box-orient: vertical; text-align: center; margin-left: auto; margin-right: auto;\"></a>
-                </div>
+        </div>
 
-            </li>
-        </ul>
+    </li>
+</ul>
         <script id=\"jsID\" type=\"text/javascript\">
 
             \$(\".nLi\").click(function () {
@@ -143,54 +144,96 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
     }
 </style>
 <body style=\"background: #fff\">
-    <form action=\"/user/outUserAdd\" id=\"LoginForm\" method=\"post\">
+    <form action=\"/user/editOutUser\" id=\"LoginForm\" method=\"post\">
         <div class=\"ui-form-item ui-border-b ui-form-itemUser\">
             <label for=\"#\">出行人姓名</label>
-            <input type=\"text\" name=\"Name\" value=\"\" placeholder=\"姓名\" />
+            <input type=\"text\" name=\"Name\" value=\"";
+        // line 96
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "name", array()), "html", null, true);
+        echo "\" placeholder=\"姓名\" />
         </div>
         <div class=\"ui-form-item ui-border-b ui-form-itemUser\">
             <label for=\"#\">手机号码</label>
-            <input type=\"text\" value=\"\" placeholder=\"手机\" name=\"Phone\" />
+            <input type=\"text\" value=\"";
+        // line 100
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "mobile", array()), "html", null, true);
+        echo "\" placeholder=\"手机\" name=\"Phone\" />
         </div>
         <div class=\"ui-form-item ui-border-b ui-form-itemUser\">
             <label for=\"#\">性&nbsp;&nbsp;&nbsp;别 </label>
             <select name=\"SEX\">
                 <option value=\"\">--请选择--</option>
-                <option value=\"0\">男</option>
-                <option value=\"1\">女</option>
+                <option value=\"0\" ";
+        // line 106
+        if (($this->getAttribute((isset($context["info"]) ? $context["info"] : null), "sex", array()) == 0)) {
+            echo "selected=\"selected\"";
+        }
+        echo ">男</option>
+                <option value=\"1\" ";
+        // line 107
+        if (($this->getAttribute((isset($context["info"]) ? $context["info"] : null), "sex", array()) == 1)) {
+            echo "selected=\"selected\"";
+        }
+        echo ">女</option>
             </select>
         </div>
-
         <div class=\"ui-form-item ui-border-b ui-form-itemUser\">
             <label for=\"#\">年龄范围 </label>
 
             <select name=\"AgeArea\">
                 <option value=\"\">--请选择--</option>
-                <option value=\"2\">成人</option>
-                <option value=\"1\">儿童</option>
+                <option value=\"1\" ";
+        // line 115
+        if (($this->getAttribute((isset($context["info"]) ? $context["info"] : null), "AgeArea", array()) == 0)) {
+            echo "selected=\"selected\"";
+        }
+        echo ">成人</option>
+                <option value=\"0\" ";
+        // line 116
+        if (($this->getAttribute((isset($context["info"]) ? $context["info"] : null), "AgeArea", array()) == 0)) {
+            echo "selected=\"selected\"";
+        }
+        echo ">儿童</option>
             </select>
         </div>
         <div class=\"ui-form-item ui-border-b ui-form-itemUser\">
             <label for=\"#\">证件类型</label>
-            <select name=\"id_type\">
-                <option value=\"1\">身份证</option>
+            <select>
+                <option value=\"0\">身份证</option>
             </select>
         </div>
         <div class=\"ui-form-item ui-border-b ui-form-itemUser\">
             <label for=\"#\">证件号码</label>
-            <input type=\"text\" value=\"\" placeholder=\"可不填\" name=\"idNum\" />
+            <input type=\"text\" value=\"";
+        // line 127
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "idNum", array()), "html", null, true);
+        echo "\" placeholder=\"可不填\" name=\"idNum\" />
             <input type=\"hidden\" value=\"";
         // line 128
-        echo twig_escape_filter($this->env, (isset($context["uid"]) ? $context["uid"] : null), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "uid", array()), "html", null, true);
         echo "\" name=\"uid\" />
+            <input type=\"hidden\" name=\"Id\" value=\"";
+        // line 129
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "id", array()), "html", null, true);
+        echo "\">
         </div>
         <div class=\"ui-btn-wrap\">
+                <button class=\"ui-btn-lg ui-btn-danger2\" type=\"button\" onclick=\"del(";
+        // line 132
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "id", array()), "html", null, true);
+        echo ")\" style=\"width: 40%; float: left; background-color: #ccc;\">删除</button>
                 <button class=\"ui-btn-lg ui-btn-danger2\" type=\"button\" onclick=\"sub(";
-        // line 131
-        echo twig_escape_filter($this->env, (isset($context["uid"]) ? $context["uid"] : null), "html", null, true);
-        echo ")\">完成</button>
+        // line 133
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "id", array()), "html", null, true);
+        echo ")\" style=\"width: 40%;float: right\">保存</button>
         </div>
     </form>
+        <script>
+            var data = \"0\";
+            \$(\"select[name='SEX']\").val(data);
+            var date = \"1\";
+            \$(\"select[name='AgeArea']\").val(date);
+        </script>
     <script>
         function sub(data) {
             \$(\"input[name='uid']\").val(data);
@@ -233,8 +276,34 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
             }
         }
 
-        function del() {
-            window.location.href = \"/userinfo/Delete?Id=\";
+        //shanchu
+        function del(id) {
+          layer.open({
+              content: '您确定要删除这条数据吗？'
+              ,btn: ['确定', '取消']
+               ,anim: 'up'
+              ,yes: function(index){
+
+                layer.close(index);
+                \$.ajax({
+                  url:\"";
+        // line 194
+        echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
+        echo "/user/delUserOut\",
+                  type:\"POST\",
+                  data:{
+                    Id:id
+                  },
+                  success:function(data){
+                    alert(data.msg);
+                  }
+                })
+              },no:function(index){
+                layer.close(index);
+              }
+
+            });
+
         }
     </script>
     <script type=\"text/javascript\">
@@ -271,7 +340,7 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
 
     public function getTemplateName()
     {
-        return "addUserOutinfo.html";
+        return "editUserOutinfo.html";
     }
 
     public function isTraitable()
@@ -281,7 +350,7 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
 
     public function getDebugInfo()
     {
-        return array (  190 => 131,  184 => 128,  103 => 50,  94 => 44,  87 => 40,  68 => 24,  64 => 23,  60 => 22,  56 => 21,  52 => 20,  48 => 19,  42 => 16,  38 => 15,  34 => 14,  19 => 1,);
+        return array (  291 => 194,  227 => 133,  223 => 132,  217 => 129,  213 => 128,  209 => 127,  193 => 116,  187 => 115,  174 => 107,  168 => 106,  159 => 100,  152 => 96,  104 => 51,  95 => 45,  88 => 41,  69 => 25,  65 => 24,  61 => 23,  57 => 22,  53 => 21,  49 => 20,  43 => 17,  39 => 16,  35 => 15,  19 => 1,);
     }
 }
 /* <!DOCTYPE HTML>*/
@@ -296,6 +365,7 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
 /*     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">*/
 /*     <meta name="apple-mobile-web-app-capable" content="yes">*/
 /*     <meta name="apple-mobile-web-app-status-bar-style" content="black">*/
+/* */
 /*     <!-- <link rel="stylesheet" type="text/css" href="http://i.gtimg.cn/vipstyle/frozenui/1.2.1/css/global.css?_bid=306"/> -->*/
 /*     <link rel="stylesheet" type="text/css" href="{{ static }}/Css/global.css">*/
 /*     <link rel="stylesheet" type="text/css" href="{{ static }}/Css/demo.css">*/
@@ -305,9 +375,9 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
 /*     <script type="text/javascript" src="{{ static }}/Scripts/zepto.min.js"></script>*/
 /*     <script type="text/javascript" src="{{ static }}/Scripts/frozen.js"></script>*/
 /*     <script type="text/javascript" src="{{ static }}/Scripts/jquery1.42.min.js"></script>*/
-/*     <script type="text/javascript" src="{{ static }}/scripts/jquery.SuperSlide.2.1.1.js"></script>*/
-/*     <link href="{{ static }}/layer/layer.css" rel="stylesheet" media="all" />*/
-/*     <script src="{{ static }}/scripts/layer.m.js" type="text/javascript"></script>*/
+/*     <script type="text/javascript" src="{{ static }}/Scripts/jquery.SuperSlide.2.1.1.js"></script>*/
+/*     <link href="{{ static }}/Css/layer.css" rel="stylesheet" media="all" />*/
+/*     <script src="{{ static }}/Scripts/layer.m.js" type="text/javascript"></script>*/
 /*         <script>*/
 /*             function alert(data) {*/
 /*                 layer.open({*/
@@ -323,21 +393,21 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
 /*     <div id="onediv" style="margin-left: auto; margin-right: auto">*/
 /*         <ul id="nav" class="nav clearfix">*/
 /* */
-/*                     <li class="nLi nLiOne"><a href="/index"><span class="cityP" style="font-size: 16px;">&nbsp;&nbsp;<img src="{{ static }}/images/tit1.png" width="30" height="30"></span></a></li>*/
+/*     <li class="nLi nLiOne"><a href="/index"><span class="cityP" style="font-size: 16px;">&nbsp;&nbsp;<img src="{{ static }}/images/tit1.png" width="30" height="30"></span></a></li>*/
 /* */
-/*             <li class="nLi nLiTwo">*/
-/*                 <h3><a href="/index/index" style="display: inline-block; width: 100%; height: 30px;">*/
+/*     <li class="nLi nLiTwo">*/
+/*         <h3><a href="/index/index" style="display: inline-block; width: 100%; height: 30px;">*/
 /*                     <img src="{{ static }}/Images/logo.png" height="30" /></a></h3>*/
-/*             </li>*/
+/*     </li>*/
 /* */
-/*             <li class="nLi nLiThree">*/
-/*                 <div class="topR" style="">*/
-/*                     <a href="/user/index">*/
-/*                         <img src="{{ static }}/Images/tit2.png" width="" height="30" style="display: -webkit-box; -webkit-box-flex: 0.5; -webkit-box-align: center; -webkit-box-pack: center; -webkit-box-orient: vertical; text-align: center; margin-left: auto; margin-right: auto;"></a>*/
-/*                 </div>*/
+/*     <li class="nLi nLiThree">*/
+/*         <div class="topR" style="">*/
+/*             <a href="/user/index">*/
+/*                 <img src="{{ static }}/Images/tit2.png" width="" height="30" style="display: -webkit-box; -webkit-box-flex: 0.5; -webkit-box-align: center; -webkit-box-pack: center; -webkit-box-orient: vertical; text-align: center; margin-left: auto; margin-right: auto;"></a>*/
+/*         </div>*/
 /* */
-/*             </li>*/
-/*         </ul>*/
+/*     </li>*/
+/* </ul>*/
 /*         <script id="jsID" type="text/javascript">*/
 /* */
 /*             $(".nLi").click(function () {*/
@@ -375,48 +445,55 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
 /*     }*/
 /* </style>*/
 /* <body style="background: #fff">*/
-/*     <form action="/user/outUserAdd" id="LoginForm" method="post">*/
+/*     <form action="/user/editOutUser" id="LoginForm" method="post">*/
 /*         <div class="ui-form-item ui-border-b ui-form-itemUser">*/
 /*             <label for="#">出行人姓名</label>*/
-/*             <input type="text" name="Name" value="" placeholder="姓名" />*/
+/*             <input type="text" name="Name" value="{{ info.name }}" placeholder="姓名" />*/
 /*         </div>*/
 /*         <div class="ui-form-item ui-border-b ui-form-itemUser">*/
 /*             <label for="#">手机号码</label>*/
-/*             <input type="text" value="" placeholder="手机" name="Phone" />*/
+/*             <input type="text" value="{{ info.mobile }}" placeholder="手机" name="Phone" />*/
 /*         </div>*/
 /*         <div class="ui-form-item ui-border-b ui-form-itemUser">*/
 /*             <label for="#">性&nbsp;&nbsp;&nbsp;别 </label>*/
 /*             <select name="SEX">*/
 /*                 <option value="">--请选择--</option>*/
-/*                 <option value="0">男</option>*/
-/*                 <option value="1">女</option>*/
+/*                 <option value="0" {% if info.sex==0 %}selected="selected"{% endif %}>男</option>*/
+/*                 <option value="1" {% if info.sex==1 %}selected="selected"{% endif %}>女</option>*/
 /*             </select>*/
 /*         </div>*/
-/* */
 /*         <div class="ui-form-item ui-border-b ui-form-itemUser">*/
 /*             <label for="#">年龄范围 </label>*/
 /* */
 /*             <select name="AgeArea">*/
 /*                 <option value="">--请选择--</option>*/
-/*                 <option value="2">成人</option>*/
-/*                 <option value="1">儿童</option>*/
+/*                 <option value="1" {% if info.AgeArea==0 %}selected="selected"{% endif %}>成人</option>*/
+/*                 <option value="0" {% if info.AgeArea==0 %}selected="selected"{% endif %}>儿童</option>*/
 /*             </select>*/
 /*         </div>*/
 /*         <div class="ui-form-item ui-border-b ui-form-itemUser">*/
 /*             <label for="#">证件类型</label>*/
-/*             <select name="id_type">*/
-/*                 <option value="1">身份证</option>*/
+/*             <select>*/
+/*                 <option value="0">身份证</option>*/
 /*             </select>*/
 /*         </div>*/
 /*         <div class="ui-form-item ui-border-b ui-form-itemUser">*/
 /*             <label for="#">证件号码</label>*/
-/*             <input type="text" value="" placeholder="可不填" name="idNum" />*/
-/*             <input type="hidden" value="{{ uid }}" name="uid" />*/
+/*             <input type="text" value="{{ info.idNum }}" placeholder="可不填" name="idNum" />*/
+/*             <input type="hidden" value="{{ info.uid }}" name="uid" />*/
+/*             <input type="hidden" name="Id" value="{{ info.id }}">*/
 /*         </div>*/
 /*         <div class="ui-btn-wrap">*/
-/*                 <button class="ui-btn-lg ui-btn-danger2" type="button" onclick="sub({{ uid }})">完成</button>*/
+/*                 <button class="ui-btn-lg ui-btn-danger2" type="button" onclick="del({{ info.id }})" style="width: 40%; float: left; background-color: #ccc;">删除</button>*/
+/*                 <button class="ui-btn-lg ui-btn-danger2" type="button" onclick="sub({{ info.id }})" style="width: 40%;float: right">保存</button>*/
 /*         </div>*/
 /*     </form>*/
+/*         <script>*/
+/*             var data = "0";*/
+/*             $("select[name='SEX']").val(data);*/
+/*             var date = "1";*/
+/*             $("select[name='AgeArea']").val(date);*/
+/*         </script>*/
 /*     <script>*/
 /*         function sub(data) {*/
 /*             $("input[name='uid']").val(data);*/
@@ -459,8 +536,31 @@ class __TwigTemplate_7ab803d71166ee38dd076911e813f6d0632ba8ab9e744276577c9666e5a
 /*             }*/
 /*         }*/
 /* */
-/*         function del() {*/
-/*             window.location.href = "/userinfo/Delete?Id=";*/
+/*         //shanchu*/
+/*         function del(id) {*/
+/*           layer.open({*/
+/*               content: '您确定要删除这条数据吗？'*/
+/*               ,btn: ['确定', '取消']*/
+/*                ,anim: 'up'*/
+/*               ,yes: function(index){*/
+/* */
+/*                 layer.close(index);*/
+/*                 $.ajax({*/
+/*                   url:"{{ APP }}/user/delUserOut",*/
+/*                   type:"POST",*/
+/*                   data:{*/
+/*                     Id:id*/
+/*                   },*/
+/*                   success:function(data){*/
+/*                     alert(data.msg);*/
+/*                   }*/
+/*                 })*/
+/*               },no:function(index){*/
+/*                 layer.close(index);*/
+/*               }*/
+/* */
+/*             });*/
+/* */
 /*         }*/
 /*     </script>*/
 /*     <script type="text/javascript">*/

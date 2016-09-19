@@ -33,10 +33,58 @@ class userModel extends model{
         }
     }
 
-
+		/**
+		 * [addOutUser 添加出行表记录]
+		 * @param [type] $data [description]
+		 */
 		public function addOutUser($data){
+			//print_r($data);
+			$res = $this->insert($this->out,$data);
+			// dump($this->last_query());
+			if($res){
+				return $res;
+			}else{
+				return false;
+			}
+		}
 
-			if($res = $this->insert($data)){
+		/**
+		 * [getOutUserBy 根据条件查询所列字段]
+		 * @param  [array Or *] $field [description]
+		 * @param  [array] $where [description]
+		 * @return [type]        [description]
+		 */
+		public function getOutUserBy($field,$where){
+			$res = $this->select($this->out,$field,$where);#die;
+			if($res){
+				return $res;
+			}else{
+				return $res;
+			}
+		}
+
+		/**
+		 * [editOutUser 修改出行人员表记录]
+		 * @param  [type] $data  [description]
+		 * @param  [type] $where [description]
+		 * @return [type]        [description]
+		 */
+		public function editOutUser($data,$where){
+			$res = $this->update($this->out,$data,$where);#die;
+			if($res){
+				return $res;
+			}else{
+				return false;
+			}
+		}
+
+		/**
+		 * [delOutUser 删除出行人员记录]
+		 * @param  [type] $where [description]
+		 * @return [type]        [description]
+		 */
+		public function delOutUser($where){
+			if($res = $this->delete($this->out,$where)){
 				return $res;
 			}else{
 				return false;
