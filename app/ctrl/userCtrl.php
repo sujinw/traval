@@ -2,6 +2,7 @@
 namespace app\ctrl;
 use core\lib\controller;
 use app\model\userModel;
+use admin\model\travalModel;
 use core\lib\library\session;
 /**
 * 前台登录功能
@@ -157,6 +158,26 @@ class userCtrl extends valiCtrl{
 			}else{
 				$this->json("error",40001,"删除失败!");
 			}
+		}
+	}
+
+	/**
+	 * 订单
+	 */
+	public function setOrder(){
+		$id = I('id');
+		$traval = new travalModel();
+		$info = $traval->selectDetailsBy(array('id'=>$id),array('id','title','signeuptime','orderTotalNum','orderYesNum','price','signnum'))[0];
+		//dump($info);
+		$this->assign("info",$info);
+		$this->display('order.html');
+	}
+
+	//异步获取出行人员数据
+	public function getUserOut(){
+		$uid = I('uid');
+		if(IS_AJAX){
+
 		}
 	}
 }

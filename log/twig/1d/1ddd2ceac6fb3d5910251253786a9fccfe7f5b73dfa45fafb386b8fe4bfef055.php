@@ -225,7 +225,7 @@ class __TwigTemplate_dbc313a701cf14c6b6405bf5c53c7a97fba09580fb914bdc8e5815f4642
 <body>
     <div id=\"onediv\" style=\"margin-left: auto; margin-right: auto\">
         <ul id=\"nav\" class=\"nav clearfix\">
-            
+
                <li class=\"nLi nLiOne\"><a href=\"/index\"><span class=\"cityP\" style=\"font-size: 16px;\">&nbsp;&nbsp;<img src=\"";
         // line 166
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
@@ -244,7 +244,7 @@ class __TwigTemplate_dbc313a701cf14c6b6405bf5c53c7a97fba09580fb914bdc8e5815f4642
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Picture/tit2.png\" width=\"\" height=\"30\" style=\"display: -webkit-box; -webkit-box-flex: 0.5; -webkit-box-align: center; -webkit-box-pack: center; -webkit-box-orient: vertical; text-align: center; margin-left: auto; margin-right: auto;\"></a>
                 </div>
-       
+
             </li>
         </ul>
         <script id=\"jsID\" type=\"text/javascript\">
@@ -354,7 +354,7 @@ class __TwigTemplate_dbc313a701cf14c6b6405bf5c53c7a97fba09580fb914bdc8e5815f4642
         // line 234
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Picture/9ddfc3a4d57245f8979750822f79cdb0.gif\" width=\"33\" height=\"33\"></span>
-                        
+
                     </div>
                 </li>
 
@@ -389,7 +389,7 @@ class __TwigTemplate_dbc313a701cf14c6b6405bf5c53c7a97fba09580fb914bdc8e5815f4642
             // line 260
             echo "                                    <a href=\"";
             echo twig_escape_filter($this->env, (isset($context["ROOT"]) ? $context["ROOT"] : null), "html", null, true);
-            echo "/traval/setOrder/id/";
+            echo "/user/setOrder/id/";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "id", array()), "html", null, true);
             echo "\" style=\"color: #fff;\">预定</a>
                                     ";
@@ -409,7 +409,7 @@ class __TwigTemplate_dbc313a701cf14c6b6405bf5c53c7a97fba09580fb914bdc8e5815f4642
                 </ul>
                 <ul class=\"ui-tab-content\" style=\"width: 100%;\">
                 \t<li class=\"div1\"></li>
-                    <li class=\"div2\" style=\"display: none\">暂无内容...</li> 
+                    <li class=\"div2\" style=\"display: none\">暂无内容...</li>
                     <li style=\"width: 100% !important; padding: 0px 0px !important; display: none\" class=\"div2\">
 
                     </li>
@@ -458,7 +458,7 @@ class __TwigTemplate_dbc313a701cf14c6b6405bf5c53c7a97fba09580fb914bdc8e5815f4642
             <!--/ui-tab-->
 
             <div class=\" ui-btn-group-bottom \" style=\"width: 100%;\">
-                
+
             </div>
             <!--/detailBtn-->
 
@@ -527,7 +527,6 @@ class __TwigTemplate_dbc313a701cf14c6b6405bf5c53c7a97fba09580fb914bdc8e5815f4642
 </script>
 
 </html>
-
 ";
     }
 
@@ -710,7 +709,7 @@ class __TwigTemplate_dbc313a701cf14c6b6405bf5c53c7a97fba09580fb914bdc8e5815f4642
 /* <body>*/
 /*     <div id="onediv" style="margin-left: auto; margin-right: auto">*/
 /*         <ul id="nav" class="nav clearfix">*/
-/*             */
+/* */
 /*                <li class="nLi nLiOne"><a href="/index"><span class="cityP" style="font-size: 16px;">&nbsp;&nbsp;<img src="{{ static }}/Picture/tit1.png" width="30" height="30"></span></a></li>*/
 /*             <li class="nLi nLiTwo">*/
 /*                 <h3><a href="/index/index" style="display: inline-block; width: 100%; height: 30px;">*/
@@ -720,7 +719,7 @@ class __TwigTemplate_dbc313a701cf14c6b6405bf5c53c7a97fba09580fb914bdc8e5815f4642
 /*                 <div class="topR" style="">*/
 /*                     <a href="/user/index"><img src="{{ static }}/Picture/tit2.png" width="" height="30" style="display: -webkit-box; -webkit-box-flex: 0.5; -webkit-box-align: center; -webkit-box-pack: center; -webkit-box-orient: vertical; text-align: center; margin-left: auto; margin-right: auto;"></a>*/
 /*                 </div>*/
-/*        */
+/* */
 /*             </li>*/
 /*         </ul>*/
 /*         <script id="jsID" type="text/javascript">*/
@@ -780,7 +779,7 @@ class __TwigTemplate_dbc313a701cf14c6b6405bf5c53c7a97fba09580fb914bdc8e5815f4642
 /*                                 <img src="{{ static }}/Picture/b10ab8eee0f64cbfadb45404add07dd7.gif" width="33" height="33"></span>*/
 /*                             <span>*/
 /*                                 <img src="{{ static }}/Picture/9ddfc3a4d57245f8979750822f79cdb0.gif" width="33" height="33"></span>*/
-/*                         */
+/* */
 /*                     </div>*/
 /*                 </li>*/
 /* */
@@ -805,7 +804,7 @@ class __TwigTemplate_dbc313a701cf14c6b6405bf5c53c7a97fba09580fb914bdc8e5815f4642
 /*                                     <a href="javascript:void(0)" style="color: #fff;">已下架</a>*/
 /* */
 /*                                     {% else %}*/
-/*                                     <a href="{{ ROOT }}/traval/setOrder/id/{{ info.id }}" style="color: #fff;">预定</a>*/
+/*                                     <a href="{{ ROOT }}/user/setOrder/id/{{ info.id }}" style="color: #fff;">预定</a>*/
 /*                                     {% endif %}*/
 /*                             </p>*/
 /* */
@@ -821,7 +820,7 @@ class __TwigTemplate_dbc313a701cf14c6b6405bf5c53c7a97fba09580fb914bdc8e5815f4642
 /*                 </ul>*/
 /*                 <ul class="ui-tab-content" style="width: 100%;">*/
 /*                 	<li class="div1"></li>*/
-/*                     <li class="div2" style="display: none">暂无内容...</li> */
+/*                     <li class="div2" style="display: none">暂无内容...</li>*/
 /*                     <li style="width: 100% !important; padding: 0px 0px !important; display: none" class="div2">*/
 /* */
 /*                     </li>*/
@@ -867,7 +866,7 @@ class __TwigTemplate_dbc313a701cf14c6b6405bf5c53c7a97fba09580fb914bdc8e5815f4642
 /*             <!--/ui-tab-->*/
 /* */
 /*             <div class=" ui-btn-group-bottom " style="width: 100%;">*/
-/*                 */
+/* */
 /*             </div>*/
 /*             <!--/detailBtn-->*/
 /* */
@@ -936,5 +935,4 @@ class __TwigTemplate_dbc313a701cf14c6b6405bf5c53c7a97fba09580fb914bdc8e5815f4642
 /* </script>*/
 /* */
 /* </html>*/
-/* */
 /* */

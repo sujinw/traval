@@ -174,8 +174,8 @@ class __TwigTemplate_1ec45542372e4b2183d354e434e1e3f2e5049c2d6aaf0de88ccd4606959
                                 setTimeout(function () {
                                     window.location.href = '";
         // line 100
-        echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
-        echo "/user/index';
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "backUrl", array()), "html", null, true);
+        echo "';
                                 }, 2000);
                             }
                         }
@@ -353,7 +353,7 @@ class __TwigTemplate_1ec45542372e4b2183d354e434e1e3f2e5049c2d6aaf0de88ccd4606959
 /*                                     window.store.set(k,data.data[k]);*/
 /*                                 }*/
 /*                                 setTimeout(function () {*/
-/*                                     window.location.href = '{{ APP }}/user/index';*/
+/*                                     window.location.href = '{{ info.backUrl }}';*/
 /*                                 }, 2000);*/
 /*                             }*/
 /*                         }*/

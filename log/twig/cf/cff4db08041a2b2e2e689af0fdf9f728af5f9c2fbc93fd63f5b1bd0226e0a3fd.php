@@ -199,7 +199,10 @@ class __TwigTemplate_34e77cf195055375eb9a31b20971ece7f61067ed4aaedbff74f8865bdf4
         // line 117
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/66.png\" width=\"30\" height=\"30\" style=\"float: left;\">
-\t\t\t\t\t\t<a href=\"/Userinfo/add\" class=\"list_page_t\" style=\"float: left;\">出行人信息</a>
+\t\t\t\t\t\t<a href=\"/user/userOut/id/";
+        // line 118
+        echo twig_escape_filter($this->env, (isset($context["uid"]) ? $context["uid"] : null), "html", null, true);
+        echo "\" class=\"list_page_t\" style=\"float: left;\">出行人信息</a>
 \t\t\t\t\t</li>
 \t\t\t\t\t<li>
 \t\t\t\t\t\t<img src=\"";
@@ -238,7 +241,7 @@ class __TwigTemplate_34e77cf195055375eb9a31b20971ece7f61067ed4aaedbff74f8865bdf4
 
     public function getDebugInfo()
     {
-        return array (  207 => 121,  200 => 117,  193 => 113,  186 => 109,  179 => 105,  172 => 101,  165 => 97,  158 => 93,  114 => 52,  104 => 45,  95 => 39,  82 => 29,  78 => 28,  74 => 27,  70 => 26,  66 => 25,  62 => 24,  58 => 23,  54 => 22,  47 => 18,  43 => 17,  39 => 16,  34 => 14,  19 => 1,);
+        return array (  210 => 121,  204 => 118,  200 => 117,  193 => 113,  186 => 109,  179 => 105,  172 => 101,  165 => 97,  158 => 93,  114 => 52,  104 => 45,  95 => 39,  82 => 29,  78 => 28,  74 => 27,  70 => 26,  66 => 25,  62 => 24,  58 => 23,  54 => 22,  47 => 18,  43 => 17,  39 => 16,  34 => 14,  19 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -358,7 +361,7 @@ class __TwigTemplate_34e77cf195055375eb9a31b20971ece7f61067ed4aaedbff74f8865bdf4
 /* 					</li>*/
 /* 					<li>*/
 /* 						<img src="{{ static }}/Images/66.png" width="30" height="30" style="float: left;">*/
-/* 						<a href="/Userinfo/add" class="list_page_t" style="float: left;">出行人信息</a>*/
+/* 						<a href="/user/userOut/id/{{ uid }}" class="list_page_t" style="float: left;">出行人信息</a>*/
 /* 					</li>*/
 /* 					<li>*/
 /* 						<img src="{{ static }}/Images/22.png" width="30" height="30" style="float: left;">*/

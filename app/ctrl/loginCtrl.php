@@ -18,11 +18,13 @@ class loginCtrl extends authorCtrl{
 	public function login(){
 		if(IS_AJAX){
 			$user = new userModel();
+			$session = new session();
 			$info = $user->getUserById(I('Phone'));
+			$info['backUrl'] = $session->get('referurl');
 			if($info['password'] == md5(I("Pwd"))){
-				$session = new session();
 				$session->set('traval_userName',$info['username']);
 				$session->set('traval_userId',$info['id']);
+
 				$this->json($info,20001,"登录成功！");
 			}else{
 				$this->json("error",40001,"登录失败！");

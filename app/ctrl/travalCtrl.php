@@ -7,7 +7,7 @@ use core\lib;
 * 旅游套餐
 */
 class travalCtrl extends authorCtrl{
-	
+
 	public function detail(){
 		$id = I('id');
 		$traval = new travalModel();
@@ -25,22 +25,7 @@ class travalCtrl extends authorCtrl{
 		$this->display('info.html');
 	}
 
-	/**
-	 * 订单
-	 */
-	public function setOrder(){
-		$id = I('id');
-		$traval = new travalModel();
-		$info = $traval->selectDetailsBy(array('id'=>$id),array('id','title','signeuptime','orderTotalNum','orderYesNum','price','signnum'))[0];
-		//dump($info);
-		$this->assign("info",$info);
-		$this->display('order.html');
-	}
-
-	public function getUserOut(){
-		$uid = I('uid');
-
-	}
+	
 }
 
 ?>

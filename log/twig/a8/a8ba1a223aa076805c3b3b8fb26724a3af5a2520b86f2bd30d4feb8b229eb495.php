@@ -289,7 +289,7 @@ class __TwigTemplate_f1c8227c73cb36c7f506ce57000e2e4db63ade489b49df701b934b28498
             echo ") top  center no-repeat; background-size: 100% 100%;\">
                                         <label class=\"money_img\" style=\"display: block; bottom: 18px; width: auto;\">￥";
             // line 188
-            echo twig_escape_filter($this->env, (isset($context["price"]) ? $context["price"] : null), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "price", array()), "html", null, true);
             echo "起</label>
 
                                     </span>
@@ -669,7 +669,7 @@ class __TwigTemplate_f1c8227c73cb36c7f506ce57000e2e4db63ade489b49df701b934b28498
 /*                             <li>*/
 /*                                 <div class="ui-grid-halve-img">*/
 /*                                     <span style="background: url({{ ROOT }}/{{ d.thumb }}) top  center no-repeat; background-size: 100% 100%;">*/
-/*                                         <label class="money_img" style="display: block; bottom: 18px; width: auto;">￥{{ price }}起</label>*/
+/*                                         <label class="money_img" style="display: block; bottom: 18px; width: auto;">￥{{ d.price }}起</label>*/
 /* */
 /*                                     </span>*/
 /*                                 </div>*/
