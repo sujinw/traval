@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2016-09-19 21:39:27
+Date: 2016-10-03 23:04:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -162,23 +162,31 @@ INSERT INTO `traval_node` VALUES ('4', 'User', null, '1', '用户管理模块', 
 -- ----------------------------
 DROP TABLE IF EXISTS `traval_order`;
 CREATE TABLE `traval_order` (
-  `id` int(11) NOT NULL COMMENT '订单主键id',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '订单主键id',
   `did` int(11) NOT NULL COMMENT '套餐id',
   `uid` int(11) NOT NULL COMMENT '用户id',
-  `user_outTime` int(11) DEFAULT NULL COMMENT '用户出行的时间',
+  `user_outTime` varchar(20) DEFAULT NULL COMMENT '用户出行的时间',
   `order_num` int(11) DEFAULT NULL COMMENT '票数',
-  `out_user` varchar(255) DEFAULT NULL COMMENT '出行人信息，中间用,分割id',
+  `out_user` varchar(255) DEFAULT NULL COMMENT '出行人信息，中间用||分割id',
   `priceTotal` int(11) DEFAULT NULL COMMENT '总价',
   `orderNum` int(11) DEFAULT NULL COMMENT '订单号',
   `create_time` int(11) DEFAULT NULL COMMENT '创建时间',
   `order_status` int(4) DEFAULT NULL COMMENT '订单状态1表示创建成功，未支付，2，支付成功，3，未支付已过期',
   `pay_way` int(4) DEFAULT NULL COMMENT '支付方式1、微信支付2、支付宝支付',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of traval_order
 -- ----------------------------
+INSERT INTO `traval_order` VALUES ('1', '3', '0', '2016', '1', '6||7', '158', '2147483647', '1475504168', '1', '1');
+INSERT INTO `traval_order` VALUES ('2', '3', '0', '2016', '1', '6', '158', '2147483647', '1475504339', '1', '1');
+INSERT INTO `traval_order` VALUES ('3', '3', '0', '2016', '1', '6', '158', '2147483647', '1475504392', '1', '1');
+INSERT INTO `traval_order` VALUES ('4', '3', '0', '2016', '2', '6||7', '316', '2147483647', '1475504537', '1', '2');
+INSERT INTO `traval_order` VALUES ('5', '3', '0', '2016', '1', '6', '158', '2147483647', '1475504601', '1', '1');
+INSERT INTO `traval_order` VALUES ('6', '3', '0', '2016', '1', '6', '158', '2147483647', '1475504633', '1', '1');
+INSERT INTO `traval_order` VALUES ('7', '3', '0', '2016', '2', '6||7', '316', '2147483647', '1475504656', '1', '2');
+INSERT INTO `traval_order` VALUES ('8', '4', '1', '2016', '2', '6||7', '316', '2147483647', '1475504682', '1', '2');
 
 -- ----------------------------
 -- Table structure for traval_outuser
@@ -201,8 +209,8 @@ CREATE TABLE `traval_outuser` (
 -- ----------------------------
 -- Records of traval_outuser
 -- ----------------------------
-INSERT INTO `traval_outuser` VALUES ('2', '2', '测试33', '13670704506', '0', '1', '1', '', '1474205383', '0');
-INSERT INTO `traval_outuser` VALUES ('4', '2', '测试1', '13670704506', '1', '1', '1', '', '1474291737', '1');
+INSERT INTO `traval_outuser` VALUES ('2', '1', '测试33', '13670704506', '0', '1', '1', '', '1474205383', '1');
+INSERT INTO `traval_outuser` VALUES ('4', '1', '测试1', '13670704506', '1', '1', '1', '', '1474291737', '1');
 INSERT INTO `traval_outuser` VALUES ('6', '2', '测试33', '13698054623', '1', '1', '1', '', '1474291796', '1');
 INSERT INTO `traval_outuser` VALUES ('7', '2', 'sdas', '13670704506', '0', '1', '1', '', '1474292001', '1');
 
