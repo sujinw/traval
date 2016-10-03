@@ -169,16 +169,50 @@ class userCtrl extends valiCtrl{
 		$traval = new travalModel();
 		$info = $traval->selectDetailsBy(array('id'=>$id),array('id','title','signeuptime','orderTotalNum','orderYesNum','price','signnum'))[0];
 		//dump($info);
+		$user = new userModel();
+		$session = new session();
+		$outUser = $user->getOutUserBy("*",array('AND'=>array('is_display'=>1,'uid'=>(int)$session->get('traval_userId'))));
 		$this->assign("info",$info);
+		$this->assign("outUser",$outUser);
+		$this->assign("userId",$session->get('traval_userId'));
 		$this->display('order.html');
 	}
 
 	//异步获取出行人员数据
-	public function getUserOut(){
+	public function addUserOrder(){
 		$uid = I('uid');
 		if(IS_AJAX){
-
+			
+			$user = new userModel();
+			$data = I();
+			$data['order_num'] = (int)I('order_num');
+			$data['did'] = (int)I('did');
+			$data['pay_way'] = (int)I('pay_way');
+			$data['orderNum'] = (int)(date('Ymd').time().I('did'));
+			$data['order_status'] = (int)1;
+			$data['create_time'] = (int)time();
+			$data['uid'] = (int)I('uid');
+			if($res = $user->addOrder($data)){
+				$this->json($res,20001,"下单成功");
+			}else{
+				$this->json("error",40001,"下单失败");
+			}
+		}else{
+			return false;
 		}
+	}
+
+	//支付页面
+	public function orderpay(){
+		$user = new userModel();
+		$orderInfo = $user->getOrderBy(array('id'=>(int)I('oid')));
+		if(!$orderInfo){
+			$this->tips("订单不存在","/user");
+		}
+		//ump(date("Y-m-d H:m:s",$orderInfo[0]['create_time']));
+		$orderInfo[0]['create_time'] = date("Y-m-d H:m:s",$orderInfo[0]['create_time']);
+		$this->assign("orderInfo",$orderInfo[0]);
+		$this->display("userOrderPay.html");
 	}
 }
 ?>

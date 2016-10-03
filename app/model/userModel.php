@@ -4,6 +4,8 @@ use core\lib\model;
 class userModel extends model{
 	public $t = "traval_user";
 	public $out = "traval_outuser";
+	public $order = "traval_order";
+	public $traval = "traval_details";
     /**
      * [getUserById 通过username获取用户信息]
      * @param    [type]                   $username [description]
@@ -56,10 +58,11 @@ class userModel extends model{
 		 */
 		public function getOutUserBy($field,$where){
 			$res = $this->select($this->out,$field,$where);#die;
+			// dump($this->last_query());die;
 			if($res){
 				return $res;
 			}else{
-				return $res;
+				return false;
 			}
 		}
 
@@ -90,5 +93,40 @@ class userModel extends model{
 				return false;
 			}
 		}
+
+		/**
+		 * [addOrder 订单]
+		 * @param    [type]                   $data [description]
+		 * @Author   Rukic
+		 * @DateTime 2016-10-03T22:15:43+0800
+		 */
+		public function addOrder($data){
+			$res = $this->insert($this->order,$data);
+			if($res){
+				return $res;
+			}else{
+				return false;
+			}
+		}
+
+	/**
+	 * [getOrderBy 查询订单信息]
+	 * @param    [type]                   $where [description]
+	 * @return   [type]                          [description]
+	 * @Author   Rukic
+	 * @DateTime 2016-10-03T22:31:00+0800
+	 */
+	public function getOrderBy($where){
+		$sql = "SELECT d.thumb,d.title,o.orderNum,o.id,o.user_outTime,o.create_time,o.pay_way,o.priceTotal FROM ".$this->traval." as d LEFT JOIN ".$this->order." AS o ON (o.did=d.id) WHERE o.id=".$where['id'];
+
+		//dump($sql);die;
+		$res = $this->query($sql)->fetchAll();
+		// dump($res);die;
+		if($res){
+			return $res;
+		}else{
+			return false;
+		}
+	}
 }
 ?>

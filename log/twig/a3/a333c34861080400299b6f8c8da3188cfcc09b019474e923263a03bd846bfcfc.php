@@ -103,13 +103,11 @@ class __TwigTemplate_afc07c3efdba2d619240c49e9ee9d41e68b0d8c78e5e265ff01407c8e66
     }
 
 </script>
-
-
 <body style=\"background: #fff\">
     <div id=\"onediv\" style=\"margin-left: auto; margin-right: auto\">
         <ul id=\"nav\" class=\"nav clearfix\">
             <li class=\"nLi nLiOne\"><span class=\"cityP\" style=\"font-size: 16px;\">常州&nbsp;&nbsp;<img src=\"";
-        // line 48
+        // line 46
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Picture/cityp1.png\" width=\"10\" height=\"10\"></span>
 
@@ -141,7 +139,7 @@ class __TwigTemplate_afc07c3efdba2d619240c49e9ee9d41e68b0d8c78e5e265ff01407c8e66
                 <div class=\"ui-searchbar-wrap\" style=\"width: 100% !important; background: #fff; position: relative;\">
 
                     <div class=\"ui-searchbar2\" style=\"background: url(";
-        // line 77
+        // line 75
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/searchbg.png)  bottom no-repeat; border: none; background-size: 100%;\">
                         <div class=\"ui-searchbar-input2\">
@@ -169,7 +167,7 @@ class __TwigTemplate_afc07c3efdba2d619240c49e9ee9d41e68b0d8c78e5e265ff01407c8e66
             <li class=\"nLi nLiThree\">
                 <div class=\"topR\" style=\"\" id=\"href\">
                     <img src=\"";
-        // line 102
+        // line 100
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Picture/tit2.png\" width=\"\" height=\"30\" style=\"display: -webkit-box; -webkit-box-flex: 0.5; -webkit-box-align: center; -webkit-box-pack: center; -webkit-box-orient: vertical; text-align: center; margin-left: auto; margin-right: auto;\">
                 </div>
@@ -204,23 +202,23 @@ class __TwigTemplate_afc07c3efdba2d619240c49e9ee9d41e68b0d8c78e5e265ff01407c8e66
             
             <ul class=\"ui-slider-content\" style=\"margin-bottom: 20px;\">
                     <li class=\"lb\" data=\"http://www.feitrip.cn/order/detail?id=423\"><span style=\"background: url(";
-        // line 134
+        // line 132
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/201606210937213948.jpg) no-repeat; background-size: 100% 100%\"></span></li> 
                     <li class=\"lb\" data=\"http://www.feitrip.cn/order/qdetail?id=500\"><span style=\"background: url(";
-        // line 135
+        // line 133
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/201608311025429463.jpg) no-repeat; background-size: 100% 100%\"></span></li> 
                     <li class=\"lb\" data=\"http://www.feitrip.cn/order/qdetail?id=491\"><span style=\"background: url(";
-        // line 136
+        // line 134
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/201608301137594447.jpg) no-repeat; background-size: 100% 100%\"></span></li> 
                     <li class=\"lb\" data=\"http://www.feitrip.cn/order/detail?id=161\"><span style=\"background: url(";
-        // line 137
+        // line 135
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/201608301135327860.jpg) no-repeat; background-size: 100% 100%\"></span></li> 
                     <li class=\"lb\" data=\"http://www.feitrip.cn/order/detail?id=222\"><span style=\"background: url(";
-        // line 138
+        // line 136
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/201603150911526141.jpg) no-repeat; background-size: 100% 100%\"></span></li> 
 
@@ -266,15 +264,15 @@ class __TwigTemplate_afc07c3efdba2d619240c49e9ee9d41e68b0d8c78e5e265ff01407c8e66
         <div class=\"content\" style=\"padding-bottom: 0px; border-bottom: 1px solid #d6f4f1; margin-bottom: 0px;\" id=\"divmain\">
             <h3 class=\"title2\" style=\"overflow: hidden;\"><font>最新发布</font><em>•</em>一份适合这季节的心情</h3>
             ";
-        // line 181
+        // line 179
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["info"]) ? $context["info"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["d"]) {
-            // line 182
+            // line 180
             echo "                <div class=\"ul_wrap\">
                     <ul class=\"ui-grid-halve ui-grid-halve2\">
                         <a href=\"";
-            // line 184
+            // line 182
             echo twig_escape_filter($this->env, (isset($context["ROOT"]) ? $context["ROOT"] : null), "html", null, true);
             echo "/traval/detail/id/";
             echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "id", array()), "html", null, true);
@@ -282,20 +280,20 @@ class __TwigTemplate_afc07c3efdba2d619240c49e9ee9d41e68b0d8c78e5e265ff01407c8e66
                             <li>
                                 <div class=\"ui-grid-halve-img\">
                                     <span style=\"background: url(";
-            // line 187
+            // line 185
             echo twig_escape_filter($this->env, (isset($context["ROOT"]) ? $context["ROOT"] : null), "html", null, true);
             echo "/";
             echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "thumb", array()), "html", null, true);
             echo ") top  center no-repeat; background-size: 100% 100%;\">
                                         <label class=\"money_img\" style=\"display: block; bottom: 18px; width: auto;\">￥";
-            // line 188
+            // line 186
             echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "price", array()), "html", null, true);
             echo "起</label>
 
                                     </span>
                                 </div>
                                 <p style=\"padding: 5px 0px 5px 0px;\">";
-            // line 192
+            // line 190
             echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "title", array()), "html", null, true);
             echo "</p>
                                 <style>
@@ -346,19 +344,19 @@ class __TwigTemplate_afc07c3efdba2d619240c49e9ee9d41e68b0d8c78e5e265ff01407c8e66
                                 </style>
                                 <div class=\"ui-grid-label\">
                                         <label>";
-            // line 240
+            // line 238
             echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "address", array()), "html", null, true);
             echo "</label>
                                         <label>";
-            // line 241
+            // line 239
             echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "yearold", array()), "html", null, true);
             echo "</label>
                                         ";
-            // line 242
+            // line 240
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["d"], "tags", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
-                // line 243
+                // line 241
                 echo "                                        <label>";
                 echo twig_escape_filter($this->env, $context["tag"], "html", null, true);
                 echo "</label>
@@ -367,13 +365,13 @@ class __TwigTemplate_afc07c3efdba2d619240c49e9ee9d41e68b0d8c78e5e265ff01407c8e66
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 245
+            // line 243
             echo "                                </div>
 
                                 <div class=\"ui-grid-halve-info\">
                                     <span class=\"sp1\">
                                         <label style=\"display: inline-block; line-height: 33px; font-size: 14px;\">累计报名人数:";
-            // line 249
+            // line 247
             echo twig_escape_filter($this->env, $this->getAttribute($context["d"], "signnum", array()), "html", null, true);
             echo " 人</label>
                                     </span>
@@ -390,7 +388,7 @@ class __TwigTemplate_afc07c3efdba2d619240c49e9ee9d41e68b0d8c78e5e265ff01407c8e66
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['d'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 260
+        // line 258
         echo "            </div>
         </div>
         <input type=\"hidden\" value=\"1\" id=\"PageIndex\">
@@ -479,7 +477,7 @@ class __TwigTemplate_afc07c3efdba2d619240c49e9ee9d41e68b0d8c78e5e265ff01407c8e66
 
     public function getDebugInfo()
     {
-        return array (  394 => 260,  377 => 249,  371 => 245,  362 => 243,  358 => 242,  354 => 241,  350 => 240,  299 => 192,  292 => 188,  286 => 187,  278 => 184,  274 => 182,  270 => 181,  224 => 138,  220 => 137,  216 => 136,  212 => 135,  208 => 134,  173 => 102,  145 => 77,  113 => 48,  90 => 28,  86 => 27,  82 => 26,  78 => 25,  74 => 24,  70 => 23,  66 => 22,  62 => 21,  58 => 20,  54 => 19,  50 => 18,  46 => 17,  42 => 16,  38 => 15,  34 => 14,  19 => 1,);
+        return array (  392 => 258,  375 => 247,  369 => 243,  360 => 241,  356 => 240,  352 => 239,  348 => 238,  297 => 190,  290 => 186,  284 => 185,  276 => 182,  272 => 180,  268 => 179,  222 => 136,  218 => 135,  214 => 134,  210 => 133,  206 => 132,  171 => 100,  143 => 75,  111 => 46,  90 => 28,  86 => 27,  82 => 26,  78 => 25,  74 => 24,  70 => 23,  66 => 22,  62 => 21,  58 => 20,  54 => 19,  50 => 18,  46 => 17,  42 => 16,  38 => 15,  34 => 14,  19 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -524,8 +522,6 @@ class __TwigTemplate_afc07c3efdba2d619240c49e9ee9d41e68b0d8c78e5e265ff01407c8e66
 /*     }*/
 /* */
 /* </script>*/
-/* */
-/* */
 /* <body style="background: #fff">*/
 /*     <div id="onediv" style="margin-left: auto; margin-right: auto">*/
 /*         <ul id="nav" class="nav clearfix">*/

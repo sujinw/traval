@@ -10,7 +10,8 @@ use core\lib\library\session;
 class authorCtrl extends lib\controller{
 	
 	function __construct(){
-		
+		$referurl = $_SERVER["HTTP_HOST"].$_SERVER["PHP_SELF"];
+		$_SESSION ['referurl'] = $referurl;
 		$this->assign("static",__STATIC__);
 		$this->assign("views",__VIEWS__);
 		$this->assign("APP",__APP__);

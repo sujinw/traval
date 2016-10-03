@@ -144,30 +144,27 @@ a.addInfoP {
 </style>
 </head>
 <script>
-    function alert(data) {
-        layer.open({
-            content: data,
-            style: 'background-color:#06c1bf; color:#fff; border:none;text-align: center;',
-            time: 2
-        });
+    function addOut(o){
+        var \$o = \$(o);
+        if(\$o.hasClass('on')){
+            \$o.removeClass('on');
+            \$o.find('input[type=\"radio\"]').prop('checked',false);
+        }else{
+            \$(o).addClass('on');
+            \$o.find('input[type=\"radio\"]').prop('checked','checked');
+
+        }
     }
-    laydate.skin('molv');
-    function setUserOut(){
-        layer.alert('内容', {
-            icon: 1,
-            skin: 'layer-ext-moon'
-        })
-        //询问框
-        layer.confirm('您是如何看待前端开发？', {
-             btn: ['重要','奇葩'] //按钮
-        }, function(){
-            layer.msg('的确很重要', {icon: 1});
-        }, function(){
-            layer.msg('也可以这样', {
-            time: 20000, //20s后自动关闭
-            btn: ['明白了', '知道了']
-        });
-        });
+
+    function selectpay(o){
+        var \$o = \$(o);
+        if(!\$o.hasClass('on')){
+            \$o.addClass('on');
+            \$o.parent().siblings('li').find('a').removeClass('on');
+            \$o.parent().siblings('li').find('input[type=\"radio\"]').prop('checked',false);
+            \$o.find('input[type=\"radio\"]').prop('checked','checked');
+        }
+        return false;
     }
 </script>
 <style type=\"text/css\">
@@ -210,7 +207,7 @@ a.addInfoP {
             <span class=\"cityP\" style=\"font-size: 16px;\">
                 &nbsp;&nbsp;
                 <img src=\"";
-        // line 170
+        // line 167
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/images/tit1.png\" width=\"30\" height=\"30\"></span>
         </a>
@@ -219,7 +216,7 @@ a.addInfoP {
         <h3>
             <a href=\"/index/index\" style=\"display: inline-block; width: 100%; height: 30px;\">
                 <img src=\"";
-        // line 176
+        // line 173
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/logo.png\" height=\"30\" />
             </a>
@@ -229,7 +226,7 @@ a.addInfoP {
         <div class=\"topR\" style=\"\">
             <a href=\"/user/index\">
                 <img src=\"";
-        // line 183
+        // line 180
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/tit2.png\" width=\"\" height=\"30\" style=\"display: -webkit-box; -webkit-box-flex: 0.5; -webkit-box-align: center; -webkit-box-pack: center; -webkit-box-orient: vertical; text-align: center; margin-left: auto; margin-right: auto;\"></a>
         </div>
@@ -249,11 +246,11 @@ a.addInfoP {
 <div class=\"content\">
     <div class=\"pay_tit\">
         <h4>";
-        // line 200
+        // line 197
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "title", array()), "html", null, true);
         echo "</h4>
         <p>报名时间：";
-        // line 201
+        // line 198
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "signeuptime", array()), "html", null, true);
         echo "</p>
     </div>
@@ -281,7 +278,7 @@ a.addInfoP {
                             <br></span>
                         <span style=\"text-align: center; display: block; margin-left: auto; margin-right: auto; width: 230px;\">
                             票数：";
-        // line 226
+        // line 223
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "orderYesNum", array()), "html", null, true);
         echo "/";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "orderTotalNum", array()), "html", null, true);
@@ -298,31 +295,92 @@ a.addInfoP {
                     <a href=\"javascript:;\" onclick=\"setUserOut()\" style=\"display: block; width: 60px; height: 25px; line-height: 25px; float: right;  font-family: '微软雅黑'; font-size: 16px; color: #06c1bf;\">
                         添加
                         <img src=\"";
-        // line 238
+        // line 235
         echo twig_escape_filter($this->env, (isset($context["static"]) ? $context["static"] : null), "html", null, true);
         echo "/Images/add.png\" style=\"display: inline-block; width: 25px; height: 25px; float: right; vertical-align: middle;\" />
                     </a>
                 </li>
                 <dl class=\"list_1\">
-            <dt class=\"t_4\"></dt>
-            <dd>
-                <ul class=\"list_page_1\">
+                    <dt class=\"t_4\"></dt>
+                    <dd>
+                        <ul class=\"list_page_1\">
+                            ";
+        // line 242
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["outUser"]) ? $context["outUser"] : null));
+        foreach ($context['_seq'] as $context["_key"] => $context["ou"]) {
+            // line 243
+            echo "                            <li style=\"padding: 0px 10px !important; height: auto; overflow: hidden; line-height: 20px !important; background:none;\">
+                                <a href=\"javascript:;\" class=\"addInfoP\" onclick=\"addOut(this)\">
+                                    <p class=\"addInfoPl fl\">
+                                        <span style=\"color: #333;\">";
+            // line 246
+            echo twig_escape_filter($this->env, $this->getAttribute($context["ou"], "name", array()), "html", null, true);
+            echo "</span>
+                                        <span style=\"color: #999; font-size: 0.7em;\">";
+            // line 247
+            if (($this->getAttribute($context["ou"], "AgeArea", array()) == 1)) {
+                echo "儿童";
+            } else {
+                echo "女";
+            }
+            echo " &nbsp;&nbsp;";
+            if (($this->getAttribute($context["ou"], "sex", array()) == 1)) {
+                echo "男";
+            } else {
+                echo "女";
+            }
+            echo "</span>
+                                    </p>
+                                    <p class=\"addInfoPr fl\">
+                                        <span style=\"color: #999; font-size: 0.7em;\">身份证</span>
+                                        <span style=\"color: #333;\">";
+            // line 251
+            if (($this->getAttribute($context["ou"], "idNum", array()) == "")) {
+                echo "暂无身份证信息";
+            } else {
+                echo twig_escape_filter($this->env, $this->getAttribute($context["ou"], "idNum", array()), "html", null, true);
+            }
+            echo "</span>
+                                    </p>
+                                    <input type=\"radio\"  class=\"outUser\" value=\"";
+            // line 253
+            echo twig_escape_filter($this->env, $this->getAttribute($context["ou"], "id", array()), "html", null, true);
+            echo "\"/>
+                                </a>
+                            </li>
+                            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ou'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 257
+        echo "                        </ul>
+                    </dd>
+                </dl>
+                <li style=\"background: none; padding-left: 15px !important;\">
+                    <span class=\"moeny\">选择支付方式：</span>
+                </li>
+                 <dl class=\"list_1\">
+                    <dt class=\"t_4\"></dt>
+                    <dd>
+                        <ul class=\"list_page_1\">
+                            <li style=\"padding: 0px 10px !important; height: auto; overflow: hidden; line-height: 20px !important; background:none;\">
+                                <a href=\"javascript:;\" class=\"addInfoP on\" onclick=\"selectpay(this)\" style=\"line-height:68px;\">
+                                    微信支付
+                                <input type=\"radio\" name=\"payway\" checked=\"checked\" value=\"1\" class=\"payway\">
+                                </a>
+                            </li>
+                             <li style=\"padding: 0px 10px !important; height: auto; overflow: hidden; line-height: 20px !important; background:none;\">
+                                <a href=\"javascript:;\" class=\"addInfoP\" onclick=\"selectpay(this)\" style=\"line-height:68px;\">
+                                    支付宝支付  
+                                <input type=\"radio\" name=\"payway\" value=\"2\" class=\"payway\">
 
-                     <li style=\"padding: 0px 10px !important; height: auto; overflow: hidden; line-height: 20px !important;\">
-                        <a href=\"/userinfo?Id=8167\" class=\"addInfoP\" style=\"\">
-                            <p class=\"addInfoPl fl\"><span style=\"color: #333;\">test1</span><span style=\"color: #999; font-size: 0.7em;\">成人 &nbsp;&nbsp;男</span></p>
-                            <p class=\"addInfoPr fl\"><span style=\"color: #999; font-size: 0.7em;\">身份证</span><span style=\"color: #333;\">暂无身份证信息</span></p>
-                        </a>
-                    </li>
-                     <li style=\"padding: 0px 10px !important; height: auto; overflow: hidden; line-height: 20px !important;\">
-                        <a href=\"/userinfo?Id=8168\" class=\"addInfoP\" style=\"\">
-                            <p class=\"addInfoPl fl\"><span style=\"color: #333;\">shenm</span><span style=\"color: #999; font-size: 0.7em;\">儿童 &nbsp;&nbsp;女</span></p>
-                            <p class=\"addInfoPr fl\"><span style=\"color: #999; font-size: 0.7em;\">身份证</span><span style=\"color: #333;\">暂无身份证信息</span></p>
-                        </a>
-                    </li>
-                </ul>
-            </dd>
-        </dl>
+                                </a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
                 <li style=\"background: none; padding-left: 15px !important;\">
                     <span class=\"moeny\">总价：</span>
                 </li>
@@ -348,12 +406,12 @@ a.addInfoP {
             </ul>
         </dd>
     </dl>
-<script>
+    <script>
 function Price() {
     //变动的价钱（数量的增减时变化）
     var c = \$(\"input[name='CManNum']\").val();
     var zc = ";
-        // line 290
+        // line 312
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "price", array()), "html", null, true);
         echo " * parseFloat(c);
     var z =  zc.toFixed(2);;
@@ -362,11 +420,11 @@ function Price() {
 </script>
     <div class=\" ui-btn-group-bottom \" style=\"width: 100%;\">
         <div class=\"postBt\">
-            <a href=\"javascript:sub()\" id=\"qychu\">下一步</a>
+            <a href=\"javascript:;\" onclick=\"sub()\" id=\"qychu\">下一步</a>
         </div>
     </div>
     <!--/postBt-->
-<script>
+    <script>
         //// js日期比较(yyyy-mm-dd)
         //function duibi(a, b) {
         //    var arr = a.split(\"-\");
@@ -386,7 +444,7 @@ function Price() {
 
         //}
     </script>
-<script>
+    <script>
     //处理选中的效果及传值的name
     //第一个选中 及存在name
     //  \$(\".timeDiv\").first().addClass(\"on\");
@@ -422,65 +480,73 @@ function sub() {
     if (Date.parse(data) >= Date.parse(now) && Date.parse(data) <= Date.parse(old)) {
         //alert(\"请选择正确的时间\");
         var time = \$(\"input[name='Time']\").val();
-        //alert(time);
+        // alert(time);
         var c = \$(\"input[name='CManNum']\").val();
-        var name = \$(\"input[name='Name']\").val();
-        var phone = \$(\"input[name='Phone']\").val();
-        var text = \$(\"input[name='Text']\").val();
-        var caid = \$(\"input[name='Caid']\").val();
         var timeid= \$(\"input[name='timeid']\").val();
-        var str = phone;
-        var n = Number(str);
-        //alert(name);
-        if (time == \" \" || time == null) {
-            alert(\"请选择时间段\");
-        } else if (c == 0) {
-            alert(\"没有数量哦！再想想\");
-        } else if (name == \"\" || name == null) {
-            alert(\"请输入姓名\");
-        } else if (phone == \" \" || phone == null) {
-            alert(\"请输入联系方式\");
-        } else if (phone.length != 11) {
-            alert(\"手机号码长度不符\");
-        } else if (isNaN(n)) {
-            alert(\"手机号码为数字\");
-        } else if (istrue ==\"True\") {
-            if (caid == \"\" || caid == null) {
-                alert(\"身份证号码不能为空\");
-            } else if (caid.length != 18) {
-                alert(\"身份证号码长度不符\");
-            }  else {
-                window.location.href = \"/order/JuOrderAdd?gid=519&cid=485&num=\" + c + \"&name=\" + name + \"&phone=\" + phone + \"&caid=\" + caid + \"&Time=\" + time + \"&text=\" + text+\"&timeid=\"+timeid;
-                layer.open({
-                    type: 2,
-                    content: '订单生成中..'
-                });
-                \$(\"#qychu\").attr(\"href\", \"javascript:void(0)\");
-                setTimeout(function() {
-                    \$(\"#qychu\").attr(\"href\", \"javascript:sub()\");
-                }, 3000);
+        var outUser = \$(\".outUser\");
+        var totalPrice = \$(\"#in\").text().substring(1, \$(\"#in\").text().length);
+        var payway = \$(\"input[name='payway']:checked\").val();
+        if(c==0){
+            alert(\"没有选择出行的门票\");
+            return;
+        }
+
+        if(timeid == \"\"){
+            alert('没有选择出行时间');
+            return;
+        }
+        var outId = \"\";
+        outUser.each(function(index,ele){
+            if(\$(this).prop('checked')){
+                outId += \$(this).val() + \"||\";
             }
-    }  else if(istrue ==\"False\"){
-        window.location.href = \"/order/JuOrderAdd?gid=519&cid=485&num=\" + c + \"&name=\" + name + \"&phone=\" + phone + \"&caid=\" + caid + \"&Time=\" + time + \"&text=\" + text+\"&timeid=\"+timeid;
-        layer.open({
-            type: 2,
-            content: '订单生成中..'
         });
-        \$(\"#qychu\").attr(\"href\", \"javascript:void(0)\");
-        setTimeout(function() {
-            \$(\"#qychu\").attr(\"href\", \"javascript:sub()\");
-        }, 3000);
+        var oId = outId.substring(0,outId.length-2);
+
+        if(oId == \"\" || oId == undefined){
+            alert(\"请选择出行的人\")
+            return;
+        }
+        //alert(\"";
+        // line 406
+        echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
+        echo "/user/addUserOrder/uid/";
+        echo twig_escape_filter($this->env, (isset($context["userId"]) ? $context["userId"] : null), "html", null, true);
+        echo "\")
+        \$.ajax({
+            url:\"";
+        // line 408
+        echo twig_escape_filter($this->env, (isset($context["APP"]) ? $context["APP"] : null), "html", null, true);
+        echo "/user/addUserOrder/uid/";
+        echo twig_escape_filter($this->env, (isset($context["userId"]) ? $context["userId"] : null), "html", null, true);
+        echo "\",
+            type:\"POST\",
+            data:{
+                \"user_outTime\":time,
+                \"order_num\":c,
+                \"out_user\":oId,
+                \"priceTotal\":totalPrice,
+                \"pay_way\":payway,
+                \"did\":";
+        // line 416
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "id", array()), "html", null, true);
+        echo "
+            },
+            success:function(data){
+                if(data.code == 20001){
+                    layer.msg(\"订单提交成功，正在跳转...\");
+                    setTimeout(function(){
+                        location.href=\"/user/orderpay/oid/\"+data.data;
+                    },4000);
+                }else{
+                    layer.msg(\"订单提交失败\");
+                }
+            }
+        });
     }
-} else {
-        // alert(\"所选时间不能为过去\");
-alert(\"不在报名时间内\");
-\$(\"#indate\").val(\"2016-09-12\");
-}
-
-
 }
 </script>
-<script>
+    <script>
 function jia(i) {
     var data = 0;
     if (i == 1) {
@@ -491,13 +557,13 @@ function jia(i) {
         data = \$(\"input[name='CManNum']\").val();
         var a = parseInt(data) + 1;
         if( a >= (parseInt(";
-        // line 425
+        // line 442
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "orderTotalNum", array()), "html", null, true);
         echo ") - parseInt(";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "orderYesNum", array()), "html", null, true);
         echo "))){
             a = (parseInt(";
-        // line 426
+        // line 443
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "orderTotalNum", array()), "html", null, true);
         echo ") - parseInt(";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["info"]) ? $context["info"] : null), "orderYesNum", array()), "html", null, true);
@@ -541,8 +607,7 @@ function jian(i) {
         \$(\".ui-btn-group-bottom\").css(\"position\", \"relative\");
     }
 </script>
-</html>
-";
+</html>";
     }
 
     public function getTemplateName()
@@ -557,7 +622,7 @@ function jian(i) {
 
     public function getDebugInfo()
     {
-        return array (  501 => 426,  495 => 425,  357 => 290,  302 => 238,  285 => 226,  257 => 201,  253 => 200,  233 => 183,  223 => 176,  214 => 170,  67 => 26,  63 => 25,  59 => 24,  54 => 22,  50 => 21,  43 => 17,  39 => 16,  35 => 15,  19 => 1,);
+        return array (  567 => 443,  561 => 442,  532 => 416,  519 => 408,  512 => 406,  415 => 312,  358 => 257,  348 => 253,  339 => 251,  322 => 247,  318 => 246,  313 => 243,  309 => 242,  299 => 235,  282 => 223,  254 => 198,  250 => 197,  230 => 180,  220 => 173,  211 => 167,  67 => 26,  63 => 25,  59 => 24,  54 => 22,  50 => 21,  43 => 17,  39 => 16,  35 => 15,  19 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -664,30 +729,27 @@ function jian(i) {
 /* </style>*/
 /* </head>*/
 /* <script>*/
-/*     function alert(data) {*/
-/*         layer.open({*/
-/*             content: data,*/
-/*             style: 'background-color:#06c1bf; color:#fff; border:none;text-align: center;',*/
-/*             time: 2*/
-/*         });*/
+/*     function addOut(o){*/
+/*         var $o = $(o);*/
+/*         if($o.hasClass('on')){*/
+/*             $o.removeClass('on');*/
+/*             $o.find('input[type="radio"]').prop('checked',false);*/
+/*         }else{*/
+/*             $(o).addClass('on');*/
+/*             $o.find('input[type="radio"]').prop('checked','checked');*/
+/* */
+/*         }*/
 /*     }*/
-/*     laydate.skin('molv');*/
-/*     function setUserOut(){*/
-/*         layer.alert('内容', {*/
-/*             icon: 1,*/
-/*             skin: 'layer-ext-moon'*/
-/*         })*/
-/*         //询问框*/
-/*         layer.confirm('您是如何看待前端开发？', {*/
-/*              btn: ['重要','奇葩'] //按钮*/
-/*         }, function(){*/
-/*             layer.msg('的确很重要', {icon: 1});*/
-/*         }, function(){*/
-/*             layer.msg('也可以这样', {*/
-/*             time: 20000, //20s后自动关闭*/
-/*             btn: ['明白了', '知道了']*/
-/*         });*/
-/*         });*/
+/* */
+/*     function selectpay(o){*/
+/*         var $o = $(o);*/
+/*         if(!$o.hasClass('on')){*/
+/*             $o.addClass('on');*/
+/*             $o.parent().siblings('li').find('a').removeClass('on');*/
+/*             $o.parent().siblings('li').find('input[type="radio"]').prop('checked',false);*/
+/*             $o.find('input[type="radio"]').prop('checked','checked');*/
+/*         }*/
+/*         return false;*/
 /*     }*/
 /* </script>*/
 /* <style type="text/css">*/
@@ -801,25 +863,50 @@ function jian(i) {
 /*                     </a>*/
 /*                 </li>*/
 /*                 <dl class="list_1">*/
-/*             <dt class="t_4"></dt>*/
-/*             <dd>*/
-/*                 <ul class="list_page_1">*/
+/*                     <dt class="t_4"></dt>*/
+/*                     <dd>*/
+/*                         <ul class="list_page_1">*/
+/*                             {% for ou in outUser %}*/
+/*                             <li style="padding: 0px 10px !important; height: auto; overflow: hidden; line-height: 20px !important; background:none;">*/
+/*                                 <a href="javascript:;" class="addInfoP" onclick="addOut(this)">*/
+/*                                     <p class="addInfoPl fl">*/
+/*                                         <span style="color: #333;">{{ ou.name }}</span>*/
+/*                                         <span style="color: #999; font-size: 0.7em;">{% if ou.AgeArea == 1 %}儿童{% else %}女{% endif %} &nbsp;&nbsp;{% if ou.sex==1 %}男{% else %}女{% endif %}</span>*/
+/*                                     </p>*/
+/*                                     <p class="addInfoPr fl">*/
+/*                                         <span style="color: #999; font-size: 0.7em;">身份证</span>*/
+/*                                         <span style="color: #333;">{% if ou.idNum == "" %}暂无身份证信息{% else %}{{ ou.idNum }}{% endif %}</span>*/
+/*                                     </p>*/
+/*                                     <input type="radio"  class="outUser" value="{{ ou.id }}"/>*/
+/*                                 </a>*/
+/*                             </li>*/
+/*                             {% endfor %}*/
+/*                         </ul>*/
+/*                     </dd>*/
+/*                 </dl>*/
+/*                 <li style="background: none; padding-left: 15px !important;">*/
+/*                     <span class="moeny">选择支付方式：</span>*/
+/*                 </li>*/
+/*                  <dl class="list_1">*/
+/*                     <dt class="t_4"></dt>*/
+/*                     <dd>*/
+/*                         <ul class="list_page_1">*/
+/*                             <li style="padding: 0px 10px !important; height: auto; overflow: hidden; line-height: 20px !important; background:none;">*/
+/*                                 <a href="javascript:;" class="addInfoP on" onclick="selectpay(this)" style="line-height:68px;">*/
+/*                                     微信支付*/
+/*                                 <input type="radio" name="payway" checked="checked" value="1" class="payway">*/
+/*                                 </a>*/
+/*                             </li>*/
+/*                              <li style="padding: 0px 10px !important; height: auto; overflow: hidden; line-height: 20px !important; background:none;">*/
+/*                                 <a href="javascript:;" class="addInfoP" onclick="selectpay(this)" style="line-height:68px;">*/
+/*                                     支付宝支付  */
+/*                                 <input type="radio" name="payway" value="2" class="payway">*/
 /* */
-/*                      <li style="padding: 0px 10px !important; height: auto; overflow: hidden; line-height: 20px !important;">*/
-/*                         <a href="/userinfo?Id=8167" class="addInfoP" style="">*/
-/*                             <p class="addInfoPl fl"><span style="color: #333;">test1</span><span style="color: #999; font-size: 0.7em;">成人 &nbsp;&nbsp;男</span></p>*/
-/*                             <p class="addInfoPr fl"><span style="color: #999; font-size: 0.7em;">身份证</span><span style="color: #333;">暂无身份证信息</span></p>*/
-/*                         </a>*/
-/*                     </li>*/
-/*                      <li style="padding: 0px 10px !important; height: auto; overflow: hidden; line-height: 20px !important;">*/
-/*                         <a href="/userinfo?Id=8168" class="addInfoP" style="">*/
-/*                             <p class="addInfoPl fl"><span style="color: #333;">shenm</span><span style="color: #999; font-size: 0.7em;">儿童 &nbsp;&nbsp;女</span></p>*/
-/*                             <p class="addInfoPr fl"><span style="color: #999; font-size: 0.7em;">身份证</span><span style="color: #333;">暂无身份证信息</span></p>*/
-/*                         </a>*/
-/*                     </li>*/
-/*                 </ul>*/
-/*             </dd>*/
-/*         </dl>*/
+/*                                 </a>*/
+/*                             </li>*/
+/*                         </ul>*/
+/*                     </dd>*/
+/*                 </dl>*/
 /*                 <li style="background: none; padding-left: 15px !important;">*/
 /*                     <span class="moeny">总价：</span>*/
 /*                 </li>*/
@@ -845,7 +932,7 @@ function jian(i) {
 /*             </ul>*/
 /*         </dd>*/
 /*     </dl>*/
-/* <script>*/
+/*     <script>*/
 /* function Price() {*/
 /*     //变动的价钱（数量的增减时变化）*/
 /*     var c = $("input[name='CManNum']").val();*/
@@ -856,11 +943,11 @@ function jian(i) {
 /* </script>*/
 /*     <div class=" ui-btn-group-bottom " style="width: 100%;">*/
 /*         <div class="postBt">*/
-/*             <a href="javascript:sub()" id="qychu">下一步</a>*/
+/*             <a href="javascript:;" onclick="sub()" id="qychu">下一步</a>*/
 /*         </div>*/
 /*     </div>*/
 /*     <!--/postBt-->*/
-/* <script>*/
+/*     <script>*/
 /*         //// js日期比较(yyyy-mm-dd)*/
 /*         //function duibi(a, b) {*/
 /*         //    var arr = a.split("-");*/
@@ -880,7 +967,7 @@ function jian(i) {
 /* */
 /*         //}*/
 /*     </script>*/
-/* <script>*/
+/*     <script>*/
 /*     //处理选中的效果及传值的name*/
 /*     //第一个选中 及存在name*/
 /*     //  $(".timeDiv").first().addClass("on");*/
@@ -916,65 +1003,60 @@ function jian(i) {
 /*     if (Date.parse(data) >= Date.parse(now) && Date.parse(data) <= Date.parse(old)) {*/
 /*         //alert("请选择正确的时间");*/
 /*         var time = $("input[name='Time']").val();*/
-/*         //alert(time);*/
+/*         // alert(time);*/
 /*         var c = $("input[name='CManNum']").val();*/
-/*         var name = $("input[name='Name']").val();*/
-/*         var phone = $("input[name='Phone']").val();*/
-/*         var text = $("input[name='Text']").val();*/
-/*         var caid = $("input[name='Caid']").val();*/
 /*         var timeid= $("input[name='timeid']").val();*/
-/*         var str = phone;*/
-/*         var n = Number(str);*/
-/*         //alert(name);*/
-/*         if (time == " " || time == null) {*/
-/*             alert("请选择时间段");*/
-/*         } else if (c == 0) {*/
-/*             alert("没有数量哦！再想想");*/
-/*         } else if (name == "" || name == null) {*/
-/*             alert("请输入姓名");*/
-/*         } else if (phone == " " || phone == null) {*/
-/*             alert("请输入联系方式");*/
-/*         } else if (phone.length != 11) {*/
-/*             alert("手机号码长度不符");*/
-/*         } else if (isNaN(n)) {*/
-/*             alert("手机号码为数字");*/
-/*         } else if (istrue =="True") {*/
-/*             if (caid == "" || caid == null) {*/
-/*                 alert("身份证号码不能为空");*/
-/*             } else if (caid.length != 18) {*/
-/*                 alert("身份证号码长度不符");*/
-/*             }  else {*/
-/*                 window.location.href = "/order/JuOrderAdd?gid=519&cid=485&num=" + c + "&name=" + name + "&phone=" + phone + "&caid=" + caid + "&Time=" + time + "&text=" + text+"&timeid="+timeid;*/
-/*                 layer.open({*/
-/*                     type: 2,*/
-/*                     content: '订单生成中..'*/
-/*                 });*/
-/*                 $("#qychu").attr("href", "javascript:void(0)");*/
-/*                 setTimeout(function() {*/
-/*                     $("#qychu").attr("href", "javascript:sub()");*/
-/*                 }, 3000);*/
+/*         var outUser = $(".outUser");*/
+/*         var totalPrice = $("#in").text().substring(1, $("#in").text().length);*/
+/*         var payway = $("input[name='payway']:checked").val();*/
+/*         if(c==0){*/
+/*             alert("没有选择出行的门票");*/
+/*             return;*/
+/*         }*/
+/* */
+/*         if(timeid == ""){*/
+/*             alert('没有选择出行时间');*/
+/*             return;*/
+/*         }*/
+/*         var outId = "";*/
+/*         outUser.each(function(index,ele){*/
+/*             if($(this).prop('checked')){*/
+/*                 outId += $(this).val() + "||";*/
 /*             }*/
-/*     }  else if(istrue =="False"){*/
-/*         window.location.href = "/order/JuOrderAdd?gid=519&cid=485&num=" + c + "&name=" + name + "&phone=" + phone + "&caid=" + caid + "&Time=" + time + "&text=" + text+"&timeid="+timeid;*/
-/*         layer.open({*/
-/*             type: 2,*/
-/*             content: '订单生成中..'*/
 /*         });*/
-/*         $("#qychu").attr("href", "javascript:void(0)");*/
-/*         setTimeout(function() {*/
-/*             $("#qychu").attr("href", "javascript:sub()");*/
-/*         }, 3000);*/
+/*         var oId = outId.substring(0,outId.length-2);*/
+/* */
+/*         if(oId == "" || oId == undefined){*/
+/*             alert("请选择出行的人")*/
+/*             return;*/
+/*         }*/
+/*         //alert("{{ APP }}/user/addUserOrder/uid/{{ userId }}")*/
+/*         $.ajax({*/
+/*             url:"{{ APP }}/user/addUserOrder/uid/{{ userId }}",*/
+/*             type:"POST",*/
+/*             data:{*/
+/*                 "user_outTime":time,*/
+/*                 "order_num":c,*/
+/*                 "out_user":oId,*/
+/*                 "priceTotal":totalPrice,*/
+/*                 "pay_way":payway,*/
+/*                 "did":{{ info.id }}*/
+/*             },*/
+/*             success:function(data){*/
+/*                 if(data.code == 20001){*/
+/*                     layer.msg("订单提交成功，正在跳转...");*/
+/*                     setTimeout(function(){*/
+/*                         location.href="/user/orderpay/oid/"+data.data;*/
+/*                     },4000);*/
+/*                 }else{*/
+/*                     layer.msg("订单提交失败");*/
+/*                 }*/
+/*             }*/
+/*         });*/
 /*     }*/
-/* } else {*/
-/*         // alert("所选时间不能为过去");*/
-/* alert("不在报名时间内");*/
-/* $("#indate").val("2016-09-12");*/
-/* }*/
-/* */
-/* */
 /* }*/
 /* </script>*/
-/* <script>*/
+/*     <script>*/
 /* function jia(i) {*/
 /*     var data = 0;*/
 /*     if (i == 1) {*/
@@ -1026,4 +1108,3 @@ function jian(i) {
 /*     }*/
 /* </script>*/
 /* </html>*/
-/* */
